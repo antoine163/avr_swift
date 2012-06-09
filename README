@@ -1,0 +1,45 @@
+################################################################################
+#
+#	avr_swift est un projet pour faciliter le développement sur
+#	Microcontrôleur ATMEL 8bit (atmega, attiny).
+#
+#
+#	Auteur 			: 	Maleyrie Antoine
+#	Début du projet 	:	juin 2011
+#	Version actuel		:	0.2
+#	Site web		:
+#	Compilateur supporter	:	AVR-GCC
+#
+################################################################################
+
+
+################################################################################
+#
+#	Copyright © 2011-2012 - Antoine Maleyrie.
+#
+################################################################################
+
+--- Installation : ---
+	TODO via le makefile ...
+	
+--- Utilisation : ---
+	Un exemple de makefile et donnent dans le dossier template. Pour 
+	une tout autre configuration il suffi d'inclure peripherals et 
+	drivers dans votre projet et les fichiers .c que vous utiliser.
+	
+	Le makefile fournie dans template permet de compiler en release 
+	ou debug, de programmer le composent cible et de générer la
+	documentation de votre projet.
+
+--- Doxygen : ---
+	Les fichiers constituent avr_swift a été conçus de sort a générai
+	de la documentation automatique grâce au logicielle Doxygen.
+	Vous pouvez générai la documentation en faisant "make" dans le
+	dossier avr_swift ou un "make clean" pour supprimer la doc.
+	
+--- Précision/autre : ---
+	Une bibliothèque développer par ATMEL, ASF disponible -> 
+	http://www.atmel.com/tools/AVRSOFTWAREFRAMEWORK.aspx
+	Est en développement et supporte un nombre limiter de
+	coupleurs/fonctionnalité pour AVR mega. Donc à voir pour le maintien 
+	d'avr_swift.
