@@ -25,11 +25,11 @@
 #ifndef TWI_H_INCLUDED
 #define TWI_H_INCLUDED
 
-//! \addtogroup Twi
-//! \brief Driver pour bénéficier du twi (2-wire Serial Interface).
+//! \addtogroup twi
+//! \brief twi (2-wire Serial Interface).
 //!
 //! \code
-//! #include "sw/drv/twi.h"
+//! #include "twi.h"
 //! \endcode
 //!
 //! Toue les exemple si dessous, sont la à titre indicatifs. La gestion du twi peut se faire totalement différemment que ces exemple, notamment avec l'interruption.

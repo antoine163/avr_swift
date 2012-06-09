@@ -3,7 +3,7 @@
 */
 //! \file **********************************************************************
 //!
-//! \brief Fichier pour usart (Universal Synchronous/Asynchronous Receiver/Transmitter).
+//! \brief Fichier pour l'usart (Universal Synchronous/Asynchronous Receiver/Transmitter).
 //!
 //! - Compilateur		: AVR-GCC
 //! - Composent supporter	: atmega
@@ -23,11 +23,11 @@
 #ifndef USART_H_INCLUDED
 #define USART_H_INCLUDED
 
-//! \addtogroup Usart
-//! \brief Driver pour bénéficier de l'usart (Universal Synchronous/Asynchronous Receiver/Transmitter)
+//! \addtogroup usart
+//! \brief usart (Universal Synchronous/Asynchronous Receiver/Transmitter)
 //!
 //! \code
-//! #include "sw/drv/usart.h"
+//! #include "usart.h"
 //! \endcode
 //!
 
@@ -45,7 +45,7 @@
 //_____ F U N C T I O N ________________________________________________________
 
 
-//! @} //Usart
+//! @} //usart
 
 
 

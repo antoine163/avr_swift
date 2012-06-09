@@ -50,7 +50,7 @@
 //! \brief Les divers proposer par avr_swift
 //! @{
 //! 	\defgroup i2c
-//! 	\brief divers i2c.
+//! 	\brief driver pour l'i2c.
 //! 	@{
 //! 	@} //I2c
 //! @} //Driver

@@ -22,11 +22,11 @@
 #ifndef TC_H_INCLUDED
 #define TC_H_INCLUDED
 
-//! \addtogroup Tc
-//! \brief Driver pour bénéficier des Timers/Counters.
+//! \addtogroup tc
+//! \brief timers/counters.
 //!
 //! \code
-//! #include "sw/drv/tc.h"
+//! #include "tc.h"
 //! \endcode
 //!
 //! \todo Les composes supportent une PLL sur leur timer 1 ne sont pas encore supporter.

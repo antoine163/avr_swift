@@ -22,11 +22,11 @@
 #ifndef ADC_H_INCLUDED
 #define ADC_H_INCLUDED
 
-//! \addtogroup Adc
-//! \brief Driver pour bénéficier de la conversation analogique numérique (Analog-to-digital Converter).
+//! \addtogroup adc
+//! \brief Conversation analogique numérique (Analog-to-digital Converter).
 //!
 //! \code
-//! #include "sw/drv/adc.h"
+//! #include "adc.h"
 //! \endcode
 //!
 //! Voir un code d'exemple.
