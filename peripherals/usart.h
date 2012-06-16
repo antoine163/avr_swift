@@ -27,7 +27,7 @@
 //! \brief usart (Universal Synchronous/Asynchronous Receiver/Transmitter)
 //!
 //! \code
-//! #include "usart.h"
+//! #include <usart.h>
 //! \endcode
 //!
 

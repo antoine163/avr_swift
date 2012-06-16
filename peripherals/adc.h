@@ -26,7 +26,7 @@
 //! \brief Conversation analogique numérique (Analog-to-digital Converter).
 //!
 //! \code
-//! #include "adc.h"
+//! #include <adc.h>
 //! \endcode
 //!
 //! Voir un code d'exemple.

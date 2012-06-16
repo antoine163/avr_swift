@@ -29,7 +29,7 @@
 //! \brief twi (2-wire Serial Interface).
 //!
 //! \code
-//! #include "twi.h"
+//! #include <twi.h>
 //! \endcode
 //!
 //! Toue les exemple si dessous, sont la à titre indicatifs. La gestion du twi peut se faire totalement différemment que ces exemple, notamment avec l'interruption.

@@ -12,7 +12,7 @@
 //!
 //!
 //! \author Maleyrie Antoine
-//! \version  1.0
+//! \version  1.2
 //! \date 19 Juin 2011
 //!
 //! ****************************************************************************
@@ -34,26 +34,30 @@
 
 
 //! \defgroup peripherials
-//! \brief Fichier de base pour la gestion des coupleurs.
 //! @{
 //! 	\defgroup twi
 //! 	\defgroup tc
 //! 	\defgroup adc
 //! 	\defgroup usart
-//! @} //Peripherials
+//! @}
 
 /*
 *
 */
 
 //! \defgroup driver
-//! \brief Les divers proposer par avr_swift
 //! @{
-//! 	\defgroup i2c
-//! 	\brief driver pour l'i2c.
+//!	 	\defgroup i2c
 //! 	@{
-//! 	@} //I2c
-//! @} //Driver
+//!			\defgroup i2cMaster
+//! 		\brief Driver i2c en maître.
+//!			\defgroup i2cSlave
+//! 		\brief Driver i2c en esclave.
+//!			\defgroup i2cCommun
+//! 		\brief Fonction commune pour l'i2c en maître et esclave.
+//! 	@}
+
+//! @}
 
 #endif // AVR_SWIFT_H_INCLUDED
 

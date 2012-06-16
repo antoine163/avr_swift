@@ -26,7 +26,7 @@
 //! \brief timers/counters.
 //!
 //! \code
-//! #include "tc.h"
+//! #include <tc.h>
 //! \endcode
 //!
 //! \todo Les composes supportent une PLL sur leur timer 1 ne sont pas encore supporter.
