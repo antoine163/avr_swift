@@ -42,8 +42,7 @@
 //_____ I N C L U D E S ________________________________________________________
 #include <stdbool.h>
 #include <stddef.h>
-#include <i2c_common.h>
-
+#include <i2ccom.h>
 #include "config.h"
 
 //_____ M A C R O S ____________________________________________________________
