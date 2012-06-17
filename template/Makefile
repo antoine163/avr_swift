@@ -31,6 +31,9 @@ TARGET_OUTPUT_FILE=avrproject.elf
 #Endroit où ce trouve avr_swift
 AVRSWIFT = /usr/libavr/avr_swift
 
+#Endroit où stoker les fichiers binaire.
+OBJDIR = obj
+
 #flage en plus pour la compilation en release.
 CCFLAGSR=-Os -O2
 #flage en plus pour la compilation en debug.
@@ -45,8 +48,6 @@ UINCDIRS=	$(AVRSWIFT)/peripherals \
 			$(AVRSWIFT)/drivers \
 			trunk/
 UINCDIR = $(patsubst %,-I%, $(UINCDIRS))
-
-
 
 
 #Construire le project en release
@@ -65,12 +66,13 @@ debug:build
 
 #Construction du projet
 build: $(OBJS)
-	$(CC) -o $(TARGET_OUTPUT_FILE) $^ $(LDFLAGS) -mmcu=$(MCU)
+	$(CC) -o $(TARGET_OUTPUT_FILE) $(patsubst %,$(OBJDIR)/%, $(patsubst /%,%, $^)) $(LDFLAGS) -mmcu=$(MCU)
 	$(OBJCOPY) -O ihex -R .eeprom -R .eesafe $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).hex
 	$(SIZE) $(TARGET_OUTPUT_FILE)
 
 %.o: %.c
-	@$(CC) -o $@ -c $<  $(UINCDIR) $(CCFLAGS) -mmcu=$(MCU) -DF_CPU=$(FCPU)
+	mkdir -p $(OBJDIR)/$(patsubst /%,%, $(@D))
+	@$(CC) -o $(OBJDIR)/$(patsubst /%,%, $@) -c $<  $(UINCDIR) $(CCFLAGS) -mmcu=$(MCU) -DF_CPU=$(FCPU)
 
 #Génération de la doc
 .PHONY: doc
@@ -82,7 +84,7 @@ doc:
 prog:
 	avrdude -p $(MCUDUD) -c $(PROGRAMATOR) -U flash:w:$(TARGET_OUTPUT_FILE).hex
 	
-#Supprime la doc génération
+#Supprime la doc générée
 .PHONY: cleandoc
 cleandoc:
 	@cd doc && rm html -R
@@ -90,6 +92,6 @@ cleandoc:
 #Nettoyage du projet
 .PHONY: clean
 clean:
-	@find . -name "*.o" -delete
+	@rm $(OBJDIR) -R
 	@rm $(TARGET_OUTPUT_FILE)
 	@rm $(TARGET_OUTPUT_FILE).hex
