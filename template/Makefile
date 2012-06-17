@@ -71,7 +71,7 @@ build: $(OBJS)
 	$(SIZE) $(TARGET_OUTPUT_FILE)
 
 %.o: %.c
-	mkdir -p $(OBJDIR)/$(patsubst /%,%, $(@D))
+	@mkdir -p $(OBJDIR)/$(patsubst /%,%, $(@D))
 	@$(CC) -o $(OBJDIR)/$(patsubst /%,%, $@) -c $<  $(UINCDIR) $(CCFLAGS) -mmcu=$(MCU) -DF_CPU=$(FCPU)
 
 #Génération de la doc
