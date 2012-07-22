@@ -20,8 +20,8 @@
 */
 
 //_____ I N C L U D E S ________________________________________________________
-#include <twi.h>
-#include <i2cm.h>
+#include <i2c_master.h>
+#include "config.h"
 
 //_____ M A C R O S ____________________________________________________________
 //Définie les valeurs de I2C_RATE et I2C_PRESCALER.

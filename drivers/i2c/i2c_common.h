@@ -19,8 +19,8 @@
 *	Copyright © 2011-2012 - Antoine Maleyrie.
 */
 
-#ifndef I2CCOM_H_INCLUDED
-#define I2CCOM_H_INCLUDED
+#ifndef I2C_COMMON_H_INCLUDED
+#define I2C_COMMON_H_INCLUDED
 
 //! \addtogroup i2cCommun
 //! @{
@@ -40,7 +40,7 @@ typedef enum
 	I2C_INFO_DATA_NO_READ,		//!< Une parti ou tout les données nom pas pue être lue.
 
 	// Possible si l'i2c en maître.
-	#if defined(I2CM_H_INCLUDED) || defined(__DOXYGEN__)
+	#if defined(I2C_MASTER_H_INCLUDED) || defined(__DOXYGEN__)
 	I2C_INFO_NO_START,			//!< La condition de start ne s'est pas produit. \note Définie seulement si l'i2c est en maître.
 	I2C_INFO_NO_ADDRESSED,		//!< L'esclave n'a pas put être adresser. \note Définie seulement si l'i2c est en maître.
 	#endif
@@ -59,4 +59,4 @@ void i2cDisable(void);
 //! @}
 
 
-#endif // I2CCCOM_H_INCLUDED
+#endif // I2C_COMMON_H_INCLUDED

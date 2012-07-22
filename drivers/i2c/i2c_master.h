@@ -20,8 +20,8 @@
 */
 
 
-#ifndef I2CM_H_INCLUDED
-#define I2CM_H_INCLUDED
+#ifndef I2C_MASTER_H_INCLUDED
+#define I2C_MASTER_H_INCLUDED
 
 //! \addtogroup i2cMaster
 //! 
@@ -42,8 +42,7 @@
 //_____ I N C L U D E S ________________________________________________________
 #include <stdbool.h>
 #include <stddef.h>
-#include <i2ccom.h>
-#include "config.h"
+#include <i2c_common.h>
 
 //_____ M A C R O S ____________________________________________________________
 
@@ -80,4 +79,4 @@ i2c_info_e i2cReadData(const uint8_t address, uint8_t data[], const size_t size,
 
 //! @}
 
-#endif // I2CM_H_INCLUDED
+#endif // I2C_MASTER_H_INCLUDED
