@@ -3,7 +3,7 @@
 #	Makfile avr.
 #
 # - author 	:	Maleyrie Antoine : antoine.maleyrie@gmail.com
-# - version	:	0.1
+# - version	:	0.4
 # - date 	:	03 Juin 2012
 #
 ################################################################################
@@ -41,7 +41,7 @@ CCFLAGSD=-g
 
 #Liste des fichiers source C
 SRC=trunk/main.c
-OBJS=$(SRC:.c=.o)
+OBJS=$(patsubst %.c,$(OBJDIR)/%.o, $(SRC))
 
 #Dossier à inclure
 UINCDIRS=	$(AVRSWIFT)/peripherals \
@@ -66,13 +66,13 @@ debug:build
 
 #Construction du projet
 build: $(OBJS)
-	$(CC) -o $(TARGET_OUTPUT_FILE) $(patsubst %,$(OBJDIR)/%, $(patsubst /%,%, $^)) $(LDFLAGS) -mmcu=$(MCU)
+	$(CC) -o $(TARGET_OUTPUT_FILE) $^ $(LDFLAGS) -mmcu=$(MCU)
 	$(OBJCOPY) -O ihex -R .eeprom -R .eesafe $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).hex
-	$(SIZE) $(TARGET_OUTPUT_FILE)
+	@avr-size -C --mcu=$(MCU) $(TARGET_OUTPUT_FILE)
 
-%.o: %.c
-	@mkdir -p $(OBJDIR)/$(patsubst /%,%, $(@D))
-	@$(CC) -o $(OBJDIR)/$(patsubst /%,%, $@) -c $<  $(UINCDIR) $(CCFLAGS) -mmcu=$(MCU) -DF_CPU=$(FCPU)
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(patsubst /%,%, $(@D))
+	@$(CC) -o $@ -c $<  $(UINCDIR) $(CCFLAGS) -mmcu=$(MCU) -DF_CPU=$(FCPU)
 
 #Génération de la doc
 .PHONY: doc
