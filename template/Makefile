@@ -3,7 +3,7 @@
 #	Makfile avr.
 #
 # - author 	:	Maleyrie Antoine : antoine.maleyrie@gmail.com
-# - version	:	0.4
+# - version	:	0.5
 # - date 	:	03 Juin 2012
 #
 ################################################################################
@@ -19,6 +19,7 @@ FCPU = 16000000UL
 
 CC		= avr-gcc
 OBJCOPY	= avr-objcopy
+OBJDUMP	= avr-objdump
 SIZE 	= avr-size
 
 #Option de compilation
@@ -68,6 +69,7 @@ debug:build
 build: $(OBJS)
 	$(CC) -o $(TARGET_OUTPUT_FILE) $^ $(LDFLAGS) -mmcu=$(MCU)
 	$(OBJCOPY) -O ihex -R .eeprom -R .eesafe $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).hex
+	$(OBJDUMP) -h -S $(TARGET_OUTPUT_FILE) > $(TARGET_OUTPUT_FILE).lss
 	@avr-size -C --mcu=$(MCU) $(TARGET_OUTPUT_FILE)
 
 $(OBJDIR)/%.o: %.c
@@ -94,4 +96,5 @@ cleandoc:
 clean:
 	@rm $(OBJDIR) -R
 	@rm $(TARGET_OUTPUT_FILE)
+	@rm $(TARGET_OUTPUT_FILE).lss
 	@rm $(TARGET_OUTPUT_FILE).hex
