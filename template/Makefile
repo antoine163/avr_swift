@@ -3,7 +3,7 @@
 #	Makfile avr.
 #
 # - author 	:	Maleyrie Antoine : antoine.maleyrie@gmail.com
-# - version	:	0.5
+# - version	:	0.6
 # - date 	:	03 Juin 2012
 #
 ################################################################################
@@ -70,7 +70,7 @@ build: $(OBJS)
 	$(CC) -o $(TARGET_OUTPUT_FILE) $^ $(LDFLAGS) -mmcu=$(MCU)
 	$(OBJCOPY) -O ihex -R .eeprom -R .eesafe $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).hex
 	$(OBJDUMP) -h -S $(TARGET_OUTPUT_FILE) > $(TARGET_OUTPUT_FILE).lss
-	@avr-size -C --mcu=$(MCU) $(TARGET_OUTPUT_FILE)
+	$(SIZE) -C --mcu=$(MCU) $(TARGET_OUTPUT_FILE)
 
 $(OBJDIR)/%.o: %.c
 	@mkdir -p $(patsubst /%,%, $(@D))
