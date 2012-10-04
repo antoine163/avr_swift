@@ -10,7 +10,7 @@
 //!
 //!
 //! \author Maleyrie Antoine
-//! \version 1.0
+//! \version 1.1
 //! \date 08 Juin 2011
 //!
 //! ****************************************************************************
@@ -32,8 +32,6 @@
 //! \todo Les composes supportent une PLL sur leur timer 1 ne sont pas encore supporter.
 //!
 //! \todo La sélection du quartz externe de 32KHz sur le timer 2 n'ais pas encore possible.
-//!
-//! \todo Vérifier le fonctionne des timer 0 et 2 pour les at90can.
 //!
 //! Voici un code d'exemple sur le timer 1 (16bit).
 //! \include tcbasic.c
@@ -111,7 +109,7 @@ typedef enum
 {
 	TC_COMPARE_A,	//!< Valeur représentent le comparateur A.
 	TC_COMPARE_B,	//!< Valeur représentent le comparateur B.
-	#if defined(OCR1C) || defined(OCR3C) || defined(OCR4C) || defined(OCR5C) || defined(__DOXYGEN__)
+	#if defined(OCR1C) || defined(OCR3C) || defined(OCR4C) | defined(OCR5C) || defined(__DOXYGEN__)
 	TC_COMPARE_C,	//!< Valeur représentent le comparateur C.
 	#endif
 	#if defined(OCR1D) || defined(__DOXYGEN__)
@@ -336,7 +334,6 @@ typedef struct
 
 	volatile uint8_t *tccra;	//!< Registre de contrôle A.
 	volatile uint8_t *tccrb;	//!< Registre de contrôle B, ou Registre de contrôle pour les timer aillent qu'un seul Registre de contrôle.
-	#endif
 	#if defined(TCCR1C) || defined(TCCR3C) || defined(TCCR4C) || defined(TCCR5C) || defined(__DOXYGEN__)
 	volatile uint8_t *tccrc;	//!< Registre de contrôle C.
 	#endif
@@ -373,9 +370,9 @@ static inline void tc_init(tc_s *tc, tc_num_e num)
 		case TC_NUM_0:
 			tc->tcnt = &TCNT0;
 
-			#ifdef OCR0
+			#ifdef OCR0 //Si il y a que un comparateur.
 			tc->ocra = &OCR0;
-			#else
+			#else //Si il y a deux comparateur.
 			tc->ocra = &OCR0A;
 				#ifdef OCR0B
 				tc->ocrb = &OCR0B;
@@ -394,7 +391,7 @@ static inline void tc_init(tc_s *tc, tc_num_e num)
 			tc->tifr = &TIFR0;
 			#endif
 
-			#ifdef TCCR0
+			#ifdef TCCR0 //si un seul TCCR
 			tc->tccrb = &TCCR0;
 			#else
 			tc->tccra = &TCCR0A;
@@ -451,10 +448,10 @@ static inline void tc_init(tc_s *tc, tc_num_e num)
 
 			#ifdef OCR2 //Si il y a que un comparateur.
 			tc->ocra = &OCR2;
-			#else
+			#else //Si il y a deux comparateur.
 			tc->ocra = &OCR2A;
-				#ifdef OCR2B 
-					tc->ocrb = &OCR2B;
+				#ifdef OCR2B
+				tc->ocrb = &OCR2B;
 				#endif
 			#endif
 
@@ -474,7 +471,7 @@ static inline void tc_init(tc_s *tc, tc_num_e num)
 			tc->tccrb = &TCCR2;
 			#else
 			tc->tccra = &TCCR2A;
-				#ifdef TCCR2B 
+				#ifdef TCCR2B
 				tc->tccrb = &TCCR2B;
 				#endif
 			#endif
