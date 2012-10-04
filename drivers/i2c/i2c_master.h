@@ -3,7 +3,7 @@
 */
 //! \file **********************************************************************
 //!
-//! \brief Ce fichier contiens le module permettent de manipuler l'i2c en esclave avec le twi pour l'arenib.
+//! \brief Ce fichier contiens le module permettent de manipuler l'i2c en esclave avec le twi.
 //!
 //! - Compilateur			: GCC-AVR
 //! - Composent supporter   : atmega
