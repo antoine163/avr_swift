@@ -1,0 +1,6 @@
+<map id="Peripherials" name="Peripherials">
+<area shape="rect" id="node1" href="$group__adc.html" title="Conversation analogique numérique (Analog&#45;to&#45;digital Converter)." alt="" coords="149,5,195,32"/>
+<area shape="rect" id="node2" href="$group__twi.html" title="twi (2&#45;wire Serial Interface)." alt="" coords="151,56,193,83"/>
+<area shape="rect" id="node4" href="$group__usart.html" title="usart (Universal Synchronous/Asynchronous Receiver/Transmitter)" alt="" coords="145,107,199,133"/>
+<area shape="rect" id="node5" href="$group__tc.html" title="timers/counters." alt="" coords="153,157,191,184"/>
+</map>
