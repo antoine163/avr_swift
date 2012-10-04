@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>avr_swift:  Fichier source de adc.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="avr_swift_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">avr_swift
+   &#160;<span id="projectnumber">1.x</span>
+   </div>
+   <div id="projectbrief">Bêta 1</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('adc_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">adc.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="adc_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*Fichier conçu pour la génération de la documentation automatique avec</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Doxygen.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*   Copyright © 2011 - Antoine Maleyrie.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef ADC_H_INCLUDED</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADC_H_INCLUDED</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//_____ I N C L U D E S ________________________________________________________</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//_____ M A C R O S ____________________________________________________________</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#if defined(ADCSRB) &amp;&amp; !defined(ADHSM) &amp;&amp; !defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADHSM 7</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//_____ E N U M ________________________________________________________________</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#ga0a758d9cd7ff9eb758893820f6923af5">   51</a></span>&#160;<span class="comment"></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5a43282f4f9e20d79367913561ac77febe">   53</a></span>&#160;    <a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5a43282f4f9e20d79367913561ac77febe" title="Tension de référence sur AREF (off).">ADC_VOLTAGE_AREF</a>    = 0x00, </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5aeadaebc1500fe208c63de82ba192559c">   54</a></span>&#160;    <a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5aeadaebc1500fe208c63de82ba192559c" title="Tension de référence sur AVCC, avec une capacité sur AREF.">ADC_VOLTAGE_AVCC</a>    = 0x40, </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5aea342d38459819b74123636e4318821e">   55</a></span>&#160;    <a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5aea342d38459819b74123636e4318821e" title="Tension de référence sur le 1.1V, avec une capacité sur AREF.">ADC_VOLTAGE_1_1</a>     = 0x80, </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5af7d53e9602838ddd3637f710a0756d33">   56</a></span>&#160;    <a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5af7d53e9602838ddd3637f710a0756d33" title="Tension de référence sur 2.56V, avec une capacité sur AREF.">ADC_VOLTAGE_2_56</a>    = 0xc0, </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">    #if !defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span>    ADC_VOLTAGE_MASK    = 0x3f  </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span>}<a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#ga0a758d9cd7ff9eb758893820f6923af5" title="Valeur pour sélectionner la valeur de la tension de référence (Vref) du convertisseur.">adc_voltage_e</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#ga5ca675e85ef437a11f8ef3254763b04f">   68</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7b0596f7e694fe81bf9d168f4b5c880d">   70</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7b0596f7e694fe81bf9d168f4b5c880d" title="ADC0 (Vin) comme entrée.">ADC_CHANNEL_ADC0</a>        = 0x00, </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fad60c1dfcccaa2951ff08d6062eb961b4">   71</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fad60c1dfcccaa2951ff08d6062eb961b4" title="ADC1 (Vin) comme entrée.">ADC_CHANNEL_ADC1</a>        = 0x01, </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa6d5d71ae9fe1834e45ecdd09884cd71a">   72</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa6d5d71ae9fe1834e45ecdd09884cd71a" title="ADC2 (Vin) comme entrée.">ADC_CHANNEL_ADC2</a>        = 0x02, </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa82049e42ed773be9acc290cb5a1eae28">   73</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa82049e42ed773be9acc290cb5a1eae28" title="ADC3 (Vin) comme entrée.">ADC_CHANNEL_ADC3</a>        = 0x03, </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faef8c212a84e173fae980cb7c9f00697c">   74</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faef8c212a84e173fae980cb7c9f00697c" title="ADC4 (Vin) comme entrée.">ADC_CHANNEL_ADC4</a>        = 0x04, </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa890385573c12f3d2c837af52b40e4d48">   75</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa890385573c12f3d2c837af52b40e4d48" title="ADC5 (Vin) comme entrée.">ADC_CHANNEL_ADC5</a>        = 0x05, </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa500567192dde11bc1a3e6ecffeefcdae">   76</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa500567192dde11bc1a3e6ecffeefcdae" title="ADC6 (Vin) comme entrée.">ADC_CHANNEL_ADC6</a>        = 0x06, </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa84f32474488bfdc1cd1246ac06bdd15e">   77</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa84f32474488bfdc1cd1246ac06bdd15e" title="ADC7 (Vin) comme entrée.">ADC_CHANNEL_ADC7</a>        = 0x07, </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa8051d1f1cec32359ab3bb164e8609763">   79</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa8051d1f1cec32359ab3bb164e8609763" title="ADC0 (Vpos) comparer avec ADC0 (Vneg) comme entrée avec un gain de 10.">ADC_CHANNEL_ADC0_COMP_ADC0_10X</a>  = 0x08, </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa38d2a98f29a9529e7e46e65a976916a5">   80</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa38d2a98f29a9529e7e46e65a976916a5" title="ADC1 (Vpos) comparer avec ADC0 (Vneg) comme entrée avec un gain de 10.">ADC_CHANNEL_ADC1_COMP_ADC0_10X</a>  = 0x09, </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa21d8f5a760f47be0a6dc063a4a7fd224">   81</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa21d8f5a760f47be0a6dc063a4a7fd224" title="ADC0 (Vpos) comparer avec ADC0 (Vneg) comme entrée avec un gain de 200.">ADC_CHANNEL_ADC0_COMP_ADC0_200X</a> = 0x0a, </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa13d11c6cfb926148aec627c8792343e5">   82</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa13d11c6cfb926148aec627c8792343e5" title="ADC1 (Vpos) comparer avec ADC0 (Vneg) comme entrée avec un gain de 200.">ADC_CHANNEL_ADC1_COMP_ADC0_200X</a> = 0x0b, </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa1f94fcb6cc90c01ad876052acb6a4509">   83</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa1f94fcb6cc90c01ad876052acb6a4509" title="ADC2 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 10.">ADC_CHANNEL_ADC2_COMP_ADC2_10X</a>  = 0x0c, </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fafe0713ee408c0f34e7b94be87570e81b">   84</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fafe0713ee408c0f34e7b94be87570e81b" title="ADC3 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 10.">ADC_CHANNEL_ADC3_COMP_ADC2_10X</a>  = 0x0d, </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa257c35260d1e0e4afd2527fb6a8e56f5">   85</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa257c35260d1e0e4afd2527fb6a8e56f5" title="ADC2 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 200.">ADC_CHANNEL_ADC2_COMP_ADC2_200X</a> = 0x0e, </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7183fd285a6daad050051218c9e2e625">   86</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7183fd285a6daad050051218c9e2e625" title="ADC3 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 200.">ADC_CHANNEL_ADC3_COMP_ADC2_200X</a> = 0x0f, </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7abb031d0284aeb299316e5781221170">   87</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7abb031d0284aeb299316e5781221170" title="ADC0 (Vpos) comparer avec ADC1 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC0_COMP_ADC1_1X</a>   = 0x10, </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fad805a97f63c0fc562201f1752dff1f75">   88</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fad805a97f63c0fc562201f1752dff1f75" title="ADC1 (Vpos) comparer avec ADC1 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC1_COMP_ADC1_1X</a>   = 0x11, </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa995f6689e46b591200363be5c0c4518d">   89</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa995f6689e46b591200363be5c0c4518d" title="ADC2 (Vpos) comparer avec ADC1 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC2_COMP_ADC1_1X</a>   = 0x12, </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa2ba4557261383cd4513990c011856c4c">   90</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa2ba4557261383cd4513990c011856c4c" title="ADC3 (Vpos) comparer avec ADC1 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC3_COMP_ADC1_1X</a>   = 0x13, </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa52a460ac725767f991893b924a14e0f5">   91</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa52a460ac725767f991893b924a14e0f5" title="ADC4 (Vpos) comparer avec ADC1 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC4_COMP_ADC1_1X</a>   = 0x14, </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faf7dee821686632b342ddde339d942f6f">   92</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faf7dee821686632b342ddde339d942f6f" title="ADC5 (Vpos) comparer avec ADC1 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC5_COMP_ADC1_1X</a>   = 0x15, </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa3d4bebb1b6274661d278447e03cfbba0">   93</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa3d4bebb1b6274661d278447e03cfbba0" title="ADC6 (Vpos) comparer avec ADC1 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC6_COMP_ADC1_1X</a>   = 0x16, </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa9e57095e2ee04951ddf5fa2ceeccd31f">   94</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa9e57095e2ee04951ddf5fa2ceeccd31f" title="ADC7 (Vpos) comparer avec ADC1 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC7_COMP_ADC1_1X</a>   = 0x17, </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa445cd0983bd23b447711699bd0a17cbb">   95</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa445cd0983bd23b447711699bd0a17cbb" title="ADC0 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC0_COMP_ADC2_1X</a>   = 0x18, </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa1bee7e19037907984ef5844cb401d1ab">   96</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa1bee7e19037907984ef5844cb401d1ab" title="ADC1 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC1_COMP_ADC2_1X</a>   = 0x19, </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faa084992480283487742aa499228d6034">   97</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faa084992480283487742aa499228d6034" title="ADC2 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC2_COMP_ADC2_1X</a>   = 0x1a, </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa0e441281588be0865f36c9117d21766b">   98</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa0e441281588be0865f36c9117d21766b" title="ADC3 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC3_COMP_ADC2_1X</a>   = 0x1b, </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa9d25cf07d53fc39697943fd92556f570">   99</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa9d25cf07d53fc39697943fd92556f570" title="ADC4 (Vpos) comparer avec ADC2 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC4_COMP_ADC2_1X</a>   = 0x1c, </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fadac033103cd83e0578f461972e5cfc92">  100</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fadac033103cd83e0578f461972e5cfc92" title="ADC5 c(Vpos) omparer avec ADC2 (Vneg) comme entrée avec un gain de 1.">ADC_CHANNEL_ADC5_COMP_ADC2_1X</a>   = 0x1d, </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa6993c4be89cf1485977a6ccbcedebc3d">  102</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa6993c4be89cf1485977a6ccbcedebc3d" title="1.1V (Vin) comme entrée, (Selon composent).">ADC_CHANNEL_1_1</a>         = 0x1e, </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa34d2661fb299bc3544a817315bf21a51">  103</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa34d2661fb299bc3544a817315bf21a51" title="1.22V (Vin) comme entrée, (Selon composent).">ADC_CHANNEL_1_22</a>        = 0x1e, </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa69dddf5b6edfe54ac25b653d8f62d104">  104</a></span>&#160;    <a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa69dddf5b6edfe54ac25b653d8f62d104" title="0V (GND) (Vin) comme entrée.">ADC_CHANNEL_0</a>           = 0x1f, </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">    #if !defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor"></span>    ADC_CHANNEL_MASK        = 0xe0</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor"></span>}<a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#ga5ca675e85ef437a11f8ef3254763b04f" title="Valeur pour sélectionner le signale d&#39;entrée et le gain.">adc_channel_e</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#gaa8ca3d5846e053f81e7b2266fc15bb2f">  116</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa48252a906c632fcb42242633ffe6a40a">  118</a></span>&#160;    <a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa48252a906c632fcb42242633ffe6a40a" title="Prediviseur à 2.">ADC_PRESCALER_2</a>     = 0x00,     </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa719aac57544787b7f3d3b43946b95d84">  119</a></span>&#160;    <a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa719aac57544787b7f3d3b43946b95d84" title="Prediviseur à 2.">ADC_PRESCALER_2_</a>    = 0x01,     </div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa9748302262a80c1cdb3bd245535fb3a1">  120</a></span>&#160;    <a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa9748302262a80c1cdb3bd245535fb3a1" title="Prediviseur à 4.">ADC_PRESCALER_4</a>     = 0x02,     </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fae14acc5684c99eb21c9812b2166071b3">  121</a></span>&#160;    <a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fae14acc5684c99eb21c9812b2166071b3" title="Prediviseur à 8.">ADC_PRESCALER_8</a>     = 0x03,     </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa8f37b7469c09fd96dde8aac7d5e6b92a">  122</a></span>&#160;    <a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa8f37b7469c09fd96dde8aac7d5e6b92a" title="Prediviseur à 16.">ADC_PRESCALER_16</a>    = 0x04,     </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa2b3edc83722c3d3763b2bba0b26aa867">  123</a></span>&#160;    <a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa2b3edc83722c3d3763b2bba0b26aa867" title="Prediviseur à 32.">ADC_PRESCALER_32</a>    = 0x05,     </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa090eaf9d6262f32bfd23214b4e180216">  124</a></span>&#160;    <a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa090eaf9d6262f32bfd23214b4e180216" title="Prediviseur à 64.">ADC_PRESCALER_64</a>    = 0x06,     </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa69cfa0fc0ce969c362d2846a1ec38913">  125</a></span>&#160;    <a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa69cfa0fc0ce969c362d2846a1ec38913" title="Prediviseur à 128.">ADC_PRESCALER_128</a>   = 0x07,     </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">    #if !defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor"></span>    ADC_PRESCALER_MASK  = 0xf8</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor"></span>}<a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#gaa8ca3d5846e053f81e7b2266fc15bb2f" title="Valeur possible poue le prediviseur.">adc_prescaler_e</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#ga47fc0c602a1d3ca619fa4df7a5712db0">  137</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0ab8c57fd2a3afa09bab531db051bc99bb">  139</a></span>&#160;    <a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0ab8c57fd2a3afa09bab531db051bc99bb" title="Déclenche une conversion à la fin d&#39;une conversion.">ADC_TRIGGER_FREE_RUNNING_MODE</a>        = 0x00,                </div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aa75e5aef069ec0ffc8c520ca4d0060c2">  140</a></span>&#160;    <a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aa75e5aef069ec0ffc8c520ca4d0060c2">ADC_TRIGGER_ANALOG_COMPARATOR</a>        = _BV(ADTS0),              </div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aca79876c6e4685539b15ecdcde355dbf">  141</a></span>&#160;    <a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aca79876c6e4685539b15ecdcde355dbf" title="Déclenche une conversion sur l&#39;interruption externe (pin INT0).">ADC_TRIGGER_EXTERNAL_INTERRUPT_REQUEST_0</a> = _BV(ADTS1),              </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0afb2cd1a696cf83da4636e094e912b8a7">  142</a></span>&#160;    <a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0afb2cd1a696cf83da4636e094e912b8a7" title="Déclenche une conversion sur la comparaison du timer 0.">ADC_TRIGGER_TIMER0_COMP</a>          = _BV(ADTS1)|_BV(ADTS0),       </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aaab3f41d686e59d337e25149d044b4f2">  143</a></span>&#160;    <a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aaab3f41d686e59d337e25149d044b4f2" title="Déclenche une conversion à chaque débordement du timer 0.">ADC_TRIGGER_TIMER0_OVERFOW</a>       = _BV(ADTS2),              </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0a35aa587167fba5478b6166c814fe708e">  144</a></span>&#160;    <a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0a35aa587167fba5478b6166c814fe708e" title="Déclenche une conversion sur la comparaison B du timer 1.">ADC_TRIGGER_TIMER1_COMP_B</a>        = _BV(ADTS2)|_BV(ADTS0),       </div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aa53617f500c0783ca938a90f368114d3">  145</a></span>&#160;    <a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aa53617f500c0783ca938a90f368114d3" title="Déclenche une conversion à chaque débordement du timer 1.">ADC_TRIGGER_TIMER1_OVERFOW</a>       = _BV(ADTS2)|_BV(ADTS1),       </div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0a569f34ae3c955c165a75a02c751cb10b">  146</a></span>&#160;    <a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0a569f34ae3c955c165a75a02c751cb10b" title="Déclenche une conversion à chaque capture du timer 1.">ADC_TRIGGER_TIMER1_CAPTURE_EVENT</a>     = _BV(ADTS2)|_BV(ADTS1)|_BV(ADTS0),    </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">    #if !defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor"></span>    ADC_TRIGGER_MASK             =  ~(_BV(ADTS2)|_BV(ADTS1)|_BV(ADTS0))</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    #endif</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}<a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#ga47fc0c602a1d3ca619fa4df7a5712db0" title="Valeur possible pour (auto trigger).">adc_trigger_e</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#if defined(DIDR0) || defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#gaec341545d17992164bb9a3a7edc680ca">  161</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaadb06b8111a79e7e76ec1e07fbbd23de">  163</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaadb06b8111a79e7e76ec1e07fbbd23de" title="Pin ADC0.">ADC_INPUT_ADC0</a>      = _BV(ADC0D),   </div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa86964b5cce15015e344f23564ef8c131">  164</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa86964b5cce15015e344f23564ef8c131" title="Pin ADC1.">ADC_INPUT_ADC1</a>      = _BV(ADC1D),   </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaa686009cf079c516faf57c3b33850132">  165</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaa686009cf079c516faf57c3b33850132" title="Pin ADC2.">ADC_INPUT_ADC2</a>      = _BV(ADC2D),   </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa3891e7feb641b7a4d5715e1c932bdf58">  166</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa3891e7feb641b7a4d5715e1c932bdf58" title="Pin ADC3.">ADC_INPUT_ADC3</a>      = _BV(ADC3D),   </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caae362ed0e795128c79ecbc8ad36af209a">  167</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caae362ed0e795128c79ecbc8ad36af209a" title="Pin ADC4.">ADC_INPUT_ADC4</a>      = _BV(ADC4D),   </div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa55c57bcb95d89746671d9857eea41b3a">  168</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa55c57bcb95d89746671d9857eea41b3a" title="Pin ADC5.">ADC_INPUT_ADC5</a>      = _BV(ADC5D),   </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa901bff4c5bd857e3debb73f2162f08bd">  169</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa901bff4c5bd857e3debb73f2162f08bd" title="Pin ADC6.">ADC_INPUT_ADC6</a>      = _BV(ADC6D),   </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaf2a35ae5d8ef97a4c3c9331e547e1619">  170</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaf2a35ae5d8ef97a4c3c9331e547e1619" title="Pin ADC7.">ADC_INPUT_ADC7</a>      = _BV(ADC7D),   </div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caadfe21b8e72f920c71e9555064827a097">  171</a></span>&#160;    <a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caadfe21b8e72f920c71e9555064827a097" title="Tout les Pins ADC.">ADC_INPUT_ADC_ALL</a>   = 0xff      </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}<a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#gaec341545d17992164bb9a3a7edc680ca" title="Les différent bits rattacher au convertisseur.">adc_input_e</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//_____ P R O T O T Y P E S ____________________________________________________</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">//_____ F U N C T I O N ________________________________________________________</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="group__adc_ga36399956caae2c32a3d45ccc8c426db6.html#ga36399956caae2c32a3d45ccc8c426db6">  182</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga36399956caae2c32a3d45ccc8c426db6.html#ga36399956caae2c32a3d45ccc8c426db6" title="Pour sélectionner la tension de référence (Vref).">adc_voltage_select</a>(<a class="code" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#ga0a758d9cd7ff9eb758893820f6923af5" title="Valeur pour sélectionner la valeur de la tension de référence (Vref) du convertisseur.">adc_voltage_e</a> voltage)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    ADMUX = (ADMUX&amp;ADC_VOLTAGE_MASK)|voltage;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="code" href="group__adc_ga48145b22a22ea09a36f4436e758d7c2e.html#ga48145b22a22ea09a36f4436e758d7c2e">  195</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga48145b22a22ea09a36f4436e758d7c2e.html#ga48145b22a22ea09a36f4436e758d7c2e" title="Pour ajuster le résulta de la conversion à gauche.">adc_left_adjust_result</a>()</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    ADMUX |= _BV(ADLAR);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="code" href="group__adc_ga800d45e062e16ba3fff7fbac92da189c.html#ga800d45e062e16ba3fff7fbac92da189c">  208</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga800d45e062e16ba3fff7fbac92da189c.html#ga800d45e062e16ba3fff7fbac92da189c" title="Pour ajuster le résulta de la conversion à droit.">adc_right_adjust_result</a>()</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;{</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    ADMUX &amp;= ~_BV(ADLAR);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="code" href="group__adc_ga00fb91e943ba614b7035f22cd0996ec2.html#ga00fb91e943ba614b7035f22cd0996ec2">  215</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga00fb91e943ba614b7035f22cd0996ec2.html#ga00fb91e943ba614b7035f22cd0996ec2" title="Pour sélectionner la tension à convertir.">adc_channel_select</a>(<a class="code" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#ga5ca675e85ef437a11f8ef3254763b04f" title="Valeur pour sélectionner le signale d&#39;entrée et le gain.">adc_channel_e</a> channel)</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    ADMUX = (ADMUX&amp;ADC_CHANNEL_MASK)|channel;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="code" href="group__adc_ga784bc45b7a6c027672c3491ee3d68cba.html#ga784bc45b7a6c027672c3491ee3d68cba">  222</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga784bc45b7a6c027672c3491ee3d68cba.html#ga784bc45b7a6c027672c3491ee3d68cba" title="Permet d&#39;activer l&#39;adc.">adc_enable</a>()</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;{</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    ADCSRA |= _BV(ADEN);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="code" href="group__adc_ga179c7c9e6f3c3f60f9cc45669be88f94.html#ga179c7c9e6f3c3f60f9cc45669be88f94">  229</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga179c7c9e6f3c3f60f9cc45669be88f94.html#ga179c7c9e6f3c3f60f9cc45669be88f94" title="Permet de désactiver l&#39;adc.">adc_disable</a>()</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;{</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    ADCSRA &amp;= ~_BV(ADEN);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="code" href="group__adc_ga6f55550fca9ee709312f310590128c15.html#ga6f55550fca9ee709312f310590128c15">  236</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga6f55550fca9ee709312f310590128c15.html#ga6f55550fca9ee709312f310590128c15" title="Pour lancer une conversion.">adc_start</a>()</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    ADCSRA |= _BV(ADSC);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="code" href="group__adc_ga5b3e57d020ecbe82a502556215278943.html#ga5b3e57d020ecbe82a502556215278943">  246</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga5b3e57d020ecbe82a502556215278943.html#ga5b3e57d020ecbe82a502556215278943" title="Permet d&#39;activer une conversion automatique.">adc_enable_trigger</a>()</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    ADCSRA |= _BV(ADATE);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="code" href="group__adc_gaccd291b8810ede0fdfbcdef5c3ebbeab.html#gaccd291b8810ede0fdfbcdef5c3ebbeab">  253</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_gaccd291b8810ede0fdfbcdef5c3ebbeab.html#gaccd291b8810ede0fdfbcdef5c3ebbeab" title="Permet de désactiver la conversion automatique (auto trigger).">adc_disable_trigger</a>()</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    ADCSRA &amp;= ~_BV(ADATE);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="code" href="group__adc_ga7244bce24c6f5318e2f361fa037c7e6a.html#ga7244bce24c6f5318e2f361fa037c7e6a">  263</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="group__adc_ga7244bce24c6f5318e2f361fa037c7e6a.html#ga7244bce24c6f5318e2f361fa037c7e6a" title="Pour savoir si le drapeau de conversion est lever.">adc_is_raising_flag</a>()</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;{</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> bit_is_set(ADCSRA, ADIF);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="code" href="group__adc_gad2570fd766b12b1dc706c5228c2d9561.html#gad2570fd766b12b1dc706c5228c2d9561">  270</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_gad2570fd766b12b1dc706c5228c2d9561.html#gad2570fd766b12b1dc706c5228c2d9561" title="Pour effacer le drapeau de conversion.">adc_cleared_flag</a>()</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    ADCSRA |= _BV(ADIF);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno"><a class="code" href="group__adc_ga41401c9473af44720822881f7ae98ca6.html#ga41401c9473af44720822881f7ae98ca6">  285</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga41401c9473af44720822881f7ae98ca6.html#ga41401c9473af44720822881f7ae98ca6" title="Permet de générer l&#39;interruption, l&#39;or ce que, une conversion est finie.">adc_enable_interrupt</a>()</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;{</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    ADCSRA |= _BV(ADIE);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="code" href="group__adc_ga3d509cdd63777a6cdc1e2fc8084d8827.html#ga3d509cdd63777a6cdc1e2fc8084d8827">  292</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga3d509cdd63777a6cdc1e2fc8084d8827.html#ga3d509cdd63777a6cdc1e2fc8084d8827" title="Permet de désactiver l&#39;interruption.">adc_disable_interrupt</a>()</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    ADCSRA &amp;= ~_BV(ADIE);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno"><a class="code" href="group__adc_ga16e4db348c8e7d1dd6a8172f4b987cf1.html#ga16e4db348c8e7d1dd6a8172f4b987cf1">  301</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga16e4db348c8e7d1dd6a8172f4b987cf1.html#ga16e4db348c8e7d1dd6a8172f4b987cf1" title="Pour sélectionner le pré-diviseur du convertisseur.">adc_prescaler_select</a>(<a class="code" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#gaa8ca3d5846e053f81e7b2266fc15bb2f" title="Valeur possible poue le prediviseur.">adc_prescaler_e</a> prescaler)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    ADCSRA = (ADCSRA&amp;ADC_PRESCALER_MASK)|prescaler;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="code" href="group__adc_ga067efb13c02dde2f4265be22f34b31b7.html#ga067efb13c02dde2f4265be22f34b31b7">  328</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint16_t <a class="code" href="group__adc_ga067efb13c02dde2f4265be22f34b31b7.html#ga067efb13c02dde2f4265be22f34b31b7" title="Permet d&#39;obtenir la valeur de conversion sur 10 bits.">adc_get_conversion_10bit</a>()</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">return</span> ADC;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="code" href="group__adc_ga1c52abb434987645bcaac7df622b2f9b.html#ga1c52abb434987645bcaac7df622b2f9b">  357</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint8_t <a class="code" href="group__adc_ga1c52abb434987645bcaac7df622b2f9b.html#ga1c52abb434987645bcaac7df622b2f9b" title="Permet d&#39;obtenir la valeur de conversion sur 8 bit.">adc_get_conversion_8bit</a>()</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;{</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> ADCH;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="preprocessor">#if defined(ADCSRB) || defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00368"></a><span class="lineno"><a class="code" href="group__adc_gafe5e40fdcda750dd63ce0fd9e514fc08.html#gafe5e40fdcda750dd63ce0fd9e514fc08">  368</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_gafe5e40fdcda750dd63ce0fd9e514fc08.html#gafe5e40fdcda750dd63ce0fd9e514fc08" title="Permet d&#39;activer le mode haut vitesse.">adc_enable_high_speed</a>()</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    ADCSRB |= _BV(ADHSM);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
+<div class="line"><a name="l00377"></a><span class="lineno"><a class="code" href="group__adc_gae516269e6218f7c8f22bbff1e8d6f340.html#gae516269e6218f7c8f22bbff1e8d6f340">  377</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_gae516269e6218f7c8f22bbff1e8d6f340.html#gae516269e6218f7c8f22bbff1e8d6f340" title="Permet de désactiver le mode haut vitesse.">adc_disable_high_speed</a>()</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;{</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    ADCSRB &amp;= ~_BV(ADHSM);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00386"></a><span class="lineno"><a class="code" href="group__adc_gae651a7942bf5f8ae5beeaea8a5f6f52f.html#gae651a7942bf5f8ae5beeaea8a5f6f52f">  386</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_gae651a7942bf5f8ae5beeaea8a5f6f52f.html#gae651a7942bf5f8ae5beeaea8a5f6f52f" title="Permet de sélectionner la source de la conversion automatique.">adc_trigger_select</a>(<a class="code" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#ga47fc0c602a1d3ca619fa4df7a5712db0" title="Valeur possible pour (auto trigger).">adc_trigger_e</a> trigger)</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="preprocessor">    #ifdef SFIOR</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="preprocessor"></span>    SFIOR = (SFIOR&amp;ADC_TRIGGER_MASK)|trigger;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #ifdef ADCSRB</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor"></span>    ADCSRB = (ADCSRB&amp;ADC_TRIGGER_MASK)|trigger;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">#if defined(DIDR0) || defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00407"></a><span class="lineno"><a class="code" href="group__adc_ga1c4387d12e832f2e013a1af9e9fb3d0c.html#ga1c4387d12e832f2e013a1af9e9fb3d0c">  407</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga1c4387d12e832f2e013a1af9e9fb3d0c.html#ga1c4387d12e832f2e013a1af9e9fb3d0c" title="Permet, de désactiver les pins en entrée logique qui serve comme entrée analogique. Pour une diminution en consommation.">adc_disable_input</a>(<a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#gaec341545d17992164bb9a3a7edc680ca" title="Les différent bits rattacher au convertisseur.">adc_input_e</a> input)</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;{</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    DIDR0 |= input;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;</div>
+<div class="line"><a name="l00421"></a><span class="lineno"><a class="code" href="group__adc_ga1bd58c6fd8ef79973e61dd143ec633b4.html#ga1bd58c6fd8ef79973e61dd143ec633b4">  421</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__adc_ga1bd58c6fd8ef79973e61dd143ec633b4.html#ga1bd58c6fd8ef79973e61dd143ec633b4" title="Permet, d&#39;activer les pins en entrée logique qui ne serve pas comme entrée analogique.">adc_enable_input</a>(<a class="code" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#gaec341545d17992164bb9a3a7edc680ca" title="Les différent bits rattacher au convertisseur.">adc_input_e</a> input)</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;{</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    DIDR0 &amp;= ~input;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;}</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="preprocessor">#endif // ADC_H_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_2df1e86e29aa9f9374c90ba96092d4a1.html">peripherals</a></li><li class="navelem"><a class="el" href="adc_8h.html">adc.h</a></li>
+    <li class="footer">Généré le Jeudi Octobre 4 2012 18:13:06 pour avr_swift par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
+  </ul>
+</div>
+</body>
+</html>
