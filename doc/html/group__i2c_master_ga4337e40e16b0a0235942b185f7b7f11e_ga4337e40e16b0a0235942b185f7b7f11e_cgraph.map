@@ -1,7 +1,0 @@
-<map id="i2cWriteData" name="i2cWriteData">
-<area shape="rect" id="node3" href="$group__twi_ga0e212e43dc0e728568cc34aed8acaf6f.html#ga0e212e43dc0e728568cc34aed8acaf6f" title="Permet de généré la condition de start." alt="" coords="153,5,282,32"/>
-<area shape="rect" id="node5" href="$group__twi_ga3076419f4f497db5d053bebef38639ec.html#ga3076419f4f497db5d053bebef38639ec" title="Pour savoir si le drapeau des jobs est lever." alt="" coords="153,56,282,83"/>
-<area shape="rect" id="node7" href="$group__twi_gadcea3fe0c0d9b29a559bff7c509015ec.html#gadcea3fe0c0d9b29a559bff7c509015ec" title="Pour obtenir le statut du bus." alt="" coords="167,107,267,133"/>
-<area shape="rect" id="node9" href="$group__twi_ga7d13ef0ca052e4711e7c57f03b864c43.html#ga7d13ef0ca052e4711e7c57f03b864c43" title="Permet de généré la condition de stop." alt="" coords="153,157,281,184"/>
-<area shape="rect" id="node11" href="$group__twi_ga605d41dff3e8347db6bc4f1dbd1dfef8.html#ga605d41dff3e8347db6bc4f1dbd1dfef8" title="Permet d&#39;envoyer un octet sur le bus." alt="" coords="164,208,271,235"/>
-</map>
