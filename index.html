@@ -39,14 +39,25 @@
         </div>
 
         <h3>Bienvenue sur la page GitHub de avr_swift.</h3>
+			<p>avr_swift est une bibliothèque réaliser dans le but de développer plus rapidement le software des microcontrollers de type AVR (8bit mega et tiny) de chez ATMEL. Elle contiens, les fichiers pour la gestion des coupleurs ainsi que des driver s'appuient sur ces coupleurs. La compatibilité de avr_swite avec tout les avr 8bit ne peut être garantie, même si c'est l'un de c'est but.</p>
 
-<p>A compléter.</p>
-
-<pre><code>$ git clone git://github.com/antoine163/avr_swift.git
-</code></pre>
-
-<p>Ici vous trouverez la <a href="./doc/html/index.html">documentation</a>  générai avec <a href="http://www.stack.nl/~dimitri/doxygen/">doxygen</a></p>
-
+		<h3>Installation.</h3>
+			<p>Il faut déjà que vous récupérer les source du projet.Soit directement avec git :
+			<pre><code>$ git clone git://github.com/antoine163/avr_swift.git</code></pre>
+			Ou en téléchargent l'<a href="https://github.com/antoine163/avr_swift/zipball/master">archive</a> du dernier commit.</p>
+			
+		<h3>Utilisation.</h3>
+			<p>Un exemple de makefile et donnent dans le dossier template. Pour une tout autre configuration il suffi d'inclure peripherals et drivers dans votre projet et les fichiers .c que vous utiliser.</p>
+			<p>Le makefile fournie dans template permet de compiler en release ou debug, de programmer le composent cible et de générer la documentation de votre projet.</p>
+		
+		<h3>Documentation (Doxygen).</h3>
+			<p>Les fichiers constituent avr_swift ont été conçus de sort à générai de la documentation automatique grâce au logicielle <a href="http://www.stack.nl/~dimitri/doxygen/">doxygen</a>. Vous pouvez générai la documentation en faisant "make" dans le dossier avr_swift ou un "make clean" pour supprimer la doc.
+				Vous pouvez toutefois la consulter en <a href="./doc/html/index.html">linge</a>.</p>
+		<h3>Précision/autre.</h3>
+			<p>Une bibliothèque développer par ATMEL,  nommer <a href="http://www.atmel.com/tools/AVRSOFTWAREFRAMEWORK.aspx">ASF "Atmel Software Framework"</a> est disponible elle est en développement et supporte un nombre limiter de coupleurs/fonctionnalité pour AVR mega. Donc à voir pour le maintien futur d'avr_swift.</p>
+		
+		
+		
       </section>
 
     </div>
