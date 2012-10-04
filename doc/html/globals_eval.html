@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>avr_swift: Variables globale</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="avr_swift_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">avr_swift
+   &#160;<span id="projectnumber">1.x</span>
+   </div>
+   <div id="projectbrief">Bêta 1</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li class="current"><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li><a href="globals.html"><span>Tout</span></a></li>
+      <li><a href="globals_func.html"><span>Fonctions</span></a></li>
+      <li><a href="globals_enum.html"><span>Énumérations</span></a></li>
+      <li class="current"><a href="globals_eval.html"><span>Valeurs&#160;énumérées</span></a></li>
+      <li><a href="globals_defs.html"><span>Macros</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('globals_eval.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>ADC_CHANNEL_0
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa69dddf5b6edfe54ac25b653d8f62d104">adc.h</a>
+</li>
+<li>ADC_CHANNEL_1_1
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa6993c4be89cf1485977a6ccbcedebc3d">adc.h</a>
+</li>
+<li>ADC_CHANNEL_1_22
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa34d2661fb299bc3544a817315bf21a51">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC0
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7b0596f7e694fe81bf9d168f4b5c880d">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC0_COMP_ADC0_10X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa8051d1f1cec32359ab3bb164e8609763">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC0_COMP_ADC0_200X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa21d8f5a760f47be0a6dc063a4a7fd224">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC0_COMP_ADC1_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7abb031d0284aeb299316e5781221170">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC0_COMP_ADC2_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa445cd0983bd23b447711699bd0a17cbb">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC1
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fad60c1dfcccaa2951ff08d6062eb961b4">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC1_COMP_ADC0_10X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa38d2a98f29a9529e7e46e65a976916a5">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC1_COMP_ADC0_200X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa13d11c6cfb926148aec627c8792343e5">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC1_COMP_ADC1_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fad805a97f63c0fc562201f1752dff1f75">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC1_COMP_ADC2_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa1bee7e19037907984ef5844cb401d1ab">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC2
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa6d5d71ae9fe1834e45ecdd09884cd71a">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC2_COMP_ADC1_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa995f6689e46b591200363be5c0c4518d">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC2_COMP_ADC2_10X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa1f94fcb6cc90c01ad876052acb6a4509">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC2_COMP_ADC2_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faa084992480283487742aa499228d6034">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC2_COMP_ADC2_200X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa257c35260d1e0e4afd2527fb6a8e56f5">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC3
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa82049e42ed773be9acc290cb5a1eae28">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC3_COMP_ADC1_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa2ba4557261383cd4513990c011856c4c">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC3_COMP_ADC2_10X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fafe0713ee408c0f34e7b94be87570e81b">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC3_COMP_ADC2_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa0e441281588be0865f36c9117d21766b">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC3_COMP_ADC2_200X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa7183fd285a6daad050051218c9e2e625">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC4
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faef8c212a84e173fae980cb7c9f00697c">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC4_COMP_ADC1_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa52a460ac725767f991893b924a14e0f5">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC4_COMP_ADC2_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa9d25cf07d53fc39697943fd92556f570">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC5
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa890385573c12f3d2c837af52b40e4d48">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC5_COMP_ADC1_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04faf7dee821686632b342ddde339d942f6f">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC5_COMP_ADC2_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fadac033103cd83e0578f461972e5cfc92">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC6
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa500567192dde11bc1a3e6ecffeefcdae">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC6_COMP_ADC1_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa3d4bebb1b6274661d278447e03cfbba0">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC7
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa84f32474488bfdc1cd1246ac06bdd15e">adc.h</a>
+</li>
+<li>ADC_CHANNEL_ADC7_COMP_ADC1_1X
+: <a class="el" href="group__adc_ga5ca675e85ef437a11f8ef3254763b04f.html#gga5ca675e85ef437a11f8ef3254763b04fa9e57095e2ee04951ddf5fa2ceeccd31f">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC0
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaadb06b8111a79e7e76ec1e07fbbd23de">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC1
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa86964b5cce15015e344f23564ef8c131">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC2
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaa686009cf079c516faf57c3b33850132">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC3
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa3891e7feb641b7a4d5715e1c932bdf58">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC4
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caae362ed0e795128c79ecbc8ad36af209a">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC5
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa55c57bcb95d89746671d9857eea41b3a">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC6
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caa901bff4c5bd857e3debb73f2162f08bd">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC7
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caaf2a35ae5d8ef97a4c3c9331e547e1619">adc.h</a>
+</li>
+<li>ADC_INPUT_ADC_ALL
+: <a class="el" href="group__adc_gaec341545d17992164bb9a3a7edc680ca.html#ggaec341545d17992164bb9a3a7edc680caadfe21b8e72f920c71e9555064827a097">adc.h</a>
+</li>
+<li>ADC_PRESCALER_128
+: <a class="el" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa69cfa0fc0ce969c362d2846a1ec38913">adc.h</a>
+</li>
+<li>ADC_PRESCALER_16
+: <a class="el" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa8f37b7469c09fd96dde8aac7d5e6b92a">adc.h</a>
+</li>
+<li>ADC_PRESCALER_2
+: <a class="el" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa48252a906c632fcb42242633ffe6a40a">adc.h</a>
+</li>
+<li>ADC_PRESCALER_2_
+: <a class="el" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa719aac57544787b7f3d3b43946b95d84">adc.h</a>
+</li>
+<li>ADC_PRESCALER_32
+: <a class="el" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa2b3edc83722c3d3763b2bba0b26aa867">adc.h</a>
+</li>
+<li>ADC_PRESCALER_4
+: <a class="el" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa9748302262a80c1cdb3bd245535fb3a1">adc.h</a>
+</li>
+<li>ADC_PRESCALER_64
+: <a class="el" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fa090eaf9d6262f32bfd23214b4e180216">adc.h</a>
+</li>
+<li>ADC_PRESCALER_8
+: <a class="el" href="group__adc_gaa8ca3d5846e053f81e7b2266fc15bb2f.html#ggaa8ca3d5846e053f81e7b2266fc15bb2fae14acc5684c99eb21c9812b2166071b3">adc.h</a>
+</li>
+<li>ADC_TRIGGER_ANALOG_COMPARATOR
+: <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aa75e5aef069ec0ffc8c520ca4d0060c2">adc.h</a>
+</li>
+<li>ADC_TRIGGER_EXTERNAL_INTERRUPT_REQUEST_0
+: <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aca79876c6e4685539b15ecdcde355dbf">adc.h</a>
+</li>
+<li>ADC_TRIGGER_FREE_RUNNING_MODE
+: <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0ab8c57fd2a3afa09bab531db051bc99bb">adc.h</a>
+</li>
+<li>ADC_TRIGGER_TIMER0_COMP
+: <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0afb2cd1a696cf83da4636e094e912b8a7">adc.h</a>
+</li>
+<li>ADC_TRIGGER_TIMER0_OVERFOW
+: <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aaab3f41d686e59d337e25149d044b4f2">adc.h</a>
+</li>
+<li>ADC_TRIGGER_TIMER1_CAPTURE_EVENT
+: <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0a569f34ae3c955c165a75a02c751cb10b">adc.h</a>
+</li>
+<li>ADC_TRIGGER_TIMER1_COMP_B
+: <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0a35aa587167fba5478b6166c814fe708e">adc.h</a>
+</li>
+<li>ADC_TRIGGER_TIMER1_OVERFOW
+: <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aa53617f500c0783ca938a90f368114d3">adc.h</a>
+</li>
+<li>ADC_VOLTAGE_1_1
+: <a class="el" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5aea342d38459819b74123636e4318821e">adc.h</a>
+</li>
+<li>ADC_VOLTAGE_2_56
+: <a class="el" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5af7d53e9602838ddd3637f710a0756d33">adc.h</a>
+</li>
+<li>ADC_VOLTAGE_AREF
+: <a class="el" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5a43282f4f9e20d79367913561ac77febe">adc.h</a>
+</li>
+<li>ADC_VOLTAGE_AVCC
+: <a class="el" href="group__adc_ga0a758d9cd7ff9eb758893820f6923af5.html#gga0a758d9cd7ff9eb758893820f6923af5aeadaebc1500fe208c63de82ba192559c">adc.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>I2C_INFO_DATA_NO_READ
+: <a class="el" href="group__i2c_commun_gacc0921b72cb6f75d5a44749be558e9a2.html#ggacc0921b72cb6f75d5a44749be558e9a2a97813cfbab6e9c996f4f7c5863b39b40">i2c_common.h</a>
+</li>
+<li>I2C_INFO_DATA_NO_WRITE
+: <a class="el" href="group__i2c_commun_gacc0921b72cb6f75d5a44749be558e9a2.html#ggacc0921b72cb6f75d5a44749be558e9a2a7810de783332a20c91e90416af75e246">i2c_common.h</a>
+</li>
+<li>I2C_INFO_NO_ADDRESSED
+: <a class="el" href="group__i2c_commun_gacc0921b72cb6f75d5a44749be558e9a2.html#ggacc0921b72cb6f75d5a44749be558e9a2ad8fb82fe5111c7a55a65767d9d1af482">i2c_common.h</a>
+</li>
+<li>I2C_INFO_NO_ERROR
+: <a class="el" href="group__i2c_commun_gacc0921b72cb6f75d5a44749be558e9a2.html#ggacc0921b72cb6f75d5a44749be558e9a2adcba625e711677f9acdd398e9a00f920">i2c_common.h</a>
+</li>
+<li>I2C_INFO_NO_START
+: <a class="el" href="group__i2c_commun_gacc0921b72cb6f75d5a44749be558e9a2.html#ggacc0921b72cb6f75d5a44749be558e9a2aad9b18d238da03b374a4fb92fe07f55b">i2c_common.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>TC_CLOCK_CLK_1
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a917df7793a08e2c7d6afc67b4ff72ace">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_1024
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a6133b33decc9485d6f1df4b9d5c068a8">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_128_RT2
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6aca832f681ca69b2a7820e23306803711">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_256
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a5ce64aad30fbc0180990e31e8dbca336">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_256_RT2
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a116b4f6d58c5712c77ff90b8936f9b1a">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_32_RT2
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a8675e4e90aea33db1faf49c8190b9100">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_64
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a7004760a02eef1a57c7de97e1a6b3d4e">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_64_RT2
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a6a839d72f171d2dc367d6ee0a40f010e">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_8
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6ae73c70765d766baa4491adda324f7a8c">tc.h</a>
+</li>
+<li>TC_CLOCK_CLK_8_RT2
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a5382ac7d036958b82a6ebaaab74f89f1">tc.h</a>
+</li>
+<li>TC_CLOCK_EXTERNAL_FALLING_EDGE
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a88b2e26c2f13740ed37d436d6b0ef25f">tc.h</a>
+</li>
+<li>TC_CLOCK_EXTERNAL_RISING_EDGE
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a81b70d87425d2954f56c5112d5d0eb09">tc.h</a>
+</li>
+<li>TC_CLOCK_NO
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a6267cddfeda38929542ff4ad160913b2">tc.h</a>
+</li>
+<li>TC_CLOCK_NO_RT2
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a7b113d68c5ed36bcb105977bdfdc3714">tc.h</a>
+</li>
+<li>TC_CLOCK_SLK_1024_RT2
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a34e6a7fa64bae127cdf2b8d24160f45e">tc.h</a>
+</li>
+<li>TC_CLOCK_SLK_1_RT2
+: <a class="el" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6aa1d84c84359a4eae777d16b66411f175">tc.h</a>
+</li>
+<li>TC_COMPARE_A
+: <a class="el" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bcaf7c637f84cf8162ee57a5d555444bf1c">tc.h</a>
+</li>
+<li>TC_COMPARE_B
+: <a class="el" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bca4ab5471dad18b02c4543261907a7daba">tc.h</a>
+</li>
+<li>TC_COMPARE_C
+: <a class="el" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bca76a830b89b663948600fd4a7cbf3ad0c">tc.h</a>
+</li>
+<li>TC_COMPARE_D
+: <a class="el" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bca556266874da209126c95b9d6f8e5c3cd">tc.h</a>
+</li>
+<li>TC_EDGE_FALLING
+: <a class="el" href="group__tc_gac085b9d1906c56fb774ef690ed34aba0.html#ggac085b9d1906c56fb774ef690ed34aba0a68db3879c6fa208e737823160d9f4159">tc.h</a>
+</li>
+<li>TC_EDGE_RISING
+: <a class="el" href="group__tc_gac085b9d1906c56fb774ef690ed34aba0.html#ggac085b9d1906c56fb774ef690ed34aba0adf5080c1e13a4206f91bc6eda89e57f7">tc.h</a>
+</li>
+<li>TC_MODE_CTC_ICR
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca3f5fdb76f83fea9730c29ab02d018349">tc.h</a>
+</li>
+<li>TC_MODE_CTC_OCRA
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca7a6951d214fb48a8ee4c67d587784356">tc.h</a>
+</li>
+<li>TC_MODE_CTC_OCRA_RT02
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9cae2b74f5532023385c222aabe84c76cc3">tc.h</a>
+</li>
+<li>TC_MODE_FAST_PWM_10BIT
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9cae4dfaa20d0f219c14eb60afc2e90e37f">tc.h</a>
+</li>
+<li>TC_MODE_FAST_PWM_8BIT
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca771d5543ccb7ff6afc10ff787145f26f">tc.h</a>
+</li>
+<li>TC_MODE_FAST_PWM_9BIT
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9cac7fb085ed610155e51c0cbe50fadd4dd">tc.h</a>
+</li>
+<li>TC_MODE_FAST_PWM_ICR
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca45bf11b406ffd34699edc0f10f215d82">tc.h</a>
+</li>
+<li>TC_MODE_FAST_PWM_OCRA
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9cae2dfcf29593dcca8e2e4323c99d00ce2">tc.h</a>
+</li>
+<li>TC_MODE_FAST_PWM_OCRA_RT02
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca52855ffec58af5775c75dba460621398">tc.h</a>
+</li>
+<li>TC_MODE_FAST_PWM_RT02
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca149a66f04516070e28a4af342d57748c">tc.h</a>
+</li>
+<li>TC_MODE_NORMAL
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9cad317042b6959ee0cfbfd77b0fef056d2">tc.h</a>
+</li>
+<li>TC_MODE_NORMAL_RT02
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca0a0beb131c4edf06301fd16d24fd0689">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_AND_FREQUENCY_CORRECT_ICR
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca76b831fb098b85101bdbc21ff0c9d49b">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_AND_FREQUENCY_CORRECT_OCRA
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca4b15b9119fde6eec07840bb16b67dd06">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_CORRECT_10BIT
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca748beb4b1f67e0223cb86441a26ce0bd">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_CORRECT_8BIT
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca761a45938ac07dc0cbc231b58b48e975">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_CORRECT_9BIT
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca30fbe1d5fe678336e2ddfce696c13dd0">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_CORRECT_ICR
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9caf43222a57ae5b4cdc1256aa8e8c62b14">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_CORRECT_OCRA
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9cae0d5b061aa43278dc49998ca9870b3c7">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_CORRECT_OCRA_RT02
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9cac11cc34d146093b554cce0e4e45bf8d8">tc.h</a>
+</li>
+<li>TC_MODE_PWM_PHASE_CORRECT_RT02
+: <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#ggabe5b113d2a1300df2fb74dbf90881d9ca28b8da0006c9cd7a8a9ee8df6fe4e1f6">tc.h</a>
+</li>
+<li>TC_NUM_0
+: <a class="el" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfae1beda0e6abfd29035d65e9956cfbd45">tc.h</a>
+</li>
+<li>TC_NUM_1
+: <a class="el" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfa8710e375fd9997543e945252611364ec">tc.h</a>
+</li>
+<li>TC_NUM_2
+: <a class="el" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfae9f0872b3c4f1480d71a9ea014fc9b1a">tc.h</a>
+</li>
+<li>TC_NUM_3
+: <a class="el" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfa8005d9c067a85b74ab5b390c9d9021ce">tc.h</a>
+</li>
+<li>TC_NUM_4
+: <a class="el" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfa9e1a23c469df678766857223d5186dd8">tc.h</a>
+</li>
+<li>TC_NUM_5
+: <a class="el" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfa0061438d5d21dda461d4c4b502a82ac5">tc.h</a>
+</li>
+<li>TC_OUTPUT_CLEAR
+: <a class="el" href="group__tc_ga9e2833692be0989d36e321ebc2a709f1.html#gga9e2833692be0989d36e321ebc2a709f1af688943b387e41bae072a07d15057ca9">tc.h</a>
+</li>
+<li>TC_OUTPUT_NORMAL
+: <a class="el" href="group__tc_ga9e2833692be0989d36e321ebc2a709f1.html#gga9e2833692be0989d36e321ebc2a709f1a1fddf960a744e9328d5bcdd99b12500a">tc.h</a>
+</li>
+<li>TC_OUTPUT_SET
+: <a class="el" href="group__tc_ga9e2833692be0989d36e321ebc2a709f1.html#gga9e2833692be0989d36e321ebc2a709f1a503fe886c339c93556ffb8d5ca01e87a">tc.h</a>
+</li>
+<li>TC_OUTPUT_TOGGLE
+: <a class="el" href="group__tc_ga9e2833692be0989d36e321ebc2a709f1.html#gga9e2833692be0989d36e321ebc2a709f1a11d96a7df91f475d00a062fc5f8de631">tc.h</a>
+</li>
+<li>TWI_PRESCALER_1
+: <a class="el" href="group__twi_gaa5aec17ac73287c41cf80e58a3e6f0c4.html#ggaa5aec17ac73287c41cf80e58a3e6f0c4a872d7cdd61cd1c02848535c33e15e771">twi.h</a>
+</li>
+<li>TWI_PRESCALER_16
+: <a class="el" href="group__twi_gaa5aec17ac73287c41cf80e58a3e6f0c4.html#ggaa5aec17ac73287c41cf80e58a3e6f0c4a90455ae21acea554caaa19d3ebf7e9cf">twi.h</a>
+</li>
+<li>TWI_PRESCALER_4
+: <a class="el" href="group__twi_gaa5aec17ac73287c41cf80e58a3e6f0c4.html#ggaa5aec17ac73287c41cf80e58a3e6f0c4a7297ba2b2750d19f321502504374ce30">twi.h</a>
+</li>
+<li>TWI_PRESCALER_64
+: <a class="el" href="group__twi_gaa5aec17ac73287c41cf80e58a3e6f0c4.html#ggaa5aec17ac73287c41cf80e58a3e6f0c4ae5346bcce4d03e073c4978a318543a6d">twi.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>USART0
+: <a class="el" href="group__usart_gafbc14eb30c7c808497939532f5f2e747.html#ggafbc14eb30c7c808497939532f5f2e747aec2fd83f873455753148f632d3b31853">usart.h</a>
+</li>
+<li>USART1
+: <a class="el" href="group__usart_gafbc14eb30c7c808497939532f5f2e747.html#ggafbc14eb30c7c808497939532f5f2e747ac7a8167f83749eed87e3e9fb0dddc6cf">usart.h</a>
+</li>
+<li>USART_CHARACTER_SIZE_5BIT
+: <a class="el" href="group__usart_gaa6d93d9da558eeac7da428f095d55254.html#ggaa6d93d9da558eeac7da428f095d55254ab1db6dc41b52d70a9185b963d9140c7f">usart.h</a>
+</li>
+<li>USART_CHARACTER_SIZE_6BIT
+: <a class="el" href="group__usart_gaa6d93d9da558eeac7da428f095d55254.html#ggaa6d93d9da558eeac7da428f095d55254a4b631e89e72f2b939afbc4a996d358b9">usart.h</a>
+</li>
+<li>USART_CHARACTER_SIZE_7BIT
+: <a class="el" href="group__usart_gaa6d93d9da558eeac7da428f095d55254.html#ggaa6d93d9da558eeac7da428f095d55254ab5e1a6e76a61ee79563a551ad2431726">usart.h</a>
+</li>
+<li>USART_CHARACTER_SIZE_8BIT
+: <a class="el" href="group__usart_gaa6d93d9da558eeac7da428f095d55254.html#ggaa6d93d9da558eeac7da428f095d55254a8679bfe526e0d92b5d313f9f5880da4b">usart.h</a>
+</li>
+<li>USART_CHARACTER_SIZE_9BIT
+: <a class="el" href="group__usart_gaa6d93d9da558eeac7da428f095d55254.html#ggaa6d93d9da558eeac7da428f095d55254a6a7fe30ecca9dbde62c154d6619cab7f">usart.h</a>
+</li>
+<li>USART_CLOCK_POLARITY_FALLING_EDGE
+: <a class="el" href="group__usart_gaa810e9bfe8c4823670edea1943d4a50f.html#ggaa810e9bfe8c4823670edea1943d4a50fa0ad4d182757eb24cd882e7848c19f838">usart.h</a>
+</li>
+<li>USART_CLOCK_POLARITY_RISING_EDGE
+: <a class="el" href="group__usart_gaa810e9bfe8c4823670edea1943d4a50f.html#ggaa810e9bfe8c4823670edea1943d4a50fa26bee75b981a65016e419046223dee48">usart.h</a>
+</li>
+<li>USART_MODE_ASYNCHRONOUS
+: <a class="el" href="group__usart_ga26cebc12ba66386228f27e788bcfe54a.html#gga26cebc12ba66386228f27e788bcfe54aa15ae875c7e7097405cb441a311d6a4d8">usart.h</a>
+</li>
+<li>USART_MODE_MASTER_SPI
+: <a class="el" href="group__usart_ga26cebc12ba66386228f27e788bcfe54a.html#gga26cebc12ba66386228f27e788bcfe54aad5884a8a7f7de6c5c9f497f5bd378183">usart.h</a>
+</li>
+<li>USART_MODE_SYNCHRONOUS
+: <a class="el" href="group__usart_ga26cebc12ba66386228f27e788bcfe54a.html#gga26cebc12ba66386228f27e788bcfe54aa004992ac327040dfff2102581111a7e9">usart.h</a>
+</li>
+<li>USART_PARITY_DISABLED
+: <a class="el" href="group__usart_gafde9da79f346d7a23e4e27e38d311960.html#ggafde9da79f346d7a23e4e27e38d311960ace43ab6f78be478f931996419cc67b6a">usart.h</a>
+</li>
+<li>USART_PARITY_ENABLED_EVEN_PARITY
+: <a class="el" href="group__usart_gafde9da79f346d7a23e4e27e38d311960.html#ggafde9da79f346d7a23e4e27e38d311960a98daca78ed5e0cc7fb1976afd9029aa7">usart.h</a>
+</li>
+<li>USART_PARITY_ENABLED_ODD_PARITY
+: <a class="el" href="group__usart_gafde9da79f346d7a23e4e27e38d311960.html#ggafde9da79f346d7a23e4e27e38d311960ae902e744de87a3eee0a991def0a32cbb">usart.h</a>
+</li>
+<li>USART_STOP_BIT_ONE
+: <a class="el" href="group__usart_ga95777282a86e96553a32d015f5d66a60.html#gga95777282a86e96553a32d015f5d66a60a52bc6c128cb4df8960bc1ffda3b6719e">usart.h</a>
+</li>
+<li>USART_STOP_BIT_TWO
+: <a class="el" href="group__usart_ga95777282a86e96553a32d015f5d66a60.html#gga95777282a86e96553a32d015f5d66a60afe61898b9f955a67b96574681bd25634">usart.h</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré le Jeudi Octobre 4 2012 18:23:13 pour avr_swift par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
+  </ul>
+</div>
+</body>
+</html>
