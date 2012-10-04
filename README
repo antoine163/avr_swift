@@ -6,7 +6,7 @@
 #
 #	Auteur 			: 	Maleyrie Antoine
 #	Début du projet 	:	juin 2011
-#	Version actuel		:	0.2
+#	Version actuel		:	0.3
 #	Site web		:
 #	Compilateur supporter	:	AVR-GCC
 #
@@ -36,6 +36,9 @@
 	de la documentation automatique grâce au logicielle Doxygen.
 	Vous pouvez générai la documentation en faisant "make" dans le
 	dossier avr_swift ou un "make clean" pour supprimer la doc.
+
+--- Guithub page : ---	
+	http://antoine163.github.com/avr_swift/
 	
 --- Précision/autre : ---
 	Une bibliothèque développer par ATMEL, ASF disponible -> 
