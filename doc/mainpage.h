@@ -12,7 +12,7 @@
 //!
 //!
 //! \author Maleyrie Antoine
-//! \version  1.2
+//! \version  1.3
 //! \date 19 Juin 2011
 //!
 //! ****************************************************************************
@@ -38,6 +38,7 @@
 //! 	\defgroup twi
 //! 	\defgroup tc
 //! 	\defgroup adc
+//! 	\defgroup spi
 //! 	\defgroup usart
 //! @}
 
