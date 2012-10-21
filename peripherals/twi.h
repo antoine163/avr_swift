@@ -13,7 +13,7 @@
 //!
 //!
 //! \author Maleyrie Antoine
-//! \version 1.0.1
+//! \version 1.1
 //! \date 16 Juin 2011
 //!
 //! ****************************************************************************
@@ -234,8 +234,7 @@ static inline void twi_receive_byte_nack()
 //!\endcode
 //!
 //! \see twi_prescaler_e
-static inline void twi_bit_rate_generator(	uint8_t rate,
-						twi_prescaler_e prescaler)
+static inline void twi_bit_rate_generator(uint8_t rate, twi_prescaler_e prescaler)
 {
 	TWBR = rate;
 	TWSR = (TWSR&TWI_PRESCALER_MASK)|prescaler;
@@ -322,7 +321,7 @@ static inline void twi_generate_stop_start()
 //! \ref twi_generate_start() (générai seulement quand le bus sera libre)
 //!
 //! \param byte est l'octet à envoyer.
-static inline void twi_send_byte(int8_t byte)
+static inline void twi_send_byte(uint8_t byte)
 {
 	TWDR = byte;
 	TWCR = (TWCR&TWI_TWCR_MASK)|_BV(TWINT);
@@ -373,7 +372,7 @@ static inline void twi_set_address(uint8_t address)
 //! Les actions qui peuve être générai ensuit sont : \n
 //! \ref twi_receive_byte_ack() (commute dans le mode non adresser) \n
 //! \ref twi_receive_byte_nack() (commute dans le mode non adresser)
-static inline void twi_send_byte_ack(int8_t byte)
+static inline void twi_send_byte_ack(uint8_t byte)
 {
 	TWDR = byte;
 	TWCR = (TWCR&TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWEA);
@@ -387,7 +386,7 @@ static inline void twi_send_byte_ack(int8_t byte)
 //! Les actions qui peuve être générai ensuit sont : \n
 //! \ref twi_receive_byte_ack() (commute dans le mode non adresser) \n
 //! \ref twi_receive_byte_nack() (commute dans le mode non adresser)
-static inline void twi_send_byte_nack(int8_t byte)
+static inline void twi_send_byte_nack(uint8_t byte)
 {
 	TWDR = byte;
 	TWCR = (TWCR&TWI_TWCR_MASK)|_BV(TWINT);

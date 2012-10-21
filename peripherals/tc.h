@@ -679,7 +679,7 @@ static inline void tc_disable_interrupt_overflow(tc_s *tc)
 	#endif
 }
 
-//! \brief Pour savoir si le drapeau de débordement et lever.
+//! \brief Pour savoir si le drapeau de débordement est lever.
 //! \param tc est la structure du timer/counter.
 //! \return false si le drapeau n'est pas lever.
 //! \see tc_cleared_overflow_flag()
