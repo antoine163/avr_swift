@@ -6,7 +6,7 @@
 //! \brief Fichier pour bénéficier de la conversation analogique numérique (Analog-to-digital Converter).
 //!
 //! - Compilateur		: AVR-GCC
-//! - Composent supporter	: atmega/attiny
+//! - Composant tester	: atmega8535, atmega644, at90usb1287, at90can128
 //!
 //!
 //! \author Maleyrie Antoine

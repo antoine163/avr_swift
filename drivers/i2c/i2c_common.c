@@ -6,7 +6,7 @@
 //! \brief Code commun pour l'i2c en maître ou esclave.
 //!
 //! - Compilateur		    : GCC-AVR
-//! - Composent supporter   : atmega
+//! - Composant tester	: atmega8535, atmega644, at90usb1287, at90can128
 //!
 //!
 //! \author Maleyrie Antoine

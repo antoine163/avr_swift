@@ -6,7 +6,7 @@
 //! \brief Fichier pour le spi (Serial Peripheral Interface).
 //!
 //! - Compilateur		: AVR-GCC
-//! - Composent supporter	: atmega
+//! - Composant tester	: 
 //!
 //!
 //!

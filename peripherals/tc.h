@@ -6,7 +6,7 @@
 //! \brief Driveur pour les Timers/Counters.
 //!
 //! - Compilateur		: AVR-GCC
-//! - Composent supporter	: atmega/attiny
+//! - Composant tester	: atmega8535, atmega644, at90usb1287
 //!
 //!
 //! \author Maleyrie Antoine

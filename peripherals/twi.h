@@ -6,7 +6,7 @@
 //! \brief Fichier pour le twi "2-wire Serial Interface".
 //!
 //! - Compilateur		: AVR-GCC
-//! - Composent supporter	: atmega
+//! - Composant tester	: atmega8535, atmega644, at90usb1287, at90can128
 //!
 //!
 //! \see http://www.nongnu.org/avr-libc/user-manual/group__util__twi.html

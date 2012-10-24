@@ -6,7 +6,7 @@
 //! \brief Fichier pour l'usart (Universal Synchronous/Asynchronous Receiver/Transmitter).
 //!
 //! - Compilateur		: AVR-GCC
-//! - Composent supporter	: atmega
+//! - Composant tester	: 
 //!
 //!
 //!

@@ -6,7 +6,7 @@
 //! \brief Ce fichier contiens le module permettent de manipuler l'i2c en esclave avec le twi.
 //!
 //! - Compilateur			: GCC-AVR
-//! - Composent supporter   : atmega
+//! - Composant tester	: atmega8535, atmega644, at90usb1287, at90can128
 //!
 //!
 //! \author Maleyrie Antoine
