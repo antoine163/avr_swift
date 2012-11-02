@@ -50,7 +50,7 @@
 
 //_____ P R O T O T Y P E S ____________________________________________________
 //! \brief Permet d'initialiser l'i2c.
-void i2cInit(void);
+void i2cInit();
 
 //! \brief Envoi des données à une adresse.
 //!

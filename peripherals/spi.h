@@ -6,7 +6,7 @@
 //! \brief Fichier pour le spi (Serial Peripheral Interface).
 //!
 //! - Compilateur		: AVR-GCC
-//! - Composant tester	: 
+//! - Composant tester	: at90usb1286, atmega8535
 //!
 //!
 //!
@@ -36,6 +36,7 @@
 //! @{
 
 //_____ I N C L U D E S ________________________________________________________
+#include <avr/io.h>
 #include <stdbool.h>
 
 //_____ M A C R O S ____________________________________________________________
@@ -50,11 +51,11 @@
 //! \see spi_data_order()
 typedef enum
 {
-	SPI_DATA_ORDER_LSB		= 0x20,		//!< Les bits de pois faible en premier
-	SPI_DATA_ORDER_MSB		= 0x00,		//!< Les bits de pois fort en premier
+	SPI_DATA_ORDER_LSB		= _BV(DORD),	//!< Les bits de pois faible en premier
+	SPI_DATA_ORDER_MSB		= 0,			//!< Les bits de pois fort en premier
 	
 	#if !defined(__DOXYGEN__)
-	SPI_DATA_ORDER_MASK 	= 0x20
+	SPI_DATA_ORDER_MASK 	= _BV(DORD)
 	#endif
 }spi_data_order_e;
 
@@ -64,41 +65,28 @@ typedef enum
 //! \see spi_mode()
 typedef enum
 {
-	SPI_MODE_MASTER		= 0x08,		//!< spi en mode maître.
-	SPI_MODE_SLAVE		= 0x00,		//!< spi en mode esclave.
+	SPI_MODE_MASTER		= _BV(MSTR),		//!< spi en mode maître.
+	SPI_MODE_SLAVE		= 0,				//!< spi en mode esclave.
 	
 	#if !defined(__DOXYGEN__)
-	SPI_MODE_MASK 	= 0x08
+	SPI_MODE_MASK 	= _BV(MSTR)
 	#endif
 }spi_mode_e;
 
-//! \brief 
-//! \todo a commenter
-//! A utiliser avec \ref spi_clock_polarity().
-//! \see spi_clock_polarity()
-typedef enum
-{
-	SPI_CLOCK_POLARITY_RISING		= 0x00,		//!< \todo a commenter
-	SPI_CLOCK_POLARITY_FALLING		= 0x03,		//!< \todo a commenter
-	
-	#if !defined(__DOXYGEN__)
-	SPI_CLOCK_POLARITY_MASK 	= 0x03
-	#endif
-}spi_clock_polarity_e;
-
-//! \brief 
-//! \todo a commenter
+//! \brief les différent modes d'horloges.
 //! A utiliser avec \ref spi_clock_phase().
-//! \see spi_clock_phase()
+//! \see spi_clock_mode()
 typedef enum
 {
-	SPI_CLOCK_PHASE_SAMPLE		= 0x00,		//!< \todo a commenter
-	SPI_CLOCK_PHASE_SETUP		= 0x02,		//!< \todo a commenter
+	SPI_CLOCK_MODE_0	= 0,					//!< Donnée valide sur front montent sans déphasage.\image spi/spi_clock_mode_0.bmp
+	SPI_CLOCK_MODE_1	= _BV(CPHA),			//!< Donnée valide sur front descendant avec déphasage.\image spi/spi_clock_mode_1.bmp
+	SPI_CLOCK_MODE_2	= _BV(CPOL),			//!< Donnée valide sur front descendant sans déphasage.\image spi/spi_clock_mode_2.bmp
+	SPI_CLOCK_MODE_3	= _BV(CPHA)|_BV(CPOL),	//!< Donnée valide sur front montent avec déphasage.\image spi/spi_clock_mode_3.bmp
 	
 	#if !defined(__DOXYGEN__)
-	SPI_CLOCK_PHASE_MASK 	= 0x02
+	SPI_CLOCK_MODE 	= _BV(CPOL)|_BV(CPHA)
 	#endif
-}spi_clock_phase_e;
+}spi_clock_mode_e;
 
 
 //! \brief Valeur possible pour la sélection de l'horloge.
@@ -107,45 +95,21 @@ typedef enum
 //! \see spi_clock_select()
 typedef enum
 {
-	SPI_CLOCK_CLK_2 		= 0x100,	//!< Horloge du cpu diviser par 2.
-	SPI_CLOCK_CLK_4 		= 0x00,		//!< Horloge du cpu diviser par 4.
-	SPI_CLOCK_CLK_8 		= 0x101,	//!< Horloge du cpu diviser par 8.
-	SPI_CLOCK_CLK_16 		= 0x01,		//!< Horloge du cpu diviser par 16.
-	SPI_CLOCK_CLK_32 		= 0x102,	//!< Horloge du cpu diviser par 32.
-	SPI_CLOCK_CLK_64 		= 0x02,		//!< Horloge du cpu diviser par 64.
-	SPI_CLOCK_CLK_128 		= 0x03,		//!< Horloge du cpu diviser par 128.
+	SPI_CLOCK_CLK_2 		= (_BV(SPI2X)<<8),				//!< Horloge du cpu diviser par 2.
+	SPI_CLOCK_CLK_4 		= 0,							//!< Horloge du cpu diviser par 4.
+	SPI_CLOCK_CLK_8 		= (_BV(SPI2X)<<8)|_BV(SPR0),	//!< Horloge du cpu diviser par 8.
+	SPI_CLOCK_CLK_16 		= _BV(SPR0),					//!< Horloge du cpu diviser par 16.
+	SPI_CLOCK_CLK_32 		= (_BV(SPI2X)<<8)|_BV(SPR1),	//!< Horloge du cpu diviser par 32.
+	SPI_CLOCK_CLK_64 		= _BV(SPR1),					//!< Horloge du cpu diviser par 64.
+	SPI_CLOCK_CLK_128 		= _BV(SPR1)|_BV(SPR0),			//!< Horloge du cpu diviser par 128.
 
 	#if !defined(__DOXYGEN__)
-	SPI_CLOCK_MASK 			= 0x103
+	SPI_CLOCK_MASK 			= (_BV(SPI2X)<<8)|_BV(SPR1)|_BV(SPR0)
 	#endif
 }spi_clock_e;
 
 
 //_____ F U N C T I O N ________________________________________________________
-
-//! \brief Permet de configurer le spi.
-//! Évite d'appeler tout les fonctions pour la configuration.
-//! \param config est la configuration souhaité. Les valeur possible son d'écrite dans les enum \ref spi_data_order_e, 
-//!	\ref spi_mode_e, \ref spi_clock_polarity_e, \ref spi_clock_phase_e,  \ref spi_clock_e.
-//! \code
-//! //un exemple :
-//! spi_configure(SPI_MODE_MASTER|SPI_DATA_ORDER_MSB|SPI_CLOCK_POLARITY_RISING|SPI_CLOCK_PHASE_SAMPLE|SPI_CLOCK_CLK_8);
-//! \endcode
-//! \see spi_data_order()
-//! \see spi_mode()
-//! \see spi_clock_polarity()
-//! \see spi_clock_phase()
-//! \see spi_clock_phase()
-//! \see spi_data_order_e
-//! \see spi_mode_e
-//! \see spi_clock_polarity_e
-//! \see spi_clock_phase_e
-//! \see spi_clock_e
-static inline void spi_configure(uint16_t config)
-{
-	SPCR = config;
-	SPSR = config>>8;
-}
 
 //! \brief Permet d'activer le spi.
 //! \see spi_disable()
@@ -171,9 +135,9 @@ static inline void spi_disable()
 //! 	//code
 //! }
 //! \endcode
-//! \note Le drapeau lier à ce vecteur d'interruption est automatiquement 
+//! \note Le drapeau de transfert est automatiquement 
 //! nettoyer à l'exécution de cette interruption (SPI_STC_vect). La fonction
-//! \ref spi_is_raising_transfer_flag() n'est donc pas à appeler.
+//! \ref spi_is_raising_transfer_flag() n'est donc pas à appeler pour le nettoyage.
 //! \see spi_disable_interrupt()
 static inline void spi_enable_interrupt()
 {
@@ -188,63 +152,62 @@ static inline void spi_disable_interrupt()
 }
 
 //! \brief Permet de définir l'ordre des données.
-//! \param data_order permet de choisir le sens de transmission des données.
+//! \param data_order permet de choisir le sens de transmission des données.\ref SPI_DATA_ORDER_MSB est actifs par défaut.
 static inline void spi_data_order(spi_data_order_e data_order)
 {
 	SPCR = (SPCR&~SPI_DATA_ORDER_MASK)|data_order;
-	
-	//SPCR &= ~SPI_DATA_ORDER_MASK;
-	//SPCR |= data_order;
 }
 
-//! \brief Définir si le composent est en maître ou en esclave.
-//! \param mode permet de choisir de mètre le composent et maître ou esclave.
-static inline void spi_mode(spi_mode_e mode)
+//! \brief Définir le mode du composent, en maître ou en esclave.
+//! \param mode permet de choisir le mode du composent, maître ou esclave.\ref SPI_MODE_SLAVE est actifs par défaut.
+static inline void spi_mode(spi_mode_e mode) 
 {
 	SPCR = (SPCR&~SPI_MODE_MASK)|mode;
-	
-	//SPCR &= ~SPI_MODE_MASK;
-	//SPCR |= mode;
 }
 
-//! \brief 
-//! \todo a commenter
-//! \param clock_polarity a commenter
-static inline void spi_clock_polarity(spi_clock_polarity_e clock_polarity)
+//! \brief Définir le mode de l'horloge.
+//! \param spi_clock_mode_e est le mode choisi,.\ref SPI_CLOCK_MODE_0 est actifs par défaut.
+static inline void spi_clock_mode(spi_clock_mode_e clock_mode)
 {
-	SPCR = (SPCR&~SPI_CLOCK_POLARITY_MASK)|clock_polarity;
-	
-	//SPCR &= ~SPI_CLOCK_POLARITY_MASK;
-	//SPCR |= clock_polarity;
-}
-
-//! \brief 
-//! \todo a commenter
-//! \param clock_phase a commenter
-static inline void spi_clock_phase(spi_clock_phase_e clock_phase)
-{
-	SPCR = (SPCR&~SPI_CLOCK_PHASE_MASK)|clock_phase;
-	
-	//SPCR &= ~SPI_CLOCK_PHASE_MASK;
-	//SPCR |= clock_phase;
+	SPCR = (SPCR&~SPI_CLOCK_MODE)|clock_mode;
 }
 
 //! \brief Pour sélectionner l'horloge.
-//! \note L'appelle de cette fonction nettoie automatiquement le drapeau.
-//! \param clock est la sélection de la source de l'horloge pour le SPI
+//!
+//!Cette fonction est utilise seulement en mode maître.
+//! \note L'appelle de cette fonction nettoie automatiquement les drapeaux.
+//! \param clock est la sélection de la source de l'horloge pour le SPI. \ref SPI_CLOCK_CLK_4 est actifs par défaut.
 static inline void spi_clock_select(spi_clock_e clock)
 {
 	SPCR = (SPCR&~SPI_CLOCK_MASK)|clock;
 	SPSR = (SPSR&~(SPI_CLOCK_MASK>>8))|(clock>>8);
-	
-	//SPCR &= ~SPI_CLOCK_MASK;
-	//SPCR |= clock;
-	//SPSR &= ~(SPI_CLOCK_MASK>>8);
-	//SPSR |= clock>>8;
+}
+
+//! \brief Permet de configurer le spi.
+//! Évite d'appeler tout les fonctions pour la configuration.
+//! \param config est la configuration souhaité. Les valeur possible son d'écrite dans les enum \ref spi_data_order_e, 
+//!	\ref spi_mode_e, \ref spi_clock_mode_e,  \ref spi_clock_e.
+//! \code
+//! //un exemple :
+//! spi_configure(SPI_MODE_MASTER|SPI_DATA_ORDER_MSB|SPI_CLOCK_POLARITY_RISING|SPI_CLOCK_PHASE_SAMPLE|SPI_CLOCK_CLK_8);
+//! \endcode
+//! \see spi_data_order()
+//! \see spi_mode()
+//! \see spi_clock_polarity()
+//! \see spi_clock_phase()
+//! \see spi_clock_phase()
+//! \see spi_data_order_e
+//! \see spi_mode_e
+//! \see spi_clock_mode_e
+//! \see spi_clock_e
+static inline void spi_configure(uint16_t config)
+{
+	SPCR = config;
+	SPSR = config>>8;
 }
 
 //! \brief Pour savoir si le drapeau de transfert est lever.
-//! \note L'appelle de cette fonction nettoie automatiquement le drapeau.
+//! \note L'appelle de cette fonction nettoie automatiquement le drapeau de transfert.
 //! \attention Nettoie aussi le drapeau de collision lier à la fonction \ref spi_is_raising_collision_flag().
 //! \return false si le drapeau n'est pas lever.
 static inline bool spi_is_raising_transfer_flag()
@@ -253,8 +216,8 @@ static inline bool spi_is_raising_transfer_flag()
 }
 
 //! \brief Pour savoir si le drapeau de collision est lever.
-//! \note L'appelle de cette fonction nettoie automatiquement le drapeau.
-//! \attention Nettoie aussi le drapeau d'interruption lier à la fonction \ref spi_is_raising_transfer_flag().
+//! \note L'appelle de cette fonction nettoie automatiquement le drapeau de collision.
+//! \attention Nettoie aussi le drapeau de transfert lier à la fonction \ref spi_is_raising_transfer_flag().
 //! \return false si le drapeau n'est pas lever.
 static inline bool spi_is_raising_collision_flag()
 {
@@ -284,7 +247,7 @@ static inline void twi_write_data(uint8_t data)
 
 //! \brief Pour lire une donnée.
 //! - Si vous êtes en mode esclave, rien de particulier vous lisez juste la donnée se trouvent dans SPDR.
-//! - Si vous êtes en mode maître, vous lisez aussi la donnée se trouvent dans SPDR, mais ensuit cette fonction 
+//! - Si vous êtes en mode maître, de même vous lisez la donnée se trouvent dans SPDR, mais ensuit cette fonction 
 //! provoque aussi la rotation des registres sur le bus spi.
 //! \return la donnée se trouvent dans SPDR.
 //! \see twi_write_data()
@@ -293,11 +256,7 @@ static inline uint8_t twi_read_data()
 	return SPDR;
 }
 
-
-
 //! @} //spi
-
-
 
 #endif // SPI_H_INCLUDED
 

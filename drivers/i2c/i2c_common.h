@@ -51,10 +51,10 @@ typedef enum
 //_____ P R O T O T Y P E S ____________________________________________________
 
 //! \brief Active l'i2c.
-void i2cEnable(void);
+void i2cEnable();
 
 //! \brief Désactive l'i2c.
-void i2cDisable(void);
+void i2cDisable();
 
 //! @}
 

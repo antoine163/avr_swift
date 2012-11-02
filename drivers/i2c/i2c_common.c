@@ -27,12 +27,12 @@
 //_____ P R O T O T Y P E S ____________________________________________________
 
 //_____ I M P L E M E N T A T I O N S __________________________________________
-void i2cEnable(void)
+void i2cEnable()
 {
 	twi_enable();
 }
 
-void i2cDisable(void)
+void i2cDisable()
 {
 	twi_disable();
 }

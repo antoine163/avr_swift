@@ -49,7 +49,7 @@
 //_____ P R O T O T Y P E S ____________________________________________________
 
 //_____ I M P L E M E N T A T I O N S __________________________________________
-void i2cInit(void)
+void i2cInit()
 {
 	twi_bit_rate_generator(I2C_RATE, I2C_PRESCALER);
 }
