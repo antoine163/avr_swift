@@ -189,7 +189,7 @@ static inline void spi_disable_interrupt()
 
 //! \brief Permet de définir l'ordre des données.
 //! \param data_order permet de choisir le sens de transmission des données.
-static inline void spi_data_order(data_order_e data_order)
+static inline void spi_data_order(spi_data_order_e data_order)
 {
 	SPCR = (SPCR&~SPI_DATA_ORDER_MASK)|data_order;
 	
