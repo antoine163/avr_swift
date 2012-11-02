@@ -78,10 +78,14 @@ typedef enum
 //! \see spi_clock_mode()
 typedef enum
 {
-	SPI_CLOCK_MODE_0	= 0,					//!< Donnée valide sur front montent sans déphasage.\image spi/spi_clock_mode_0.bmp
-	SPI_CLOCK_MODE_1	= _BV(CPHA),			//!< Donnée valide sur front descendant avec déphasage.\image spi/spi_clock_mode_1.bmp
-	SPI_CLOCK_MODE_2	= _BV(CPOL),			//!< Donnée valide sur front descendant sans déphasage.\image spi/spi_clock_mode_2.bmp
-	SPI_CLOCK_MODE_3	= _BV(CPHA)|_BV(CPOL),	//!< Donnée valide sur front montent avec déphasage.\image spi/spi_clock_mode_3.bmp
+	SPI_CLOCK_MODE_0	= 0,					//!< Donnée valide sur front montent sans déphasage.\n
+												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/spi_clock_mode_0.bmp
+	SPI_CLOCK_MODE_1	= _BV(CPHA),			//!< Donnée valide sur front descendant avec déphasage.\n
+												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/spi_clock_mode_1.bmp
+	SPI_CLOCK_MODE_2	= _BV(CPOL),			//!< Donnée valide sur front descendant sans déphasage.\n
+												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/spi_clock_mode_2.bmp
+	SPI_CLOCK_MODE_3	= _BV(CPHA)|_BV(CPOL),	//!< Donnée valide sur front montent avec déphasage.\n
+												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/spi_clock_mode_3.bmp
 	
 	#if !defined(__DOXYGEN__)
 	SPI_CLOCK_MODE 	= _BV(CPOL)|_BV(CPHA)
