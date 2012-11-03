@@ -1,5 +1,5 @@
 #include <avr/io.h>
-#include <sw/drv/twi.h>
+#include <twi.h>
 
 //Une adresse esclave.
 #define TWI_ADD 0x32
@@ -10,7 +10,7 @@ void TWI_ERREUR()
 	//...
 }
 
-int main(void)
+int main()
 {
 	//...
 	
@@ -24,29 +24,29 @@ int main(void)
 	
 	//...
 	
-	twi_generate_start();			// Pour générai la condition de start.
-	while(!twi_is_raising_falg());		// Attend que le drapeau ce lève.
-	if(twi_get_statu() != TW_START)  	// Si le statu n'est pas TW_START, s'est qu'il ses produit une erreur.
+	twi_generate_start();					// Pour générai la condition de start.
+	while(!twi_is_raising_falg());			// Attend que le drapeau ce lève.
+	if(twi_get_statu() != TW_START)  		// Si le statu n'est pas TW_START, s'est qu'il ses produit une erreur.
 		TWI_ERREUR();
 
 	//Envoi l'adresse.
 	twi_send_byte((TWI_ADD<<1)|TW_WRITE);	// Envoi du premier octet, qui contient l'adresse et le mode écriture.
-	while(!twi_is_raising_falg());		// Attend que le drapeau ce lève.
+	while(!twi_is_raising_falg());			// Attend que le drapeau ce lève.
 	if(twi_get_statu() != TW_MT_SLA_ACK)  	// Si le statu n'est pas TW_MT_SLA_ACK, s'est qu'il ses produit une erreur.
 		TWI_ERREUR();
 
 	//Envoi les données.
-	twi_send_byte(buf[0]);			// Envoi d'une données.
-	while(!twi_is_raising_falg());		// Attend que le drapeau ce lève.
+	twi_send_byte(buf[0]);					// Envoi d'une données.
+	while(!twi_is_raising_falg());			// Attend que le drapeau ce lève.
 	if(twi_get_statu() != TW_MT_DATA_ACK)  // Si le statu n'est pas TW_MT_DATA_ACK, s'est qu'il ses produit une erreur.
 		TWI_ERREUR();
 
-	twi_send_byte(buf[1]);			// Envoi d'une données.
-	while(!twi_is_raising_falg());		// Attend que le drapeau ce lève.
-	if(twi_get_statu() != TW_MT_DATA_ACK)  // Si le statu n'est pas TW_MT_DATA_ACK, s'est qu'il ses produit une erreur.
+	twi_send_byte(buf[1]);					// Envoi d'une données.
+	while(!twi_is_raising_falg());			// Attend que le drapeau ce lève.
+	if(twi_get_statu() != TW_MT_DATA_ACK)	// Si le statu n'est pas TW_MT_DATA_ACK, s'est qu'il ses produit une erreur.
 		TWI_ERREUR();
 
-	twi_generate_stop();			// Pour générai la condition de stop.
+	twi_generate_stop();					// Pour générai la condition de stop.
 		
 	//...
 	

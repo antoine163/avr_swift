@@ -34,17 +34,17 @@
 //!
 //! Toue les exemple si dessous, sont la à titre indicatifs. La gestion du twi peut se faire totalement différemment que ces exemple, notamment avec l'interruption.
 //!
-//! Voici un code d'exemple pour le \b maître \b transmettent deux données.
-//! \include twimt.c
+//! - Voici un code d'exemple pour le \b maître \b transmettent deux données.
+//! \include twi/mt.c
 //!
-//! Voici un code d'exemple pour l'\b esclave \b recevant deux données.
-//! \include twisr.c
+//! - Voici un code d'exemple pour l'\b esclave \b recevant deux données.
+//! \include twi/sr.c
 //!
-//! Voici un code d'exemple pour le \b maître \b recevant deux données.
-//! \include twimr.c
+//! - Voici un code d'exemple pour le \b maître \b recevant deux données.
+//! \include twi/mr.c
 //!
-//! Voici un code d'exemple pour l'\b esclave \b transmettent deux données.
-//! \include twist.c
+//! - Voici un code d'exemple pour l'\b esclave \b transmettent deux données.
+//! \include twi/st.c
 //!
 //! @{
 

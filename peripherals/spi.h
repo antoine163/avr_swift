@@ -6,12 +6,12 @@
 //! \brief Fichier pour le spi (Serial Peripheral Interface).
 //!
 //! - Compilateur		: AVR-GCC
-//! - Composant tester	: at90usb1286, atmega8535
+//! - Composant tester	: at90usb1287, atmega8535
 //!
 //!
 //!
 //! \author Maleyrie Antoine
-//! \version 0.1
+//! \version 0.2
 //! \date 04 Octobre 2012
 //!
 //! ****************************************************************************
@@ -26,13 +26,18 @@
 //! \addtogroup spi
 //! \brief spi (Serial Peripheral Interface).
 //!
-//! \todo A tester !!!
-//!
 //! \code
 //! #include <spi.h>
 //! \endcode
 //!
-//!
+//! - Voir un code d'exemple en mode maître :
+//! \include master_scan.c
+//! Pour attendre la fin d'une transaction dans l'exemple, on scrute le 
+//! drapeau de transfert \ref spi_is_raising_transfer_flag().
+//! Vous pouvez vous inspirer de l'exemple suivent pour mètre en place les interruptions.
+//! - Voir un code d'exemple en mode esclave :
+//! \include slave_interruption.c
+//! De même ici pour pouvez faire de la scrutation à la place des interruptions
 //! @{
 
 //_____ I N C L U D E S ________________________________________________________
@@ -79,13 +84,13 @@ typedef enum
 typedef enum
 {
 	SPI_CLOCK_MODE_0	= 0,					//!< Donnée valide sur front montent sans déphasage.\n
-												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/spi_clock_mode_0.bmp
+												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/clock_mode_0.bmp
 	SPI_CLOCK_MODE_1	= _BV(CPHA),			//!< Donnée valide sur front descendant avec déphasage.\n
-												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/spi_clock_mode_1.bmp
+												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/clock_mode_1.bmp
 	SPI_CLOCK_MODE_2	= _BV(CPOL),			//!< Donnée valide sur front descendant sans déphasage.\n
-												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/spi_clock_mode_2.bmp
+												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/clock_mode_2.bmp
 	SPI_CLOCK_MODE_3	= _BV(CPHA)|_BV(CPOL),	//!< Donnée valide sur front montent avec déphasage.\n
-												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/spi_clock_mode_3.bmp
+												//!< Voici un exemple ou le maître écrie 0x33 :\image html spi/clock_mode_3.bmp
 	
 	#if !defined(__DOXYGEN__)
 	SPI_CLOCK_MODE 	= _BV(CPOL)|_BV(CPHA)

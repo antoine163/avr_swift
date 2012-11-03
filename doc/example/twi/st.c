@@ -1,5 +1,5 @@
 #include <avr/io.h>
-#include "sw/drv/twi.h"
+#include <twi.h>
 
 //L'adresse du composent.
 #define TWI_ADD 0x32
@@ -10,7 +10,7 @@ void TWI_ERREUR()
 	//...
 }
 
-int main(void)
+int main()
 {
 	//...
 	
@@ -24,18 +24,18 @@ int main(void)
 	
 	//...
 	
-	twi_receive_byte_ack();			// Prépare le composent a recevoir un octet, puis générera le bit ack (ici l'octet est l'adresse).
-	while(!twi_is_raising_falg());		// Attend que le drapeau ce lève. Attend qu'un maître adresse le composent.
+	twi_receive_byte_ack();					// Prépare le composent a recevoir un octet, puis générera le bit ack (ici l'octet est l'adresse).
+	while(!twi_is_raising_falg());			// Attend que le drapeau ce lève. Attend qu'un maître adresse le composent.
 	if(twi_get_statu() != TW_ST_SLA_ACK)	// Si le statu n'est pas TW_ST_SLA_ACK, s'est qu'il ses produit une erreur.
 		TWI_ERREUR();
 				
-	twi_send_byte_ack(buf[0]);		// Envoi d'une données.Puis prépare le composent à recevoire le bit ack.
-	while(!twi_is_raising_falg());		// Attend que le drapeau ce lève.
+	twi_send_byte_ack(buf[0]);				// Envoi d'une données.Puis prépare le composent à recevoire le bit ack.
+	while(!twi_is_raising_falg());				// Attend que le drapeau ce lève.
 	if(twi_get_statu() != TW_ST_DATA_ACK)	// Si le statu n'est pas TW_ST_DATA_ACK, s'est qu'il ses produit une erreur.
 		TWI_ERREUR();
 
-	twi_send_byte_nack(buf[1]);		// Envoi d'une données.Puis prépare le composent à recevoir le bit nack.
-	while(!twi_is_raising_falg());		// Attend que le drapeau ce lève.
+	twi_send_byte_nack(buf[1]);				// Envoi d'une données.Puis prépare le composent à recevoir le bit nack.
+	while(!twi_is_raising_falg());			// Attend que le drapeau ce lève.
 	if(twi_get_statu() != TW_ST_DATA_NACK)	// Si le statu n'est pas TW_ST_DATA_NACK, s'est qu'il ses produit une erreur.
 		TWI_ERREUR();
 			

@@ -34,7 +34,7 @@
 //! \todo La sélection du quartz externe de 32KHz sur le timer 2 n'ais pas encore possible.
 //!
 //! Voici un code d'exemple sur le timer 1 (16bit).
-//! \include tcbasic.c
+//! \include tc/basic.c
 //!
 //! @{
 
