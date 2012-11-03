@@ -200,90 +200,89 @@ $(document).ready(function(){initNavTree('twi_8h_source.html','');});
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="code" href="group__twi_ga2a19adba28256c8da5e9964d6c80430d.html#ga2a19adba28256c8da5e9964d6c80430d">  237</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga2a19adba28256c8da5e9964d6c80430d.html#ga2a19adba28256c8da5e9964d6c80430d" title="Configuration de l&#39;horloge SCL du bus.">twi_bit_rate_generator</a>(  uint8_t rate,</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        <a class="code" href="group__twi_gaa5aec17ac73287c41cf80e58a3e6f0c4.html#gaa5aec17ac73287c41cf80e58a3e6f0c4" title="Pré-diviseur twps.">twi_prescaler_e</a> prescaler)</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;{</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    TWBR = rate;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    TWSR = (TWSR&amp;TWI_PRESCALER_MASK)|prescaler;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;}</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
-<div class="line"><a name="l00252"></a><span class="lineno"><a class="code" href="group__twi_ga0e212e43dc0e728568cc34aed8acaf6f.html#ga0e212e43dc0e728568cc34aed8acaf6f">  252</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga0e212e43dc0e728568cc34aed8acaf6f.html#ga0e212e43dc0e728568cc34aed8acaf6f" title="Permet de généré la condition de start.">twi_generate_start</a>()</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWSTA);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
-<div class="line"><a name="l00261"></a><span class="lineno"><a class="code" href="group__twi_ga7d13ef0ca052e4711e7c57f03b864c43.html#ga7d13ef0ca052e4711e7c57f03b864c43">  261</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga7d13ef0ca052e4711e7c57f03b864c43.html#ga7d13ef0ca052e4711e7c57f03b864c43" title="Permet de généré la condition de stop.">twi_generate_stop</a>()</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWSTO);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno"><a class="code" href="group__twi_gaa07f48913d9778919773fbd7c57dfc6a.html#gaa07f48913d9778919773fbd7c57dfc6a">  273</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gaa07f48913d9778919773fbd7c57dfc6a.html#gaa07f48913d9778919773fbd7c57dfc6a" title="Permet de généré la condition de stop puis la condition de start.">twi_generate_stop_start</a>()</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWSTO)|_BV(TWSTA);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
-<div class="line"><a name="l00325"></a><span class="lineno"><a class="code" href="group__twi_ga605d41dff3e8347db6bc4f1dbd1dfef8.html#ga605d41dff3e8347db6bc4f1dbd1dfef8">  325</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga605d41dff3e8347db6bc4f1dbd1dfef8.html#ga605d41dff3e8347db6bc4f1dbd1dfef8" title="Permet d&#39;envoyer un octet sur le bus.">twi_send_byte</a>(int8_t byte)</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;{</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    TWDR = byte;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
-<div class="line"><a name="l00345"></a><span class="lineno"><a class="code" href="group__twi_gad5df58c4dfc060ada17d33daa313be98.html#gad5df58c4dfc060ada17d33daa313be98">  345</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gad5df58c4dfc060ada17d33daa313be98.html#gad5df58c4dfc060ada17d33daa313be98" title="Permet de commuter en mode esclave, si un transfère à été perdu.">twi_switched_slave_mode</a>()</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;{</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="code" href="group__twi_ga2a19adba28256c8da5e9964d6c80430d.html#ga2a19adba28256c8da5e9964d6c80430d">  237</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga2a19adba28256c8da5e9964d6c80430d.html#ga2a19adba28256c8da5e9964d6c80430d" title="Configuration de l&#39;horloge SCL du bus.">twi_bit_rate_generator</a>(uint8_t rate, <a class="code" href="group__twi_gaa5aec17ac73287c41cf80e58a3e6f0c4.html#gaa5aec17ac73287c41cf80e58a3e6f0c4" title="Pré-diviseur twps.">twi_prescaler_e</a> prescaler)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    TWBR = rate;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    TWSR = (TWSR&amp;TWI_PRESCALER_MASK)|prescaler;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="code" href="group__twi_ga0e212e43dc0e728568cc34aed8acaf6f.html#ga0e212e43dc0e728568cc34aed8acaf6f">  251</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga0e212e43dc0e728568cc34aed8acaf6f.html#ga0e212e43dc0e728568cc34aed8acaf6f" title="Permet de généré la condition de start.">twi_generate_start</a>()</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;{</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWSTA);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="code" href="group__twi_ga7d13ef0ca052e4711e7c57f03b864c43.html#ga7d13ef0ca052e4711e7c57f03b864c43">  260</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga7d13ef0ca052e4711e7c57f03b864c43.html#ga7d13ef0ca052e4711e7c57f03b864c43" title="Permet de généré la condition de stop.">twi_generate_stop</a>()</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWSTO);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno"><a class="code" href="group__twi_gaa07f48913d9778919773fbd7c57dfc6a.html#gaa07f48913d9778919773fbd7c57dfc6a">  272</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gaa07f48913d9778919773fbd7c57dfc6a.html#gaa07f48913d9778919773fbd7c57dfc6a" title="Permet de généré la condition de stop puis la condition de start.">twi_generate_stop_start</a>()</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWSTO)|_BV(TWSTA);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno"><a class="code" href="group__twi_ga7488655131923ddf61ef4369df1ec9c0.html#ga7488655131923ddf61ef4369df1ec9c0">  324</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga7488655131923ddf61ef4369df1ec9c0.html#ga7488655131923ddf61ef4369df1ec9c0" title="Permet d&#39;envoyer un octet sur le bus.">twi_send_byte</a>(uint8_t byte)</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;{</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    TWDR = byte;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno"><a class="code" href="group__twi_gad5df58c4dfc060ada17d33daa313be98.html#gad5df58c4dfc060ada17d33daa313be98">  344</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gad5df58c4dfc060ada17d33daa313be98.html#gad5df58c4dfc060ada17d33daa313be98" title="Permet de commuter en mode esclave, si un transfère à été perdu.">twi_switched_slave_mode</a>()</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;{</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
-<div class="line"><a name="l00360"></a><span class="lineno"><a class="code" href="group__twi_gab3c02a804abcd4c1195545cd1bbda64f.html#gab3c02a804abcd4c1195545cd1bbda64f">  360</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gab3c02a804abcd4c1195545cd1bbda64f.html#gab3c02a804abcd4c1195545cd1bbda64f" title="Permet d&#39;affecter une adresse.">twi_set_address</a>(uint8_t address)</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    TWAR = address&lt;&lt;1;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
-<div class="line"><a name="l00376"></a><span class="lineno"><a class="code" href="group__twi_ga695374ca0075a1d811589390f6e73ad5.html#ga695374ca0075a1d811589390f6e73ad5">  376</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga695374ca0075a1d811589390f6e73ad5.html#ga695374ca0075a1d811589390f6e73ad5" title="Pour envoyer une octet et se préparer à recevoir le bit ack.">twi_send_byte_ack</a>(int8_t byte)</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    TWDR = byte;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWEA);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
-<div class="line"><a name="l00390"></a><span class="lineno"><a class="code" href="group__twi_ga6396b3eab9618a69079cd3d3cbdd5dc8.html#ga6396b3eab9618a69079cd3d3cbdd5dc8">  390</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga6396b3eab9618a69079cd3d3cbdd5dc8.html#ga6396b3eab9618a69079cd3d3cbdd5dc8" title="Pour envoyer une octet et se préparer à recevoir le bit nack.">twi_send_byte_nack</a>(int8_t byte)</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;{</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    TWDR = byte;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
-<div class="line"><a name="l00399"></a><span class="lineno"><a class="code" href="group__twi_ga9de33e88e7df840e020df33fdbfd629f.html#ga9de33e88e7df840e020df33fdbfd629f">  399</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga9de33e88e7df840e020df33fdbfd629f.html#ga9de33e88e7df840e020df33fdbfd629f" title="Pour activer l&#39;appelle générale.">twi_enable_general_call</a>()</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;{</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    TWAR |= _BV(TWGCE);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;</div>
-<div class="line"><a name="l00405"></a><span class="lineno"><a class="code" href="group__twi_gaa0e49a78e5371c7f7b75a85ee94ed642.html#gaa0e49a78e5371c7f7b75a85ee94ed642">  405</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gaa0e49a78e5371c7f7b75a85ee94ed642.html#gaa0e49a78e5371c7f7b75a85ee94ed642" title="Pour désactiver l&#39;appelle générale.">twi_disable_general_call</a>()</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;{</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    TWAR &amp;= ~_BV(TWGCE);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;}</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;</div>
-<div class="line"><a name="l00413"></a><span class="lineno"><a class="code" href="group__twi_ga9fcfb6f5f4ed4962f58e3bea1f2447b8.html#ga9fcfb6f5f4ed4962f58e3bea1f2447b8">  413</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga9fcfb6f5f4ed4962f58e3bea1f2447b8.html#ga9fcfb6f5f4ed4962f58e3bea1f2447b8" title="Pour libéré le bus si un erreur est survenue.">twi_freed_bus</a>()</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;{</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWSTO);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="code" href="group__twi_gab3c02a804abcd4c1195545cd1bbda64f.html#gab3c02a804abcd4c1195545cd1bbda64f">  359</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gab3c02a804abcd4c1195545cd1bbda64f.html#gab3c02a804abcd4c1195545cd1bbda64f" title="Permet d&#39;affecter une adresse.">twi_set_address</a>(uint8_t address)</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;{</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    TWAR = address&lt;&lt;1;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
+<div class="line"><a name="l00375"></a><span class="lineno"><a class="code" href="group__twi_gaff11df5271caa9dec8338499758cccf8.html#gaff11df5271caa9dec8338499758cccf8">  375</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gaff11df5271caa9dec8338499758cccf8.html#gaff11df5271caa9dec8338499758cccf8" title="Pour envoyer une octet et se préparer à recevoir le bit ack.">twi_send_byte_ack</a>(uint8_t byte)</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;{</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    TWDR = byte;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWEA);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
+<div class="line"><a name="l00389"></a><span class="lineno"><a class="code" href="group__twi_ga7411f5cdc4169eb6aa90e65aa7f9ed43.html#ga7411f5cdc4169eb6aa90e65aa7f9ed43">  389</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga7411f5cdc4169eb6aa90e65aa7f9ed43.html#ga7411f5cdc4169eb6aa90e65aa7f9ed43" title="Pour envoyer une octet et se préparer à recevoir le bit nack.">twi_send_byte_nack</a>(uint8_t byte)</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;{</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    TWDR = byte;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
+<div class="line"><a name="l00398"></a><span class="lineno"><a class="code" href="group__twi_ga9de33e88e7df840e020df33fdbfd629f.html#ga9de33e88e7df840e020df33fdbfd629f">  398</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga9de33e88e7df840e020df33fdbfd629f.html#ga9de33e88e7df840e020df33fdbfd629f" title="Pour activer l&#39;appelle générale.">twi_enable_general_call</a>()</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    TWAR |= _BV(TWGCE);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;</div>
+<div class="line"><a name="l00404"></a><span class="lineno"><a class="code" href="group__twi_gaa0e49a78e5371c7f7b75a85ee94ed642.html#gaa0e49a78e5371c7f7b75a85ee94ed642">  404</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_gaa0e49a78e5371c7f7b75a85ee94ed642.html#gaa0e49a78e5371c7f7b75a85ee94ed642" title="Pour désactiver l&#39;appelle générale.">twi_disable_general_call</a>()</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    TWAR &amp;= ~_BV(TWGCE);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;</div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="code" href="group__twi_ga9fcfb6f5f4ed4962f58e3bea1f2447b8.html#ga9fcfb6f5f4ed4962f58e3bea1f2447b8">  412</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__twi_ga9fcfb6f5f4ed4962f58e3bea1f2447b8.html#ga9fcfb6f5f4ed4962f58e3bea1f2447b8" title="Pour libéré le bus si un erreur est survenue.">twi_freed_bus</a>()</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;{</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    TWCR = (TWCR&amp;TWI_TWCR_MASK)|_BV(TWINT)|_BV(TWSTO);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="preprocessor">#endif // TWI_H_INCLUDED</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="preprocessor">#endif // TWI_H_INCLUDED</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_2df1e86e29aa9f9374c90ba96092d4a1.html">peripherals</a></li><li class="navelem"><a class="el" href="twi_8h.html">twi.h</a></li>
-    <li class="footer">Généré le Jeudi Octobre 4 2012 18:23:13 pour avr_swift par
+    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:22 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

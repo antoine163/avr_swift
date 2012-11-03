@@ -1,6 +1,6 @@
 <map id="I2c" name="I2c">
-<area shape="rect" id="node1" href="$group__i2c_master.html" title="Driver i2c en maître." alt="" coords="207,5,287,32"/>
-<area shape="rect" id="node2" href="$group__i2c_commun.html" title="Fonction commune pour l&#39;i2c en maître et esclave." alt="" coords="200,56,293,83"/>
-<area shape="rect" id="node3" href="$group__i2c_slave.html" title="Driver i2c en esclave." alt="" coords="210,107,283,133"/>
-<area shape="rect" id="node5" href="$group__driver.html" title="Driver" alt="" coords="6,56,63,83"/>
+<area shape="rect" id="node1" href="$group__i2c_master.html" title="Driver i2c en maître." alt="" coords="210,5,294,32"/>
+<area shape="rect" id="node2" href="$group__i2c_commun.html" title="Fonction commune pour l&#39;i2c en maître et esclave." alt="" coords="203,56,301,83"/>
+<area shape="rect" id="node3" href="$group__i2c_slave.html" title="Driver i2c en esclave." alt="" coords="215,107,289,133"/>
+<area shape="rect" id="node5" href="$group__driver.html" title="Driver" alt="" coords="6,56,66,83"/>
 </map>

@@ -22,9 +22,9 @@ var twi_8h =
     [ "twi_is_raising_falg", "twi_8h.html#ga3076419f4f497db5d053bebef38639ec", null ],
     [ "twi_receive_byte_ack", "twi_8h.html#ga210907e0452f5760815f30d725146f6a", null ],
     [ "twi_receive_byte_nack", "twi_8h.html#gac3434b1093639afed39735b5befa6fea", null ],
-    [ "twi_send_byte", "twi_8h.html#ga605d41dff3e8347db6bc4f1dbd1dfef8", null ],
-    [ "twi_send_byte_ack", "twi_8h.html#ga695374ca0075a1d811589390f6e73ad5", null ],
-    [ "twi_send_byte_nack", "twi_8h.html#ga6396b3eab9618a69079cd3d3cbdd5dc8", null ],
+    [ "twi_send_byte", "twi_8h.html#ga7488655131923ddf61ef4369df1ec9c0", null ],
+    [ "twi_send_byte_ack", "twi_8h.html#gaff11df5271caa9dec8338499758cccf8", null ],
+    [ "twi_send_byte_nack", "twi_8h.html#ga7411f5cdc4169eb6aa90e65aa7f9ed43", null ],
     [ "twi_set_address", "twi_8h.html#gab3c02a804abcd4c1195545cd1bbda64f", null ],
     [ "twi_switched_slave_mode", "twi_8h.html#gad5df58c4dfc060ada17d33daa313be98", null ]
 ];

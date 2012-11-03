@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>avr_swift: i2cEnable</title>
+<title>avr_swift: twi_send_byte_nack</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('group__i2c_commun.html','');});
+$(document).ready(function(){initNavTree('group__twi.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,32 +103,40 @@ $(document).ready(function(){initNavTree('group__i2c_commun.html','');});
 </div>
 
 <div class="contents">
-<a class="anchor" id="ga60e1089bf20433fe336d55fcdc64d00c"></a>
+<a class="anchor" id="ga7411f5cdc4169eb6aa90e65aa7f9ed43"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void i2cEnable </td>
+          <td class="memname">static void twi_send_byte_nack </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>byte</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Active l'i2c. </p>
+<p>Pour envoyer une octet et se préparer à recevoir le bit nack. </p>
+<p>Les status qui peuve survenir après l'appelle de cette fonction sont :</p>
+<ul>
+<li>TW_ST_DATA_NACK <br/>
+</li>
+<li>TW_ST_LAST_DATA <br/>
+ Les actions qui peuve être générai ensuit sont : <br/>
+ <a class="el" href="group__twi_ga210907e0452f5760815f30d725146f6a.html#ga210907e0452f5760815f30d725146f6a">twi_receive_byte_ack()</a> (commute dans le mode non adresser) <br/>
+ <a class="el" href="group__twi_gac3434b1093639afed39735b5befa6fea.html#gac3434b1093639afed39735b5befa6fea">twi_receive_byte_nack()</a> (commute dans le mode non adresser) </li>
+</ul>
 
-<p>Définition à la ligne <a class="el" href="i2c__common_8c_source.html#l00030">30</a> du fichier <a class="el" href="i2c__common_8c_source.html">i2c_common.c</a>.</p>
-
-<p><div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="group__i2c_commun_ga60e1089bf20433fe336d55fcdc64d00c_ga60e1089bf20433fe336d55fcdc64d00c_cgraph.png" border="0" usemap="#group__i2c_commun_ga60e1089bf20433fe336d55fcdc64d00c_ga60e1089bf20433fe336d55fcdc64d00c_cgraph" alt=""/></div>
-<map name="group__i2c_commun_ga60e1089bf20433fe336d55fcdc64d00c_ga60e1089bf20433fe336d55fcdc64d00c_cgraph" id="group__i2c_commun_ga60e1089bf20433fe336d55fcdc64d00c_ga60e1089bf20433fe336d55fcdc64d00c_cgraph">
-<area shape="rect" id="node3" href="group__twi_ga11ad74aa363d748fdad0c4bae0163abd.html#ga11ad74aa363d748fdad0c4bae0163abd" title="Permet d&#39;activer le twi." alt="" coords="134,5,218,32"/></map>
-</div>
-</p>
+<p>Définition à la ligne <a class="el" href="twi_8h_source.html#l00389">389</a> du fichier <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
 
 </div>
 </div>
@@ -137,8 +145,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="group__i2c_commun.html">I2cCommun</a></li>
-    <li class="footer">Généré le Jeudi Octobre 4 2012 18:23:13 pour avr_swift par
+    <li class="navelem"><a class="el" href="group__twi.html">Twi</a></li>
+    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

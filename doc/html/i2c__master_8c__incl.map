@@ -1,5 +1,5 @@
 <map id="i2c_master.c" name="i2c_master.c">
-<area shape="rect" id="node3" href="$i2c__master_8h.html" title="Ce fichier contiens le module permettent de manipuler l&#39;i2c en esclave avec le twi." alt="" coords="23,80,120,107"/>
-<area shape="rect" id="node9" href="$i2c__common_8h.html" title="Code commun pour l&#39;i2c en maître ou esclave." alt="" coords="131,155,237,181"/>
-<area shape="rect" id="node11" href="$twi_8h.html" title="Fichier pour le twi &quot;2&#45;wire Serial Interface&quot;." alt="" coords="136,229,187,256"/>
+<area shape="rect" id="node3" href="$i2c__master_8h.html" title="Ce fichier contiens le module permettent de manipuler l&#39;i2c en esclave avec le twi." alt="" coords="23,80,127,107"/>
+<area shape="rect" id="node9" href="$i2c__common_8h.html" title="Code commun pour l&#39;i2c en maître ou esclave." alt="" coords="135,155,251,181"/>
+<area shape="rect" id="node11" href="$twi_8h.html" title="Fichier pour le twi &quot;2&#45;wire Serial Interface&quot;." alt="" coords="145,229,196,256"/>
 </map>

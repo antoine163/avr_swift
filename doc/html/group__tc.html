@@ -119,7 +119,7 @@ Graphe de collaboration de Tc:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__tc.png" border="0" alt="" usemap="#group____tc"/>
 <map name="group____tc" id="group____tc">
-<area shape="rect" id="node1" href="group__peripherials.html" title="Peripherials" alt="" coords="5,5,96,32"/></map>
+<area shape="rect" id="node1" href="group__peripherials.html" title="Peripherials" alt="" coords="5,5,101,32"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
@@ -244,7 +244,7 @@ Overflow</h2></td></tr>
 <tr class="memdesc:gad9d81aaf35804ec2c7b1632980f11e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Désactive l'interruption de débordement.  <a href="#gad9d81aaf35804ec2c7b1632980f11e91"></a><br/></td></tr>
 <tr class="separator:gad9d81aaf35804ec2c7b1632980f11e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7db387efb1d8f08fc4bee7123fc7bc20"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tc_ga7db387efb1d8f08fc4bee7123fc7bc20.html#ga7db387efb1d8f08fc4bee7123fc7bc20">tc_is_raising_overflow_flag</a> (<a class="el" href="structtc__s.html">tc_s</a> *tc)</td></tr>
-<tr class="memdesc:ga7db387efb1d8f08fc4bee7123fc7bc20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour savoir si le drapeau de débordement et lever.  <a href="#ga7db387efb1d8f08fc4bee7123fc7bc20"></a><br/></td></tr>
+<tr class="memdesc:ga7db387efb1d8f08fc4bee7123fc7bc20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour savoir si le drapeau de débordement est lever.  <a href="#ga7db387efb1d8f08fc4bee7123fc7bc20"></a><br/></td></tr>
 <tr class="separator:ga7db387efb1d8f08fc4bee7123fc7bc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6b0c11245d08effcfe40cb537ebb0423"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tc_ga6b0c11245d08effcfe40cb537ebb0423.html#ga6b0c11245d08effcfe40cb537ebb0423">tc_cleared_overflow_flag</a> (<a class="el" href="structtc__s.html">tc_s</a> *tc)</td></tr>
 <tr class="memdesc:ga6b0c11245d08effcfe40cb537ebb0423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour effacer le drapeau de débordement.  <a href="#ga6b0c11245d08effcfe40cb537ebb0423"></a><br/></td></tr>
@@ -340,7 +340,7 @@ Capture</h2></td></tr>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;avr/interrupt.h&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="preprocessor">#include &quot;sw/drv/tc.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="tc_8h.html" title="Driveur pour les Timers/Counters.">tc.h</a>&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">//...</span></div>
 <div class="line"></div>
@@ -364,19 +364,20 @@ Capture</h2></td></tr>
 <div class="line"></div>
 <div class="line"><span class="comment">//...</span></div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">//...</span></div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="structtc__s.html" title="Structure représentante la configuration matérielle d&#39;un timer/counter.">tc_s</a> tc;        <span class="comment">//On déclare une structure pour manipuler un timer.</span></div>
-<div class="line">    <a class="code" href="group__tc_ga29745a1934f1bbe24b10cf45781a8e1c.html#ga29745a1934f1bbe24b10cf45781a8e1c" title="Initialise un timer/counter.">tc_init</a>(&amp;tc, <a class="code" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfa8710e375fd9997543e945252611364ec" title="Valeur représentent le timer/counter 1 (16bits).">TC_NUM_1</a>); <span class="comment">//On l&#39;initialise sur le timer 1.</span></div>
+<div class="line">    <a class="code" href="structtc__s.html" title="Structure représentante la configuration matérielle d&#39;un timer/counter.">tc_s</a> tc;                    <span class="comment">//On déclare une structure pour manipuler un timer.</span></div>
+<div class="line">    <a class="code" href="group__tc_ga29745a1934f1bbe24b10cf45781a8e1c.html#ga29745a1934f1bbe24b10cf45781a8e1c" title="Initialise un timer/counter.">tc_init</a>(&amp;tc, <a class="code" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfa8710e375fd9997543e945252611364ec" title="Valeur représentent le timer/counter 1 (16bits).">TC_NUM_1</a>);     <span class="comment">//On l&#39;initialise sur le timer 1.</span></div>
 <div class="line"></div>
-<div class="line">    sei();  <span class="comment">//Active les interruptions.</span></div>
+<div class="line">    <span class="comment">//Active les interruptions.</span></div>
+<div class="line">    sei();  </div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="group__tc_gaa74b33f01f8acaebb99c4f187cdada4e.html#gaa74b33f01f8acaebb99c4f187cdada4e" title="Active l&#39;interruption de débordement.">tc_enable_interrupt_overflow</a>(&amp;tc);      <span class="comment">//Active l&#39;interruption de débordement du timer 1.</span></div>
+<div class="line">    <a class="code" href="group__tc_gaa74b33f01f8acaebb99c4f187cdada4e.html#gaa74b33f01f8acaebb99c4f187cdada4e" title="Active l&#39;interruption de débordement.">tc_enable_interrupt_overflow</a>(&amp;tc);                  <span class="comment">//Active l&#39;interruption de débordement du timer 1.</span></div>
 <div class="line">    <a class="code" href="group__tc_ga68acf35b2a364e9761d71b0017d70c46.html#ga68acf35b2a364e9761d71b0017d70c46" title="Active l&#39;interruption de comparaison.">tc_enable_interrupt_compare</a>(&amp;tc, <a class="code" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bcaf7c637f84cf8162ee57a5d555444bf1c" title="Valeur représentent le comparateur A.">TC_COMPARE_A</a>);     <span class="comment">//Active l&#39;interruption de comparaison sur le comparateur A, du timer 1.</span></div>
 <div class="line">    <a class="code" href="group__tc_ga68acf35b2a364e9761d71b0017d70c46.html#ga68acf35b2a364e9761d71b0017d70c46" title="Active l&#39;interruption de comparaison.">tc_enable_interrupt_compare</a>(&amp;tc, <a class="code" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bca4ab5471dad18b02c4543261907a7daba" title="Valeur représentent le comparateur B.">TC_COMPARE_B</a>);     <span class="comment">//Active l&#39;interruption de comparaison sur le comparateur B, du timer 1.</span></div>
-<div class="line">    <a class="code" href="group__tc_ga3ed971e25e245b0df87eea5b47310845.html#ga3ed971e25e245b0df87eea5b47310845" title="Pour de sélectionner l&#39;horloge.">tc_clock_select</a>(&amp;tc, <a class="code" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a917df7793a08e2c7d6afc67b4ff72ace" title="Horloge du cpu diviser par 1.">TC_CLOCK_CLK_1</a>);       <span class="comment">//Cadence du timer 1 à l&#39;horloge du cpu diviser pas 1.</span></div>
+<div class="line">    <a class="code" href="group__tc_ga3ed971e25e245b0df87eea5b47310845.html#ga3ed971e25e245b0df87eea5b47310845" title="Pour de sélectionner l&#39;horloge.">tc_clock_select</a>(&amp;tc, <a class="code" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a917df7793a08e2c7d6afc67b4ff72ace" title="Horloge du cpu diviser par 1.">TC_CLOCK_CLK_1</a>);               <span class="comment">//Cadence du timer 1 à l&#39;horloge du cpu diviser pas 1.</span></div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="group__tc_gabde8a8a19a9fbab7c2c788b52a54d94d.html#gabde8a8a19a9fbab7c2c788b52a54d94d" title="Permet de modifier la valeur de comparaison, des comparateurs de 16 bits (timer/counter 1...">tc_set_compare_16bit</a>(&amp;tc, <a class="code" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bcaf7c637f84cf8162ee57a5d555444bf1c" title="Valeur représentent le comparateur A.">TC_COMPARE_A</a>, 0x8000);    <span class="comment">//Pour avoirs environ un rapport cyclique de 50%, sur le comparateur A.</span></div>
 <div class="line">    <a class="code" href="group__tc_gabde8a8a19a9fbab7c2c788b52a54d94d.html#gabde8a8a19a9fbab7c2c788b52a54d94d" title="Permet de modifier la valeur de comparaison, des comparateurs de 16 bits (timer/counter 1...">tc_set_compare_16bit</a>(&amp;tc, <a class="code" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bca4ab5471dad18b02c4543261907a7daba" title="Valeur représentent le comparateur B.">TC_COMPARE_B</a>, 0x3333);    <span class="comment">//Pour avoirs environ un rapport cyclique de 20%, sur le comparateur B.</span></div>
@@ -395,7 +396,7 @@ Capture</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Jeudi Octobre 4 2012 18:23:13 pour avr_swift par
+    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

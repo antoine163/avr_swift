@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>avr_swift: i2cInit</title>
+<title>avr_swift: spi_mode_e</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('group__i2c_master.html','');});
+$(document).ready(function(){initNavTree('group__spi.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,32 +103,31 @@ $(document).ready(function(){initNavTree('group__i2c_master.html','');});
 </div>
 
 <div class="contents">
-<a class="anchor" id="ga1e0a81a1ad1fd7710ca189236e3e5476"></a>
+<a class="anchor" id="ga0cb467f85c0d7ce489b861ee7bb20e9a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void i2cInit </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">enum <a class="el" href="group__spi_ga0cb467f85c0d7ce489b861ee7bb20e9a.html#ga0cb467f85c0d7ce489b861ee7bb20e9a">spi_mode_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Permet d'initialiser l'i2c. </p>
+<p>le mode maître ou esclave. </p>
+<p>A utiliser avec <a class="el" href="group__spi_ga5735c92259190998f1304ba4985d893b.html#ga5735c92259190998f1304ba4985d893b">spi_mode()</a>. </p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group__spi_ga5735c92259190998f1304ba4985d893b.html#ga5735c92259190998f1304ba4985d893b" title="Définir le mode du composent, en maître ou en esclave.">spi_mode()</a> </dd></dl>
+<dl><dt><b>Valeurs énumérées: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga0cb467f85c0d7ce489b861ee7bb20e9aae68a8adf6e5b67a7bdbe9526b15dae99"></a>SPI_MODE_MASTER</em>&nbsp;</td><td>
+<p>spi en mode maître. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga0cb467f85c0d7ce489b861ee7bb20e9aad1131ed33ad43ab3f667070b04454439"></a>SPI_MODE_SLAVE</em>&nbsp;</td><td>
+<p>spi en mode esclave. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
 
-<p>Définition à la ligne <a class="el" href="i2c__master_8c_source.html#l00052">52</a> du fichier <a class="el" href="i2c__master_8c_source.html">i2c_master.c</a>.</p>
-
-<p><div class="dynheader">
-Voici le graphe d'appel pour cette fonction :</div>
-<div class="dyncontent">
-<div class="center"><img src="group__i2c_master_ga1e0a81a1ad1fd7710ca189236e3e5476_ga1e0a81a1ad1fd7710ca189236e3e5476_cgraph.png" border="0" usemap="#group__i2c_master_ga1e0a81a1ad1fd7710ca189236e3e5476_ga1e0a81a1ad1fd7710ca189236e3e5476_cgraph" alt=""/></div>
-<map name="group__i2c_master_ga1e0a81a1ad1fd7710ca189236e3e5476_ga1e0a81a1ad1fd7710ca189236e3e5476_cgraph" id="group__i2c_master_ga1e0a81a1ad1fd7710ca189236e3e5476_ga1e0a81a1ad1fd7710ca189236e3e5476_cgraph">
-<area shape="rect" id="node3" href="group__twi_ga2a19adba28256c8da5e9964d6c80430d.html#ga2a19adba28256c8da5e9964d6c80430d" title="Configuration de l&#39;horloge SCL du bus." alt="" coords="113,5,263,32"/></map>
-</div>
-</p>
+<p>Définition à la ligne <a class="el" href="spi_8h_source.html#l00071">71</a> du fichier <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
 </div>
 </div>
@@ -137,8 +136,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="group__i2c_master.html">I2cMaster</a></li>
-    <li class="footer">Généré le Jeudi Octobre 4 2012 18:23:13 pour avr_swift par
+    <li class="navelem"><a class="el" href="group__spi.html">Spi</a></li>
+    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

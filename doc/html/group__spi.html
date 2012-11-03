@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>avr_swift: Spi</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="avr_swift_logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">avr_swift
+   &#160;<span id="projectnumber">1.x</span>
+   </div>
+   <div id="projectbrief">Bêta 1</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('group__spi.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Spi</div>  </div>
+<div class="ingroups"><a class="el" href="group__peripherials.html">Peripherials</a></div></div><!--header-->
+<div class="contents">
+
+<p>spi (Serial Peripheral Interface).  
+<a href="#details">Plus de détails...</a></p>
+<div class="dynheader">
+Graphe de collaboration de Spi:</div>
+<div class="dyncontent">
+<center><table><tr><td><img src="group__spi.png" border="0" alt="" usemap="#group____spi"/>
+<map name="group____spi" id="group____spi">
+<area shape="rect" id="node2" href="group__peripherials.html" title="Peripherials" alt="" coords="5,5,101,32"/></map>
+</td></tr></table></center>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:ga6f82437c11db0597742becba77160486"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga6f82437c11db0597742becba77160486.html#ga6f82437c11db0597742becba77160486">spi_data_order_e</a> { <a class="el" href="group__spi_ga6f82437c11db0597742becba77160486.html#gga6f82437c11db0597742becba77160486ab016ca9032d6e9418d834514cc95b7d3">SPI_DATA_ORDER_LSB</a> = _BV(DORD), 
+<a class="el" href="group__spi_ga6f82437c11db0597742becba77160486.html#gga6f82437c11db0597742becba77160486a7eb5ed4b7d6f993acd7d09a5d8db3687">SPI_DATA_ORDER_MSB</a> = 0
+ }</td></tr>
+<tr class="memdesc:ga6f82437c11db0597742becba77160486"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'ordre des données.  <a href="group__spi_ga6f82437c11db0597742becba77160486.html#ga6f82437c11db0597742becba77160486">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ga6f82437c11db0597742becba77160486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cb467f85c0d7ce489b861ee7bb20e9a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga0cb467f85c0d7ce489b861ee7bb20e9a.html#ga0cb467f85c0d7ce489b861ee7bb20e9a">spi_mode_e</a> { <a class="el" href="group__spi_ga0cb467f85c0d7ce489b861ee7bb20e9a.html#gga0cb467f85c0d7ce489b861ee7bb20e9aae68a8adf6e5b67a7bdbe9526b15dae99">SPI_MODE_MASTER</a> = _BV(MSTR), 
+<a class="el" href="group__spi_ga0cb467f85c0d7ce489b861ee7bb20e9a.html#gga0cb467f85c0d7ce489b861ee7bb20e9aad1131ed33ad43ab3f667070b04454439">SPI_MODE_SLAVE</a> = 0
+ }</td></tr>
+<tr class="memdesc:ga0cb467f85c0d7ce489b861ee7bb20e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">le mode maître ou esclave.  <a href="group__spi_ga0cb467f85c0d7ce489b861ee7bb20e9a.html#ga0cb467f85c0d7ce489b861ee7bb20e9a">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ga0cb467f85c0d7ce489b861ee7bb20e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbf084b66b63f22862360ce643b042bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#gadbf084b66b63f22862360ce643b042bc">spi_clock_mode_e</a> { <a class="el" href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#ggadbf084b66b63f22862360ce643b042bca351e76bea67640bde5dfe4a3d6e70629">SPI_CLOCK_MODE_0</a> = 0, 
+<a class="el" href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#ggadbf084b66b63f22862360ce643b042bcabbfe9079aed2f49aa2fe2e89c35d1c85">SPI_CLOCK_MODE_1</a> = _BV(CPHA), 
+<a class="el" href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#ggadbf084b66b63f22862360ce643b042bca33e2f311cd3fb7b51df545ab034e2865">SPI_CLOCK_MODE_2</a> = _BV(CPOL), 
+<a class="el" href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#ggadbf084b66b63f22862360ce643b042bca9f7a639520b970ea751233877a9679c3">SPI_CLOCK_MODE_3</a> = _BV(CPHA)|_BV(CPOL)
+ }</td></tr>
+<tr class="memdesc:gadbf084b66b63f22862360ce643b042bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">les différent modes d'horloges. A utiliser avec spi_clock_phase().  <a href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#gadbf084b66b63f22862360ce643b042bc">Plus de détails...</a><br/></td></tr>
+<tr class="separator:gadbf084b66b63f22862360ce643b042bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd01c42ec148f8992b090716441ae64d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#gacd01c42ec148f8992b090716441ae64d">spi_clock_e</a> { <br/>
+&#160;&#160;<a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#ggacd01c42ec148f8992b090716441ae64dafd2ca003046a102ae173112cc302fae6">SPI_CLOCK_CLK_2</a> = (_BV(SPI2X)&lt;&lt;8), 
+<a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#ggacd01c42ec148f8992b090716441ae64da8cc9c30e86261381cd2c5eca9069fe3a">SPI_CLOCK_CLK_4</a> = 0, 
+<a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#ggacd01c42ec148f8992b090716441ae64da6a8c9f7ec5a7ec561ff5d5d36f46f7b7">SPI_CLOCK_CLK_8</a> = (_BV(SPI2X)&lt;&lt;8)|_BV(SPR0), 
+<a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#ggacd01c42ec148f8992b090716441ae64da6dc7c34c75db2e2f5fc42c0fd2fbc9ca">SPI_CLOCK_CLK_16</a> = _BV(SPR0), 
+<br/>
+&#160;&#160;<a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#ggacd01c42ec148f8992b090716441ae64daeb81671e83e1218da0bcf5e31fc088f1">SPI_CLOCK_CLK_32</a> = (_BV(SPI2X)&lt;&lt;8)|_BV(SPR1), 
+<a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#ggacd01c42ec148f8992b090716441ae64dae7b983d5e79e2077c6189479b1fe2d34">SPI_CLOCK_CLK_64</a> = _BV(SPR1), 
+<a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#ggacd01c42ec148f8992b090716441ae64daa61aa9a7a85e6a35c25775406db1d8dc">SPI_CLOCK_CLK_128</a> = _BV(SPR1)|_BV(SPR0)
+<br/>
+ }</td></tr>
+<tr class="memdesc:gacd01c42ec148f8992b090716441ae64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur possible pour la sélection de l'horloge.  <a href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#gacd01c42ec148f8992b090716441ae64d">Plus de détails...</a><br/></td></tr>
+<tr class="separator:gacd01c42ec148f8992b090716441ae64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ga66cad9246c979cf477e35ec51c4b3147"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga66cad9246c979cf477e35ec51c4b3147.html#ga66cad9246c979cf477e35ec51c4b3147">spi_enable</a> ()</td></tr>
+<tr class="memdesc:ga66cad9246c979cf477e35ec51c4b3147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'activer le spi.  <a href="#ga66cad9246c979cf477e35ec51c4b3147"></a><br/></td></tr>
+<tr class="separator:ga66cad9246c979cf477e35ec51c4b3147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cc8320b75bf859c2ebea365095fb2a5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga0cc8320b75bf859c2ebea365095fb2a5.html#ga0cc8320b75bf859c2ebea365095fb2a5">spi_disable</a> ()</td></tr>
+<tr class="memdesc:ga0cc8320b75bf859c2ebea365095fb2a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de désactiver le twi.  <a href="#ga0cc8320b75bf859c2ebea365095fb2a5"></a><br/></td></tr>
+<tr class="separator:ga0cc8320b75bf859c2ebea365095fb2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96c0e4ca0e0be8295dcbda3eac7cbb53"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga96c0e4ca0e0be8295dcbda3eac7cbb53.html#ga96c0e4ca0e0be8295dcbda3eac7cbb53">spi_enable_interrupt</a> ()</td></tr>
+<tr class="memdesc:ga96c0e4ca0e0be8295dcbda3eac7cbb53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'activer l'interruption.  <a href="#ga96c0e4ca0e0be8295dcbda3eac7cbb53"></a><br/></td></tr>
+<tr class="separator:ga96c0e4ca0e0be8295dcbda3eac7cbb53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8bde527b62c65b8951e788d1702843c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_gaf8bde527b62c65b8951e788d1702843c.html#gaf8bde527b62c65b8951e788d1702843c">spi_disable_interrupt</a> ()</td></tr>
+<tr class="memdesc:gaf8bde527b62c65b8951e788d1702843c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de désactiver l'interruption.  <a href="#gaf8bde527b62c65b8951e788d1702843c"></a><br/></td></tr>
+<tr class="separator:gaf8bde527b62c65b8951e788d1702843c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad522b79883bcc06ffc90ae8dd784cc9e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_gad522b79883bcc06ffc90ae8dd784cc9e.html#gad522b79883bcc06ffc90ae8dd784cc9e">spi_data_order</a> (<a class="el" href="group__spi_ga6f82437c11db0597742becba77160486.html#ga6f82437c11db0597742becba77160486">spi_data_order_e</a> data_order)</td></tr>
+<tr class="memdesc:gad522b79883bcc06ffc90ae8dd784cc9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de définir l'ordre des données.  <a href="#gad522b79883bcc06ffc90ae8dd784cc9e"></a><br/></td></tr>
+<tr class="separator:gad522b79883bcc06ffc90ae8dd784cc9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5735c92259190998f1304ba4985d893b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga5735c92259190998f1304ba4985d893b.html#ga5735c92259190998f1304ba4985d893b">spi_mode</a> (<a class="el" href="group__spi_ga0cb467f85c0d7ce489b861ee7bb20e9a.html#ga0cb467f85c0d7ce489b861ee7bb20e9a">spi_mode_e</a> mode)</td></tr>
+<tr class="memdesc:ga5735c92259190998f1304ba4985d893b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définir le mode du composent, en maître ou en esclave.  <a href="#ga5735c92259190998f1304ba4985d893b"></a><br/></td></tr>
+<tr class="separator:ga5735c92259190998f1304ba4985d893b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9cd5c7298c1ce273001d322eb17e9e9d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga9cd5c7298c1ce273001d322eb17e9e9d.html#ga9cd5c7298c1ce273001d322eb17e9e9d">spi_clock_mode</a> (<a class="el" href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#gadbf084b66b63f22862360ce643b042bc">spi_clock_mode_e</a> clock_mode)</td></tr>
+<tr class="memdesc:ga9cd5c7298c1ce273001d322eb17e9e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définir le mode de l'horloge.  <a href="#ga9cd5c7298c1ce273001d322eb17e9e9d"></a><br/></td></tr>
+<tr class="separator:ga9cd5c7298c1ce273001d322eb17e9e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ea38f68dd21e0c793d0d957553c56b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga9ea38f68dd21e0c793d0d957553c56b4.html#ga9ea38f68dd21e0c793d0d957553c56b4">spi_clock_select</a> (<a class="el" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#gacd01c42ec148f8992b090716441ae64d">spi_clock_e</a> clock)</td></tr>
+<tr class="memdesc:ga9ea38f68dd21e0c793d0d957553c56b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour sélectionner l'horloge.  <a href="#ga9ea38f68dd21e0c793d0d957553c56b4"></a><br/></td></tr>
+<tr class="separator:ga9ea38f68dd21e0c793d0d957553c56b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa5207b784658bda7a51a511454df340f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_gaa5207b784658bda7a51a511454df340f.html#gaa5207b784658bda7a51a511454df340f">spi_configure</a> (uint16_t config)</td></tr>
+<tr class="memdesc:gaa5207b784658bda7a51a511454df340f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de configurer le spi. Évite d'appeler tout les fonctions pour la configuration.  <a href="#gaa5207b784658bda7a51a511454df340f"></a><br/></td></tr>
+<tr class="separator:gaa5207b784658bda7a51a511454df340f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a7f2f6a0ebf4930c176ee6eec8091dd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga8a7f2f6a0ebf4930c176ee6eec8091dd.html#ga8a7f2f6a0ebf4930c176ee6eec8091dd">spi_is_raising_transfer_flag</a> ()</td></tr>
+<tr class="memdesc:ga8a7f2f6a0ebf4930c176ee6eec8091dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour savoir si le drapeau de transfert est lever.  <a href="#ga8a7f2f6a0ebf4930c176ee6eec8091dd"></a><br/></td></tr>
+<tr class="separator:ga8a7f2f6a0ebf4930c176ee6eec8091dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada86777d993e5395a5ab7add7693813c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_gada86777d993e5395a5ab7add7693813c.html#gada86777d993e5395a5ab7add7693813c">spi_is_raising_collision_flag</a> ()</td></tr>
+<tr class="memdesc:gada86777d993e5395a5ab7add7693813c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour savoir si le drapeau de collision est lever.  <a href="#gada86777d993e5395a5ab7add7693813c"></a><br/></td></tr>
+<tr class="separator:gada86777d993e5395a5ab7add7693813c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ea8b4a2b6a20e10bbd7ca0db5988e13"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga1ea8b4a2b6a20e10bbd7ca0db5988e13.html#ga1ea8b4a2b6a20e10bbd7ca0db5988e13">twi_write_data</a> (uint8_t data)</td></tr>
+<tr class="memdesc:ga1ea8b4a2b6a20e10bbd7ca0db5988e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour écrire une donnée.  <a href="#ga1ea8b4a2b6a20e10bbd7ca0db5988e13"></a><br/></td></tr>
+<tr class="separator:ga1ea8b4a2b6a20e10bbd7ca0db5988e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79eea763b4b466207708067327186104"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi_ga79eea763b4b466207708067327186104.html#ga79eea763b4b466207708067327186104">twi_read_data</a> ()</td></tr>
+<tr class="memdesc:ga79eea763b4b466207708067327186104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour lire une donnée.  <a href="#ga79eea763b4b466207708067327186104"></a><br/></td></tr>
+<tr class="separator:ga79eea763b4b466207708067327186104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<p>spi (Serial Peripheral Interface). </p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="spi_8h.html" title="Fichier pour le spi (Serial Peripheral Interface).">spi.h</a>&gt;</span></div>
+</div><!-- fragment --><ul>
+<li>Voir un code d'exemple en mode maître : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="spi_8h.html" title="Fichier pour le spi (Serial Peripheral Interface).">spi.h</a>&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//Ici exemple avec un at90usb.</span></div>
+<div class="line"><span class="comment">//Le spi et sur le port B.</span></div>
+<div class="line"><span class="preprocessor">#define SPI_DD      DDRB</span></div>
+<div class="line"><span class="preprocessor"></span><span class="comment">//Le bit SCK est sur le pin 1 du port B.</span></div>
+<div class="line"><span class="preprocessor">#define SPI_SCK     PB1</span></div>
+<div class="line"><span class="preprocessor"></span><span class="comment">//Le bit MOSI est sur le pin 2 du port B.</span></div>
+<div class="line"><span class="preprocessor">#define SPI_MOSI    PB2</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//Configuration des sorties.</span></div>
+<div class="line">    SPI_DD = _BV(SPI_SCK)|_BV(SPI_MOSI);</div>
+<div class="line">    <span class="comment">//Configuration du bus spi.</span></div>
+<div class="line">    <a class="code" href="group__spi_gaa5207b784658bda7a51a511454df340f.html#gaa5207b784658bda7a51a511454df340f" title="Permet de configurer le spi. Évite d&#39;appeler tout les fonctions pour la configuration.">spi_configure</a>(  <a class="code" href="group__spi_ga0cb467f85c0d7ce489b861ee7bb20e9a.html#gga0cb467f85c0d7ce489b861ee7bb20e9aae68a8adf6e5b67a7bdbe9526b15dae99" title="spi en mode maître.">SPI_MODE_MASTER</a>     |   <span class="comment">//Mode maître</span></div>
+<div class="line">                    <a class="code" href="group__spi_ga6f82437c11db0597742becba77160486.html#gga6f82437c11db0597742becba77160486a7eb5ed4b7d6f993acd7d09a5d8db3687" title="Les bits de pois fort en premier.">SPI_DATA_ORDER_MSB</a>  |   <span class="comment">//Bit de pois fort en premier.</span></div>
+<div class="line">                    <a class="code" href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#ggadbf084b66b63f22862360ce643b042bca351e76bea67640bde5dfe4a3d6e70629">SPI_CLOCK_MODE_0</a>    |   <span class="comment">//Communique avec le mode 0.</span></div>
+<div class="line">                    <a class="code" href="group__spi_gacd01c42ec148f8992b090716441ae64d.html#ggacd01c42ec148f8992b090716441ae64da6dc7c34c75db2e2f5fc42c0fd2fbc9ca" title="Horloge du cpu diviser par 16.">SPI_CLOCK_CLK_16</a>);      <span class="comment">//Horloge avec un diviseur de 16, soit une horloge spi à 1Mhz pour une horloge cpu à 16Mhz</span></div>
+<div class="line">    <span class="comment">//Activation du spi.</span></div>
+<div class="line">    <a class="code" href="group__spi_ga66cad9246c979cf477e35ec51c4b3147.html#ga66cad9246c979cf477e35ec51c4b3147" title="Permet d&#39;activer le spi.">spi_enable</a>();</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">//Préparation pour écrire 0x33 sur le bus (MOSI).</span></div>
+<div class="line">    <a class="code" href="group__spi_ga1ea8b4a2b6a20e10bbd7ca0db5988e13.html#ga1ea8b4a2b6a20e10bbd7ca0db5988e13" title="Pour écrire une donnée.">twi_write_data</a>(0x33);</div>
+<div class="line">    <span class="comment">//Écriture de 0x33 sur le bus. (La lecture (MISO) est ici ignorer)</span></div>
+<div class="line">    <a class="code" href="group__spi_ga79eea763b4b466207708067327186104.html#ga79eea763b4b466207708067327186104" title="Pour lire une donnée.">twi_read_data</a>();</div>
+<div class="line">    <span class="comment">//Attend la fin de la transaction.</span></div>
+<div class="line">    <span class="keywordflow">while</span>(!<a class="code" href="group__spi_ga8a7f2f6a0ebf4930c176ee6eec8091dd.html#ga8a7f2f6a0ebf4930c176ee6eec8091dd" title="Pour savoir si le drapeau de transfert est lever.">spi_is_raising_transfer_flag</a>())</div>
+<div class="line">    <span class="comment">//lecture du bus (MISO) est sauvegarde de la valeur lu dans twiRead.</span></div>
+<div class="line">    uint8_t twiRead = <a class="code" href="group__spi_ga79eea763b4b466207708067327186104.html#ga79eea763b4b466207708067327186104" title="Pour lire une donnée.">twi_read_data</a>();</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">while</span>(1)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> Pour attendre la fin d'une transaction dans l'exemple, on scrute le drapeau de transfert <a class="el" href="group__spi_ga8a7f2f6a0ebf4930c176ee6eec8091dd.html#ga8a7f2f6a0ebf4930c176ee6eec8091dd">spi_is_raising_transfer_flag()</a>. Vous pouvez vous inspirer de l'exemple suivent pour mètre en place les interruptions.</li>
+<li>Voir un code d'exemple en mode esclave : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;avr/interrupt.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="spi_8h.html" title="Fichier pour le spi (Serial Peripheral Interface).">spi.h</a>&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//Ici exemple avec un atmega8535.</span></div>
+<div class="line"><span class="comment">//Le spi et sur le port B.</span></div>
+<div class="line"><span class="preprocessor">#define SPI_DD      DDRB</span></div>
+<div class="line"><span class="preprocessor"></span><span class="comment">//Le bit MISO est sur le pin 6 du port B.</span></div>
+<div class="line"><span class="preprocessor">#define SPI_MISO    PB6</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line">ISR(SPI_STC_vect)</div>
+<div class="line">{   </div>
+<div class="line">    <span class="comment">//Lecture de la valeur qui vient d&#39;être reçus (MOSI) est sauvegarde de la valeur lu dans twiRead.</span></div>
+<div class="line">    uint8_t twiRead = <a class="code" href="group__spi_ga79eea763b4b466207708067327186104.html#ga79eea763b4b466207708067327186104" title="Pour lire une donnée.">twi_read_data</a>();</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">//Préparation pour écrire 0x54 sur le bus (MISO).</span></div>
+<div class="line">    <a class="code" href="group__spi_ga1ea8b4a2b6a20e10bbd7ca0db5988e13.html#ga1ea8b4a2b6a20e10bbd7ca0db5988e13" title="Pour écrire une donnée.">twi_write_data</a>(0x54);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//Configuration des sorties.</span></div>
+<div class="line">    SPI_DD = _BV(SPI_MISO);</div>
+<div class="line">    <span class="comment">//Configuration du bus spi.</span></div>
+<div class="line">    <a class="code" href="group__spi_gaa5207b784658bda7a51a511454df340f.html#gaa5207b784658bda7a51a511454df340f" title="Permet de configurer le spi. Évite d&#39;appeler tout les fonctions pour la configuration.">spi_configure</a>(  <a class="code" href="group__spi_ga0cb467f85c0d7ce489b861ee7bb20e9a.html#gga0cb467f85c0d7ce489b861ee7bb20e9aad1131ed33ad43ab3f667070b04454439" title="spi en mode esclave.">SPI_MODE_SLAVE</a>      |   <span class="comment">//Mode esclave</span></div>
+<div class="line">                    <a class="code" href="group__spi_ga6f82437c11db0597742becba77160486.html#gga6f82437c11db0597742becba77160486a7eb5ed4b7d6f993acd7d09a5d8db3687" title="Les bits de pois fort en premier.">SPI_DATA_ORDER_MSB</a>  |   <span class="comment">//Bit de pois fort en premier.</span></div>
+<div class="line">                    <a class="code" href="group__spi_gadbf084b66b63f22862360ce643b042bc.html#ggadbf084b66b63f22862360ce643b042bca351e76bea67640bde5dfe4a3d6e70629">SPI_CLOCK_MODE_0</a>;       <span class="comment">//Communique avec le mode 0.</span></div>
+<div class="line">    <span class="comment">//Activation du spi.</span></div>
+<div class="line">    <a class="code" href="group__spi_ga66cad9246c979cf477e35ec51c4b3147.html#ga66cad9246c979cf477e35ec51c4b3147" title="Permet d&#39;activer le spi.">spi_enable</a>();</div>
+<div class="line">    <span class="comment">//Active les interruptions spi</span></div>
+<div class="line">    <a class="code" href="group__spi_ga96c0e4ca0e0be8295dcbda3eac7cbb53.html#ga96c0e4ca0e0be8295dcbda3eac7cbb53" title="Permet d&#39;activer l&#39;interruption.">spi_enable_interrupt</a>();</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">//Active les interruption globale.</span></div>
+<div class="line">    sei();</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">while</span>(1)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> De même ici pour pouvez faire de la scrutation à la place des interruptions </li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
+  </ul>
+</div>
+</body>
+</html>

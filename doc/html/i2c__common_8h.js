@@ -7,6 +7,6 @@ var i2c__common_8h =
       [ "I2C_INFO_NO_START", "i2c__common_8h.html#ggacc0921b72cb6f75d5a44749be558e9a2aad9b18d238da03b374a4fb92fe07f55b", null ],
       [ "I2C_INFO_NO_ADDRESSED", "i2c__common_8h.html#ggacc0921b72cb6f75d5a44749be558e9a2ad8fb82fe5111c7a55a65767d9d1af482", null ]
     ] ],
-    [ "i2cDisable", "i2c__common_8h.html#ga479332ced11bd652084071208f6e4e97", null ],
-    [ "i2cEnable", "i2c__common_8h.html#ga60e1089bf20433fe336d55fcdc64d00c", null ]
+    [ "i2cDisable", "i2c__common_8h.html#ga9ab971732b7fa0cfbb0e52ccab79d4ee", null ],
+    [ "i2cEnable", "i2c__common_8h.html#ga8ac96c75783ac06819869be78cfcfe5b", null ]
 ];

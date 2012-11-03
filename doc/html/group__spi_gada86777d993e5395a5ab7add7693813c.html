@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>avr_swift: twi_send_byte_nack</title>
+<title>avr_swift: spi_is_raising_collision_flag</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('group__twi.html','');});
+$(document).ready(function(){initNavTree('group__spi.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('group__twi.html','');});
 </div>
 
 <div class="contents">
-<a class="anchor" id="ga6396b3eab9618a69079cd3d3cbdd5dc8"></a>
+<a class="anchor" id="gada86777d993e5395a5ab7add7693813c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -111,10 +111,9 @@ $(document).ready(function(){initNavTree('group__twi.html','');});
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void twi_send_byte_nack </td>
+          <td class="memname">static bool spi_is_raising_collision_flag </td>
           <td>(</td>
-          <td class="paramtype">int8_t&#160;</td>
-          <td class="paramname"><em>byte</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -125,18 +124,12 @@ $(document).ready(function(){initNavTree('group__twi.html','');});
 </table>
 </div><div class="memdoc">
 
-<p>Pour envoyer une octet et se préparer à recevoir le bit nack. </p>
-<p>Les status qui peuve survenir après l'appelle de cette fonction sont :</p>
-<ul>
-<li>TW_ST_DATA_NACK <br/>
-</li>
-<li>TW_ST_LAST_DATA <br/>
- Les actions qui peuve être générai ensuit sont : <br/>
- <a class="el" href="group__twi_ga210907e0452f5760815f30d725146f6a.html#ga210907e0452f5760815f30d725146f6a">twi_receive_byte_ack()</a> (commute dans le mode non adresser) <br/>
- <a class="el" href="group__twi_gac3434b1093639afed39735b5befa6fea.html#gac3434b1093639afed39735b5befa6fea">twi_receive_byte_nack()</a> (commute dans le mode non adresser) </li>
-</ul>
+<p>Pour savoir si le drapeau de collision est lever. </p>
+<dl class="section note"><dt>Note</dt><dd>L'appelle de cette fonction nettoie automatiquement le drapeau de collision. </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Nettoie aussi le drapeau de transfert lier à la fonction <a class="el" href="group__spi_ga8a7f2f6a0ebf4930c176ee6eec8091dd.html#ga8a7f2f6a0ebf4930c176ee6eec8091dd">spi_is_raising_transfer_flag()</a>. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>false si le drapeau n'est pas lever. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="twi_8h_source.html#l00390">390</a> du fichier <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+<p>Définition à la ligne <a class="el" href="spi_8h_source.html#l00231">231</a> du fichier <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
 </div>
 </div>
@@ -145,8 +138,8 @@ $(document).ready(function(){initNavTree('group__twi.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="group__twi.html">Twi</a></li>
-    <li class="footer">Généré le Jeudi Octobre 4 2012 18:23:13 pour avr_swift par
+    <li class="navelem"><a class="el" href="group__spi.html">Spi</a></li>
+    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

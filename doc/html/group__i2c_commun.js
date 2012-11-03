@@ -7,6 +7,6 @@ var group__i2c_commun =
       [ "I2C_INFO_NO_START", "group__i2c_commun_gacc0921b72cb6f75d5a44749be558e9a2.html#ggacc0921b72cb6f75d5a44749be558e9a2aad9b18d238da03b374a4fb92fe07f55b", null ],
       [ "I2C_INFO_NO_ADDRESSED", "group__i2c_commun_gacc0921b72cb6f75d5a44749be558e9a2.html#ggacc0921b72cb6f75d5a44749be558e9a2ad8fb82fe5111c7a55a65767d9d1af482", null ]
     ] ],
-    [ "i2cDisable", "group__i2c_commun_ga479332ced11bd652084071208f6e4e97.html#ga479332ced11bd652084071208f6e4e97", null ],
-    [ "i2cEnable", "group__i2c_commun_ga60e1089bf20433fe336d55fcdc64d00c.html#ga60e1089bf20433fe336d55fcdc64d00c", null ]
+    [ "i2cDisable", "group__i2c_commun_ga9ab971732b7fa0cfbb0e52ccab79d4ee.html#ga9ab971732b7fa0cfbb0e52ccab79d4ee", null ],
+    [ "i2cEnable", "group__i2c_commun_ga8ac96c75783ac06819869be78cfcfe5b.html#ga8ac96c75783ac06819869be78cfcfe5b", null ]
 ];
