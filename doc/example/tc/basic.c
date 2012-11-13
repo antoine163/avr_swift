@@ -41,7 +41,7 @@ int main()
 	tc_clock_select(&tc, TC_CLOCK_CLK_1);				//Cadence du timer 1 à l'horloge du cpu diviser pas 1.
 
 	tc_set_compare_16bit(&tc, TC_COMPARE_A, 0x8000);	//Pour avoirs environ un rapport cyclique de 50%, sur le comparateur A.
-	tc_set_compare_16bit(&tc, TC_COMPARE_B, 0x3333);	//Pour avoirs environ un rapport cyclique de 20%, sur le comparateur B.
+	tc_set_compare_16bit(&tc, TC_COMPARE_B, 0x3333);	//Pour avoirs environ un rapport cyclique de 80%, sur le comparateur B.
 
 	//...
 
