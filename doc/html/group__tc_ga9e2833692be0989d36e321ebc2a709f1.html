@@ -53,7 +53,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -93,7 +92,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,7 +114,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 
 <p>Les différents mode de sortie. </p>
 <p>Ceci va pouvoirs, définir le comportement des sortirs, OCn (timer ayant qu'un seul comparateur), OCnX (n représentent le numéro du timer et X, ce se sont les nom des comparateurs).</p>
-<p>Selon le mode choisi avec <a class="el" href="group__tc_ga441798c06080d7e2416be688f3e08277.html#ga441798c06080d7e2416be688f3e08277">tc_mode_select()</a> les différents valeurs énumérer ici vont avoir une légère différence (sauf pour la valeur TC_OUTPUT_NORMAL).</p>
+<p>Selon le mode choisi avec <a class="el" href="group__tc_ga98f3d02eecd01b72a9f4da1e4ce40172.html#ga98f3d02eecd01b72a9f4da1e4ce40172">tc_mode_select()</a> les différents valeurs énumérer ici vont avoir une légère différence (sauf pour la valeur TC_OUTPUT_NORMAL).</p>
 <ul>
 <li>Si vous avez choisie le mode <b>Normale</b> ou <b>CTC</b> (non-PWM).<ul>
 <li>TC_OUTPUT_TOGGLE : A chaque comparaison égale, les sortis change d'état.</li>
@@ -136,9 +135,9 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 </ul>
 </li>
 </ul>
-<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group__tc_gafda3492ad2a2b5f1a7338be1aa7be51f.html#gafda3492ad2a2b5f1a7338be1aa7be51f" title="Permet de sélectionner le mode de sorti (OCRnX).">tc_output_select()</a> </dd>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group__tc_ga18617794e6c84387142a09a566e2bd42.html#ga18617794e6c84387142a09a566e2bd42" title="Permet de sélectionner le mode de sorti (OCRnX).">tc_output_select()</a> </dd>
 <dd>
-<a class="el" href="group__tc_ga441798c06080d7e2416be688f3e08277.html#ga441798c06080d7e2416be688f3e08277" title="Pour sélectionner le mode de fonctionement.">tc_mode_select()</a> </dd>
+<a class="el" href="group__tc_ga98f3d02eecd01b72a9f4da1e4ce40172.html#ga98f3d02eecd01b72a9f4da1e4ce40172" title="Pour sélectionner le mode de fonctionement.">tc_mode_select()</a> </dd>
 <dd>
 <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#gabe5b113d2a1300df2fb74dbf90881d9c" title="Les différents modes.">tc_mode_e</a> </dd></dl>
 <dl><dt><b>Valeurs énumérées: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
@@ -158,7 +157,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="tc_8h_source.html#l00283">283</a> du fichier <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+<p>Définition à la ligne <a class="el" href="tc_8h_source.html#l00252">252</a> du fichier <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
 
 </div>
 </div>
@@ -168,7 +167,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="group__tc.html">Tc</a></li>
-    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
+    <li class="footer">Généré le Mercredi Novembre 14 2012 18:36:40 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

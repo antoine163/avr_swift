@@ -53,7 +53,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -93,7 +92,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,7 +113,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 </div><div class="memdoc">
 
 <p>Les différents modes. </p>
-<p>On peut distinguer deux grande famille de valeur. Les timer 0 et 2 sur 8 bit et les timer 1, 3, 4, 5 sur 16 bit. Pour plus de renseignement, veiller consulter la documentation de votre composent. A utiliser avec <a class="el" href="group__tc_ga441798c06080d7e2416be688f3e08277.html#ga441798c06080d7e2416be688f3e08277">tc_mode_select()</a>.</p>
+<p>On peut distinguer deux grande famille de valeur. Les timer 0 et 2 sur 8 bit et les timer 1, 3, 4, 5 sur 16 bit. Pour plus de renseignement, veiller consulter la documentation de votre composent. A utiliser avec <a class="el" href="group__tc_ga98f3d02eecd01b72a9f4da1e4ce40172.html#ga98f3d02eecd01b72a9f4da1e4ce40172">tc_mode_select()</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>Les dénomination OCn (timer ayant qu'un seul comparateur) et OCnX, représente les comparateurs, avec n représentent le numéro du timer et X représentent le nom des comparateurs.</dd></dl>
 <p>5 type de mode possible : </p>
 <dl class="section user"><dt>Normale. </dt><dd>C'est le mode qui est configurée par défaut et le plus basique. Le(s) registre(s) de comparaison (OCn/OCnX) sont mis à jour immédiatement. Le débordement du conteur un ci que le drapeau de débordement s'effectu au maximums (soit 0xff pour un timer de 8 bit ou 0xffff pour un timer de 16 bit).</dd></dl>
@@ -137,7 +136,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 <li><b>TOP</b> Valeur maximale du timer.</li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>PWM, Phase Correct. </dt><dd>Le(s) registre(s) de comparaison (OCn/OCnX) sont mis à jour a la valeur minimale (0) du timer. Le débordement du conteur s'effectu sur la valeur maximale du timer, le drapeau de débordement est lever à la valeur minimale tu timer (0) <br/>
+<dl class="section user"><dt>PWM, Phase Correct. </dt><dd>Le(s) registre(s) de comparaison (OCn/OCnX) sont mis à jour à la valeur minimale (0) du timer. Le débordement du conteur s'effectu sur la valeur maximale du timer, le drapeau de débordement est lever à la valeur minimale tu timer (0) <br/>
  \( RPCPWM = \frac {log(TOP+1)}{log(2)}\)<ul>
 <li><b>RPCPWM</b> Résolution de la pwm générer.</li>
 <li><b>TOP</b> Valeur maximale du timer <br/>
@@ -159,9 +158,9 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 <li><b>TOP</b> Valeur maximale du timer.</li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group__tc_ga441798c06080d7e2416be688f3e08277.html#ga441798c06080d7e2416be688f3e08277" title="Pour sélectionner le mode de fonctionement.">tc_mode_select()</a> </dd>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group__tc_ga98f3d02eecd01b72a9f4da1e4ce40172.html#ga98f3d02eecd01b72a9f4da1e4ce40172" title="Pour sélectionner le mode de fonctionement.">tc_mode_select()</a> </dd>
 <dd>
-<a class="el" href="group__tc_gafda3492ad2a2b5f1a7338be1aa7be51f.html#gafda3492ad2a2b5f1a7338be1aa7be51f" title="Permet de sélectionner le mode de sorti (OCRnX).">tc_output_select()</a> </dd>
+<a class="el" href="group__tc_ga18617794e6c84387142a09a566e2bd42.html#ga18617794e6c84387142a09a566e2bd42" title="Permet de sélectionner le mode de sorti (OCRnX).">tc_output_select()</a> </dd>
 <dd>
 <a class="el" href="group__tc_ga9e2833692be0989d36e321ebc2a709f1.html#ga9e2833692be0989d36e321ebc2a709f1" title="Les différents mode de sortie.">tc_output_e</a> </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">A faire:</a></b></dt><dd>l'explication est à fignoler, pour le moment le plus simple est de regarder la doc du composent. </dd></dl>
@@ -235,7 +234,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="tc_8h_source.html#l00214">214</a> du fichier <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+<p>Définition à la ligne <a class="el" href="tc_8h_source.html#l00185">185</a> du fichier <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
 
 </div>
 </div>
@@ -245,7 +244,7 @@ $(document).ready(function(){initNavTree('group__tc.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="group__tc.html">Tc</a></li>
-    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
+    <li class="footer">Généré le Mercredi Novembre 14 2012 18:36:40 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

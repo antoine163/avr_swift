@@ -53,7 +53,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li class="current"><a href="pages.html"><span>Pages&#160;associées</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -93,7 +92,7 @@ $(document).ready(function(){initNavTree('todo.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,17 +109,23 @@ $(document).ready(function(){initNavTree('todo.html','');});
 <div class="textblock"><dl class="reflist">
 <dt><a class="anchor" id="_todo000002"></a>Global(e) <a class="el" href="group__adc_ga47fc0c602a1d3ca619fa4df7a5712db0.html#gga47fc0c602a1d3ca619fa4df7a5712db0aa75e5aef069ec0ffc8c520ca4d0060c2">ADC_TRIGGER_ANALOG_COMPARATOR</a>  </dt>
 <dd>à expliquer.  </dd>
+<dt><a class="anchor" id="_todo000006"></a>Groupe <a class="el" href="group__tc.html#amgrp44a50f07b4bdc57740901280f9eddaf5">Capture</a>  </dt>
+<dd>Prendre en compte l'entre de comparaison analogique. Fonction lier au capture des timers (capture). Ces fonctionnalités sont présent pour les timer 1, 3, 4, 5.  </dd>
+<dt><a class="anchor" id="_todo000006"></a>Groupe <a class="el" href="group__tc.html#amgrp44a50f07b4bdc57740901280f9eddaf5">Capture</a>  </dt>
+<dd>Prendre en compte l'entre de comparaison analogique. Fonction lier au capture des timers (capture). Ces fonctionnalités sont présent pour les timer 1, 3, 4, 5.  </dd>
 <dt><a class="anchor" id="_todo000001"></a>Groupe <a class="el" href="group__i2c_master.html">i2cMaster</a>  </dt>
 <dd>un/des exemple(s).  </dd>
 <dt><a class="anchor" id="_todo000003"></a>Groupe <a class="el" href="group__tc.html">tc</a>  </dt>
 <dd><p class="startdd">Les composes supportent une PLL sur leur timer 1 ne sont pas encore supporter.</p>
 <p class="enddd">La sélection du quartz externe de 32KHz sur le timer 2 n'ais pas encore possible. </p>
 </dd>
+<dt><a class="anchor" id="_todo000007"></a>Global(e) <a class="el" href="group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bca556266874da209126c95b9d6f8e5c3cd">TC_COMPARE_D</a>  </dt>
+<dd>pas encore supporter.  </dd>
 <dt><a class="anchor" id="_todo000005"></a>Global(e) <a class="el" href="group__tc_gabe5b113d2a1300df2fb74dbf90881d9c.html#gabe5b113d2a1300df2fb74dbf90881d9c">tc_mode_e</a>  </dt>
 <dd>l'explication est à fignoler, pour le moment le plus simple est de regarder la doc du composent.  </dd>
-<dt><a class="anchor" id="_todo000006"></a>Global(e) <a class="el" href="group__twi_gad5df58c4dfc060ada17d33daa313be98.html#gad5df58c4dfc060ada17d33daa313be98">twi_switched_slave_mode</a>  ()</dt>
+<dt><a class="anchor" id="_todo000008"></a>Global(e) <a class="el" href="group__twi_gad5df58c4dfc060ada17d33daa313be98.html#gad5df58c4dfc060ada17d33daa313be98">twi_switched_slave_mode</a>  ()</dt>
 <dd>à tester  </dd>
-<dt><a class="anchor" id="_todo000007"></a>Groupe <a class="el" href="group__usart.html">usart</a>  </dt>
+<dt><a class="anchor" id="_todo000009"></a>Groupe <a class="el" href="group__usart.html">usart</a>  </dt>
 <dd>A finir/tester </dd>
 </dl>
 </div></div><!-- contents -->
@@ -128,7 +133,7 @@ $(document).ready(function(){initNavTree('todo.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
+    <li class="footer">Généré le Mercredi Novembre 14 2012 18:36:40 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

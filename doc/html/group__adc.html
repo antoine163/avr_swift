@@ -53,7 +53,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -93,7 +92,7 @@ $(document).ready(function(){initNavTree('group__adc.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -300,7 +299,7 @@ Fonctions</h2></td></tr>
 <div class="line"></div>
 <div class="line"><span class="comment">// ...</span></div>
 <div class="line"></div>
-<div class="line"><a class="code" href="structtc__s.html" title="Structure représentante la configuration matérielle d&#39;un timer/counter.">tc_s</a> tc0;   <span class="comment">//Un timer.</span></div>
+<div class="line">tc_s tc0;   <span class="comment">//Un timer.</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">//Interruption de fin de conversion.</span></div>
 <div class="line">ISR(ADC_vect)</div>
@@ -311,7 +310,7 @@ Fonctions</h2></td></tr>
 <div class="line">    <span class="comment">// ...</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//On affecte le drapeau de débordement du timer pour pouvoir refaire d&#39;autre conversion.</span></div>
-<div class="line">    <a class="code" href="group__tc_ga6b0c11245d08effcfe40cb537ebb0423.html#ga6b0c11245d08effcfe40cb537ebb0423" title="Pour effacer le drapeau de débordement.">tc_cleared_overflow_flag</a>(&amp;tc0);             </div>
+<div class="line">    <a class="code" href="group__tc_gaaa97605985da2bd5d722c29b885f58ac.html#gaaa97605985da2bd5d722c29b885f58ac" title="Pour effacer le drapeau de débordement.">tc_cleared_overflow_flag</a>(&amp;tc0);             </div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
@@ -333,8 +332,8 @@ Fonctions</h2></td></tr>
 <div class="line">    <a class="code" href="group__adc_gad2570fd766b12b1dc706c5228c2d9561.html#gad2570fd766b12b1dc706c5228c2d9561" title="Pour effacer le drapeau de conversion.">adc_cleared_flag</a>();                             <span class="comment">//Efface le bit du drapeau de fin de convection.</span></div>
 <div class="line"></div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="group__tc_ga29745a1934f1bbe24b10cf45781a8e1c.html#ga29745a1934f1bbe24b10cf45781a8e1c" title="Initialise un timer/counter.">tc_init</a>(&amp;tc0, <a class="code" href="group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfae1beda0e6abfd29035d65e9956cfbd45" title="Valeur représentent le timer/counter 0.">TC_NUM_0</a>);                        <span class="comment">//Initialise le timer 0.</span></div>
-<div class="line">    <a class="code" href="group__tc_ga3ed971e25e245b0df87eea5b47310845.html#ga3ed971e25e245b0df87eea5b47310845" title="Pour de sélectionner l&#39;horloge.">tc_clock_select</a>(&amp;tc0, <a class="code" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a6133b33decc9485d6f1df4b9d5c068a8" title="Horloge du cpu diviser par 1024.">TC_CLOCK_CLK_1024</a>);       <span class="comment">//Sélectionne un pré-diviseur de 1024. Pour effectuer une conversion tout les 16ms environ, (cpu à 16MHZ).</span></div>
+<div class="line">    tc_init(&amp;tc0, TC_NUM_0);                        <span class="comment">//Initialise le timer 0.</span></div>
+<div class="line">    <a class="code" href="group__tc_ga838793c8fc2337d18fd7e3416f28160d.html#ga838793c8fc2337d18fd7e3416f28160d" title="Pour de sélectionner l&#39;horloge.">tc_clock_select</a>(&amp;tc0, <a class="code" href="group__tc_gaa541a8ad1d089a0b0869983f05b56fc6.html#ggaa541a8ad1d089a0b0869983f05b56fc6a6133b33decc9485d6f1df4b9d5c068a8" title="Horloge du cpu diviser par 1024.">TC_CLOCK_CLK_1024</a>);       <span class="comment">//Sélectionne un pré-diviseur de 1024. Pour effectuer une conversion tout les 16ms environ, (cpu à 16MHZ).</span></div>
 <div class="line"></div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="group__adc_ga41401c9473af44720822881f7ae98ca6.html#ga41401c9473af44720822881f7ae98ca6" title="Permet de générer l&#39;interruption, l&#39;or ce que, une conversion est finie.">adc_enable_interrupt</a>();                         <span class="comment">//Active l&#39;interruption lier au la conversion.</span></div>
@@ -353,7 +352,7 @@ Fonctions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Samedi Novembre 3 2012 19:26:23 pour avr_swift par
+    <li class="footer">Généré le Mercredi Novembre 14 2012 18:36:40 pour avr_swift par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

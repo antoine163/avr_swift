@@ -4,14 +4,6 @@ var NAVTREE =
     [ "avr_swift", "index.html", null ],
     [ "Liste des choses à faire", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
-    [ "Structures de données", null, [
-      [ "Structures de données", "annotated.html", null ],
-      [ "Index des structures de données", "classes.html", null ],
-      [ "Champs de donnée", "functions.html", [
-        [ "Tout", "functions.html", null ],
-        [ "Variables", "functions_vars.html", null ]
-      ] ]
-    ] ],
     [ "Fichiers", null, [
       [ "Liste des fichiers", "files.html", "files" ],
       [ "Variables globale", "globals.html", [
@@ -28,8 +20,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc_8h.html",
-"group__tc_ga29b06bb9de07ccf37dfe00d775e988bf.html#gga29b06bb9de07ccf37dfe00d775e988bfa0061438d5d21dda461d4c4b502a82ac5",
-"tc_8h.html#gabde8a8a19a9fbab7c2c788b52a54d94d"
+"group__tc_ga50f5649178156026a1f9556820cbe8bc.html#gga50f5649178156026a1f9556820cbe8bca4ab5471dad18b02c4543261907a7daba",
+"tc_8h.html#gga9e2833692be0989d36e321ebc2a709f1af688943b387e41bae072a07d15057ca9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
