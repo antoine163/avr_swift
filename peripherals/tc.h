@@ -39,6 +39,7 @@
 //! @{
 
 //_____ I N C L U D E S ________________________________________________________
+#include <util/atomic.h>
 #include <stdbool.h>
 
 //_____ M A C R O S ____________________________________________________________
@@ -70,7 +71,7 @@ typedef enum
 	#if defined(TCNT5) || defined(__DOXYGEN__)
 	TC_5,	//!< Valeur représentent le timer/counter 5 (16bits).
 	#endif
-}tc_s;
+}tc_e;
 
 //! \brief Valeur représentent le nom du comparateur.
 //!
@@ -184,48 +185,46 @@ typedef enum
 typedef enum
 {
 	#if (defined(TCCR0) || defined(TCCR2)) && !defined(__DOXYGEN__) //Timer 1 et 2 avec un comparateur.
-	TC_MODE_NORMAL_RT02  				= 0x00,	//!< Mode normale. Avec comme valeur maximale 0xff.<b>Réserver au timer 0 et 2</b>.
-	TC_MODE_PWM_PHASE_CORRECT_RT02		= 0x40,	//!< Mode PWM, Phase Correct. Avec comme valeur maximale, 0xff.<b>Réserver au timer 0 et 2</b>.
-	TC_MODE_CTC_OCRA_RT02				= 0x08,	//!< Mode CTC. Avec comme valeur maximale, le registre de compareson A, (OCRnA/OCRn).<b>Réserver au timer 0 et 2</b>.
-	TC_MODE_FAST_PWM_RT02				= 0x48,	//!< Mode Fast PWM. Avec comme valeur maximale, 0xff.<b>Réserver au timer 0 et 2</b>.
-	#else
-	TC_MODE_NORMAL_RT02  				= 0x00,	//!< Mode normale. Avec comme valeur maximale 0xff.<b>Réserver au timer 0 et 2</b>.
-	TC_MODE_PWM_PHASE_CORRECT_RT02		= 0x01,	//!< Mode PWM, Phase Correct. Avec comme valeur maximale, 0xff.<b>Réserver au timer 0 et 2</b>.
-	TC_MODE_CTC_OCRA_RT02				= 0x02,	//!< Mode CTC. Avec comme valeur maximale, le registre de compareson A, (OCRnA/OCRn).<b>Réserver au timer 0 et 2</b>.
-	TC_MODE_FAST_PWM_RT02				= 0x03,	//!< Mode Fast PWM. Avec comme valeur maximale, 0xff.<b>Réserver au timer 0 et 2</b>.
-	TC_MODE_PWM_PHASE_CORRECT_OCRA_RT02	= 0x09,	//!< Mode PWM, Phase Correct. Avec comme valeur maximale, le registre de compareson A, (OCRnA).<b>Réserver au timer 0 et 2</b>. \note Valeur possible, si il y a au moins 2 comparateur sur le timer.
-	TC_MODE_FAST_PWM_OCRA_RT02			= 0x0b,	//!< Mode Fast PWM. Avec comme valeur maximale, le registre de compareson A, (OCRnA).<b>Réserver au timer 0 et 2</b>. \note Valeur possible, si il y a au moins 2 comparateur sur le timer.
-	#endif
-
-
-	TC_MODE_NORMAL  					= 0x00, //!< Mode normale. Avec comme valeur maximale 0xffff.
-	TC_MODE_CTC_OCRA					= 0x08, //!< Mode CTC. Avec comme valeur maximale, le registre de compareson A, (OCRnA).
-	TC_MODE_CTC_ICR						= 0x18, //!< Mode CTC. Avec comme valeur maximale, le registre de capture, (ICRn).
-
-	TC_MODE_PWM_PHASE_CORRECT_8BIT		= 0x01, //!< Mode PWM, Phase Correct. Timer sur 8 bit, avec comme valeur maximale, 0x00ff.
-	TC_MODE_PWM_PHASE_CORRECT_9BIT 		= 0x02, //!< Mode PWM, Phase Correct. Timer sur 9 bit, avec comme valeur maximale, 0x01ff.
-	TC_MODE_PWM_PHASE_CORRECT_10BIT		= 0x03, //!< Mode PWM, Phase Correct. Timer sur 10 bit, avec comme valeur maximale, 0x03ff.
-	TC_MODE_PWM_PHASE_CORRECT_OCRA		= 0x13, //!< Mode PWM, Phase Correct. Avec comme valeur maximale, le registre de compareson A, (OCRnA).
-	TC_MODE_PWM_PHASE_CORRECT_ICR		= 0x12, //!< Mode PWM, Phase Correct. Avec comme valeur maximale, le registre de capture, (ICRn).
-
-
-	TC_MODE_FAST_PWM_8BIT 				= 0x09, //!< Mode Fast PWM. Timer sur 8 bit, avec comme valeur maximale, 0x00ff.
-	TC_MODE_FAST_PWM_9BIT				= 0x0a, //!< Mode Fast PWM. Timer sur 9 bit, avec comme valeur maximale, 0x01ff.
-	TC_MODE_FAST_PWM_10BIT				= 0x0b, //!< Mode Fast PWMt. Timer sur 10 bit, avec comme valeur maximale, 0x03ff.
-	TC_MODE_FAST_PWM_OCRA				= 0x1b, //!< Mode Fast PWM. Avec comme valeur maximale, le registre de compareson A, (OCRnA).
-	TC_MODE_FAST_PWM_ICR				= 0x1a, //!< Mode Fast PWM. Avec comme valeur maximale, le registre de capture, (ICRn).
+	TC_MODE_NORMAL_RT02  							= 0x00,	//!< Mode normale. Avec comme valeur maximale 0xff.<b>Réserver au timer 0 et 2</b>.
+	TC_MODE_PWM_PHASE_CORRECT_RT02					= 0x40,	//!< Mode PWM, Phase Correct. Avec comme valeur maximale, 0xff.<b>Réserver au timer 0 et 2</b>.
+	TC_MODE_CTC_OCRA_RT02							= 0x08,	//!< Mode CTC. Avec comme valeur maximale, le registre de compareson A, (OCRnA/OCRn).<b>Réserver au timer 0 et 2</b>.
+	TC_MODE_FAST_PWM_RT02							= 0x48,	//!< Mode Fast PWM. Avec comme valeur maximale, 0xff.<b>Réserver au timer 0 et 2</b>.
+	#else			
+	TC_MODE_NORMAL_RT02  							= 0x00,	//!< Mode normale. Avec comme valeur maximale 0xff.<b>Réserver au timer 0 et 2</b>.
+	TC_MODE_PWM_PHASE_CORRECT_RT02					= 0x01,	//!< Mode PWM, Phase Correct. Avec comme valeur maximale, 0xff.<b>Réserver au timer 0 et 2</b>.
+	TC_MODE_CTC_OCRA_RT02							= 0x02,	//!< Mode CTC. Avec comme valeur maximale, le registre de compareson A, (OCRnA/OCRn).<b>Réserver au timer 0 et 2</b>.
+	TC_MODE_FAST_PWM_RT02							= 0x03,	//!< Mode Fast PWM. Avec comme valeur maximale, 0xff.<b>Réserver au timer 0 et 2</b>.
+	TC_MODE_PWM_PHASE_CORRECT_OCRA_RT02				= 0x09,	//!< Mode PWM, Phase Correct. Avec comme valeur maximale, le registre de compareson A, (OCRnA).<b>Réserver au timer 0 et 2</b>. \note Valeur possible, si il y a au moins 2 comparateur sur le timer.
+	TC_MODE_FAST_PWM_OCRA_RT02						= 0x0b,	//!< Mode Fast PWM. Avec comme valeur maximale, le registre de compareson A, (OCRnA).<b>Réserver au timer 0 et 2</b>. \note Valeur possible, si il y a au moins 2 comparateur sur le timer.
+	#endif			
+			
+			
+	TC_MODE_NORMAL  								= 0x00, //!< Mode normale. Avec comme valeur maximale 0xffff.
+	TC_MODE_CTC_OCRA								= 0x08, //!< Mode CTC. Avec comme valeur maximale, le registre de compareson A, (OCRnA).
+	TC_MODE_CTC_ICR									= 0x18, //!< Mode CTC. Avec comme valeur maximale, le registre de capture, (ICRn).
+			
+	TC_MODE_PWM_PHASE_CORRECT_8BIT					= 0x01, //!< Mode PWM, Phase Correct. Timer sur 8 bit, avec comme valeur maximale, 0x00ff.
+	TC_MODE_PWM_PHASE_CORRECT_9BIT 					= 0x02, //!< Mode PWM, Phase Correct. Timer sur 9 bit, avec comme valeur maximale, 0x01ff.
+	TC_MODE_PWM_PHASE_CORRECT_10BIT					= 0x03, //!< Mode PWM, Phase Correct. Timer sur 10 bit, avec comme valeur maximale, 0x03ff.
+	TC_MODE_PWM_PHASE_CORRECT_OCRA					= 0x13, //!< Mode PWM, Phase Correct. Avec comme valeur maximale, le registre de compareson A, (OCRnA).
+	TC_MODE_PWM_PHASE_CORRECT_ICR					= 0x12, //!< Mode PWM, Phase Correct. Avec comme valeur maximale, le registre de capture, (ICRn).
+			
+			
+	TC_MODE_FAST_PWM_8BIT 							= 0x09, //!< Mode Fast PWM. Timer sur 8 bit, avec comme valeur maximale, 0x00ff.
+	TC_MODE_FAST_PWM_9BIT							= 0x0a, //!< Mode Fast PWM. Timer sur 9 bit, avec comme valeur maximale, 0x01ff.
+	TC_MODE_FAST_PWM_10BIT							= 0x0b, //!< Mode Fast PWMt. Timer sur 10 bit, avec comme valeur maximale, 0x03ff.
+	TC_MODE_FAST_PWM_OCRA							= 0x1b, //!< Mode Fast PWM. Avec comme valeur maximale, le registre de compareson A, (OCRnA).
+	TC_MODE_FAST_PWM_ICR							= 0x1a, //!< Mode Fast PWM. Avec comme valeur maximale, le registre de capture, (ICRn).
 
 	TC_MODE_PWM_PHASE_AND_FREQUENCY_CORRECT_OCRA 	= 0x10, //!< Mode PWM, Phase and Frequency Correct. Avec comme valeur maximale, le registre de compareson A, (OCRnA).
 	TC_MODE_PWM_PHASE_AND_FREQUENCY_CORRECT_ICR		= 0x11, //!< Mode PWM, Phase and Frequency Correct, le registre de capture, (ICRn).
 
 	#if !defined(__DOXYGEN__)
 	#if defined(TCCR0) || defined(TCCR2) //Timer 1 et 2 avec un comparateur.
-	TC_MODE_MASK_TCCR					= 0xb7,
-	#else //Timer 1 et 2 avec deux comparateurs.
-	TC_MODE_MASK_TCCR12_B				= 0xf7,
+	TC_MODE_MASK_TCCR								= 0x48,
 	#endif
-	TC_MODE_MASK_TCCR_A					= 0xfc,
-	TC_MODE_MASK_TCCR_B					= 0xe7
+	TC_MODE_MASK_TCCR_A								= 0x03,
+	TC_MODE_MASK_TCCR_B								= 0x18
 	#endif
 }tc_mode_e;
 
@@ -258,10 +257,10 @@ typedef enum
 	TC_OUTPUT_SET	  				= 0xfc,	//!< Mise à 1 de la sorti a chaque comparaison égale.
 
 	#if !defined(__DOXYGEN__)
-	TC_OUTPUT_A_MASK				= 0x3f,
-	TC_OUTPUT_B_MASK				= 0xcf,
+	TC_OUTPUT_A_MASK				= 0xc0,
+	TC_OUTPUT_B_MASK				= 0x30,
 	#if defined(OCR1C) || defined(OCR3C) || defined(OCR4C) || defined(OCR5C)
-	TC_OUTPUT_C_MASK				= 0xf3
+	TC_OUTPUT_C_MASK				= 0x0c
 	#endif
 	#endif
 }tc_output_e;
@@ -288,7 +287,7 @@ typedef enum
 //! \brief Pour de sélectionner l'horloge.
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \param clock est la sélection de la source de l'horloge pour le compteur.
-static inline void tc_clock_select(tc_s tc, tc_clock_e clock)
+static inline void tc_clock_select(tc_e tc, tc_clock_e clock)
 {
 	switch(tc)
 	{
@@ -345,7 +344,7 @@ static inline void tc_clock_select(tc_s tc, tc_clock_e clock)
 //! \brief Pour sélectionner le mode de fonctionement.
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \param mode est le mode souhaiter.
-static inline void tc_mode_select(tc_s tc, tc_mode_e mode)
+static inline void tc_mode_select(tc_e tc, tc_mode_e mode)
 {
 	//if(tc->num == TC_NUM_0 || tc->num == TC_NUM_2)
 	//{
@@ -361,6 +360,59 @@ static inline void tc_mode_select(tc_s tc, tc_mode_e mode)
 		//*tc->tccra = (*tc->tccra&TC_MODE_MASK_TCCR_A)|(~TC_MODE_MASK_TCCR_A&mode);
 		//*tc->tccrb = (*tc->tccrb&TC_MODE_MASK_TCCR_B)|(~TC_MODE_MASK_TCCR_B&mode);
 	//}
+	
+	switch(tc)
+	{
+		#if defined(TCNT0)
+		case TC_0:	//timer/counter 0.
+			#if defined(TCCR0)
+			TCCR0 = (TCCR0&~TC_MODE_MASK_TCCR)|(mode&TC_MODE_MASK_TCCR);
+			#else
+			TCCR0A = (TCCR0A&~TC_MODE_MASK_TCCR_A)|(mode&TC_MODE_MASK_TCCR_A);
+			TCCR0B = (TCCR0B&~TC_MODE_MASK_TCCR_B)|(mode&TC_MODE_MASK_TCCR_B);	
+			#endif
+		break;
+		#endif
+		
+		#if defined(TCNT1)
+		case TC_1:	//timer/counter 1 (16bits).
+			TCCR1A = (TCCR1A&~TC_MODE_MASK_TCCR_A)|(mode&TC_MODE_MASK_TCCR_A);
+			TCCR1B = (TCCR1B&~TC_MODE_MASK_TCCR_B)|(mode&TC_MODE_MASK_TCCR_B);
+		break;
+		#endif
+		
+		#if defined(TCNT2)
+		case TC_2:	//timer/counter 2.
+			#if defined(TCCR2)
+			TCCR2 = (TCCR2&~TC_MODE_MASK_TCCR)|(mode&TC_MODE_MASK_TCCR);
+			#else
+			TCCR2A = (TCCR2A&~TC_MODE_MASK_TCCR_A)|(mode&TC_MODE_MASK_TCCR_A);
+			TCCR2B = (TCCR2B&~TC_MODE_MASK_TCCR_B)|(mode&TC_MODE_MASK_TCCR_B);
+			#endif
+		break;
+		#endif
+		
+		#if defined(TCNT3)
+		case TC_3:	//timer/counter 3 (16bits).
+			TCCR3A = (TCCR3A&~TC_MODE_MASK_TCCR_A)|(mode&TC_MODE_MASK_TCCR_A);
+			TCCR3B = (TCCR3B&~TC_MODE_MASK_TCCR_B)|(mode&TC_MODE_MASK_TCCR_B);
+		break;
+		#endif
+		
+		#if defined(TCNT4)
+		case TC_4:	//timer/counter 4 (16bits).
+			TCCR4A = (TCCR4A&~TC_MODE_MASK_TCCR_A)|(mode&TC_MODE_MASK_TCCR_A);
+			TCCR4B = (TCCR4B&~TC_MODE_MASK_TCCR_B)|(mode&TC_MODE_MASK_TCCR_B);
+		break;
+		#endif
+		
+		#if defined(TCNT5)
+		case TC_5:	//timer/counter 5 (16bits).
+			TCCR5A = (TCCR5A&~TC_MODE_MASK_TCCR_A)|(mode&TC_MODE_MASK_TCCR_A);
+			TCCR5B = (TCCR5B&~TC_MODE_MASK_TCCR_B)|(mode&TC_MODE_MASK_TCCR_B);
+		break;
+		#endif
+	}
 }
 
 //! \brief Permet de sélectionner le mode de sorti (OCRnX).
@@ -368,33 +420,130 @@ static inline void tc_mode_select(tc_s tc, tc_mode_e mode)
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \param compare est le comparateur affecter par l'opération de cette fonction.
 //! \param output est la nouvelle valeur du mode de sortie.
-static inline void tc_output_select(tc_s tc, tc_compare_e compare, tc_output_e output)
-{
-	//#if defined(TCCR0) || defined(TCCR2)
-	//if(tc->num == TC_NUM_0 || tc->num == TC_NUM_2)
-	//{
-		//*tc->tccrb = (*tc->tccrb&TC_OUTPUT_B_MASK)|(~TC_OUTPUT_B_MASK&output);
-	//}
-	//else
-	//{
-	//#endif
-		//switch(compare)
-		//{
-			//case TC_COMPARE_A:
-				//*tc->tccra = (*tc->tccra&TC_OUTPUT_A_MASK)|(~TC_OUTPUT_A_MASK&output);
-			//break;
-			//case TC_COMPARE_B:
-				//*tc->tccra = (*tc->tccra&TC_OUTPUT_B_MASK)|(~TC_OUTPUT_B_MASK&output);
-			//break;
-			//#if defined(OCR1C) || defined(OCR3C) || defined(OCR4C) | defined(OCR5C)
-			//case TC_COMPARE_C:
-				//*tc->tccra = (*tc->tccra&TC_OUTPUT_C_MASK)|(~TC_OUTPUT_C_MASK&output);
-			//break;
-			//#endif
-		//}
-	//#if defined(TCCR0) || defined(TCCR2)
-	//}
-	//#endif
+static inline void tc_output_select(tc_e tc, tc_compare_e compare, tc_output_e output)
+{	
+	switch(tc)
+	{
+		#if defined(TCNT0)
+		case TC_0:	//timer/counter 0.
+			#if defined(TCCR0)
+			//Ici les enum (TC_OUTPUT_B_MASK et TC_COMPARE_B) sont en fait le comparateur A.
+			TCCR0 = (TCCR0&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+			#elif defined(TCCR0B)
+			switch(compare)
+			{
+				case TC_COMPARE_A:
+				TCCR0A = (TCCR0A&~TC_OUTPUT_A_MASK)|(TC_OUTPUT_A_MASK&output);
+				break;
+				case TC_COMPARE_B:
+				TCCR0A = (TCCR0A&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+				break;
+			}
+			#elif defined(TCCR0A) != defined(TCCR0B)
+			//Ici les enum (TC_OUTPUT_B_MASK et TC_COMPARE_B) sont en fait le comparateur A.
+			TCCR0A = (TCCR0A&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+			#endif
+		break;
+		#endif
+		
+		#if defined(TCNT1)
+		case TC_1:	//timer/counter 1 (16bits).
+			switch(compare)
+			{
+				case TC_COMPARE_A:
+				TCCR1A = (TCCR1A&~TC_OUTPUT_A_MASK)|(TC_OUTPUT_A_MASK&output);
+				break;
+				case TC_COMPARE_B:
+				TCCR1A = (TCCR1A&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+				break;
+				#if defined(OCR1C)
+				case TC_COMPARE_C:
+				TCCR1A = (TCCR1A&~TC_OUTPUT_C_MASK)|(TC_OUTPUT_C_MASK&output);
+				break;
+				#endif
+			}
+		break;
+		#endif
+		
+		#if defined(TCNT2)
+		case TC_2:	//timer/counter 2.
+			#if defined(TCCR2)
+			//Ici les enum (TC_OUTPUT_B_MASK et TC_COMPARE_B) sont en fait le comparateur A.
+			TCCR2 = (TCCR2&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+			#elif defined(TCCR2B)
+			switch(compare)
+			{
+				case TC_COMPARE_A:
+				TCCR2A = (TCCR2A&~TC_OUTPUT_A_MASK)|(TC_OUTPUT_A_MASK&output);
+				break;
+				case TC_COMPARE_B:
+				TCCR2A = (TCCR2A&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+				break;
+			}
+			#elif defined(TCCR0A) != defined(TCCR0B)
+			//Ici les enum (TC_OUTPUT_B_MASK et TC_COMPARE_B) sont en fait le comparateur A.
+			TCCR2A = (TCCR2A&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+			#endif
+		break;
+		#endif
+		
+		#if defined(TCNT3)
+		case TC_3:	//timer/counter 3 (16bits).
+			switch(compare)
+			{
+				case TC_COMPARE_A:
+				TCCR3A = (TCCR3A&~TC_OUTPUT_A_MASK)|(TC_OUTPUT_A_MASK&output);
+				break;
+				case TC_COMPARE_B:
+				TCCR3A = (TCCR3A&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+				break;
+				#if defined(OCR3C)
+				case TC_COMPARE_C:
+				TCCR3A = (TCCR3A&~TC_OUTPUT_C_MASK)|(TC_OUTPUT_C_MASK&output);
+				break;
+				#endif
+			}
+		break;
+		#endif
+		
+		#if defined(TCNT4)
+		case TC_4:	//timer/counter 4 (16bits).
+			switch(compare)
+			{
+				case TC_COMPARE_A:
+				TCCR4A = (TCCR4A&~TC_OUTPUT_A_MASK)|(TC_OUTPUT_A_MASK&output);
+				break;
+				case TC_COMPARE_B:
+				TCCR4A = (TCCR4A&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+				break;
+				#if defined(OCR4C)
+				case TC_COMPARE_C:
+				TCCR4A = (TCCR4A&~TC_OUTPUT_C_MASK)|(TC_OUTPUT_C_MASK&output);
+				break;
+				#endif
+			}
+		break;
+		#endif
+		
+		#if defined(TCNT5)
+		case TC_5:	//timer/counter 5 (16bits).
+			switch(compare)
+			{
+				case TC_COMPARE_A:
+				TCCR5A = (TCCR5A&~TC_OUTPUT_A_MASK)|(TC_OUTPUT_A_MASK&output);
+				break;
+				case TC_COMPARE_B:
+				TCCR5A = (TCCR5A&~TC_OUTPUT_B_MASK)|(TC_OUTPUT_B_MASK&output);
+				break;
+				#if defined(OCR5C)
+				case TC_COMPARE_C:
+				TCCR5A = (TCCR5A&~TC_OUTPUT_C_MASK)|(TC_OUTPUT_C_MASK&output);
+				break;
+				#endif
+			}
+		break;
+		#endif
+	}
 }
 
 
@@ -435,7 +584,7 @@ static inline void tc_output_select(tc_s tc, tc_compare_e compare, tc_output_e o
 //!
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \see tc_disable_interrupt_overflow()
-static inline void tc_enable_interrupt_overflow(tc_s tc)
+static inline void tc_enable_interrupt_overflow(tc_e tc)
 {	
 	switch(tc)
 	{
@@ -492,7 +641,7 @@ static inline void tc_enable_interrupt_overflow(tc_s tc)
 //! \brief Désactive l'interruption de débordement.
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \see tc_enable_interrupt_overflow()
-static inline void tc_disable_interrupt_overflow(tc_s tc)
+static inline void tc_disable_interrupt_overflow(tc_e tc)
 {
 	switch(tc)
 	{
@@ -550,7 +699,7 @@ static inline void tc_disable_interrupt_overflow(tc_s tc)
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \return false si le drapeau n'est pas lever.
 //! \see tc_cleared_overflow_flag()
-static inline bool tc_is_raising_overflow_flag(tc_s tc)
+static inline bool tc_is_raising_overflow_flag(tc_e tc)
 {
 	switch(tc)
 	{
@@ -607,7 +756,7 @@ static inline bool tc_is_raising_overflow_flag(tc_s tc)
 //! \brief Pour effacer le drapeau de débordement.
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \see tc_is_raising_overflow_flag()
-static inline void tc_cleared_overflow_flag(tc_s tc)
+static inline void tc_cleared_overflow_flag(tc_e tc)
 {
 	switch(tc)
 	{
@@ -674,7 +823,7 @@ static inline void tc_cleared_overflow_flag(tc_s tc)
 //! \see tc_get_counter_8bit()
 //! \see tc_set_counter_16bit()
 //! \see tc_get_counter_16bit()
-static inline void tc_set_counter_8bit(tc_s tc, uint8_t val)
+static inline void tc_set_counter_8bit(tc_e tc, uint8_t val)
 {
 	switch(tc)
 	{
@@ -698,7 +847,7 @@ static inline void tc_set_counter_8bit(tc_s tc, uint8_t val)
 //! \see tc_set_counter_8bit()
 //! \see tc_set_counter_16bit()
 //! \see tc_get_counter_16bit()
-static inline uint8_t tc_get_counter_8bit(tc_s tc)
+static inline uint8_t tc_get_counter_8bit(tc_e tc)
 {
 	//Sauvegarde du drapeau d'interruption globale.
 	uint8_t sreg = SREG;
@@ -730,42 +879,37 @@ static inline uint8_t tc_get_counter_8bit(tc_s tc)
 //! \see tc_set_counter_8bit()
 //! \see tc_get_counter_8bit()
 //! \see tc_get_counter_16bit()
-static inline void tc_set_counter_16bit(tc_s tc, uint16_t val)
+static inline void tc_set_counter_16bit(tc_e tc, uint16_t val)
 {
-	//Sauvegarde du drapeau d'interruption globale.
-	uint8_t sreg = SREG;
-	//Désactive les interruptions
-	cli();
-	
-	switch(tc)
-	{		
-		#if defined(TCNT1)
-		case TC_1:	//timer/counter 1 (16bits).
-			TCNT1 = val;
-		break;
-		#endif
-		
-		#if defined(TCNT3)
-		case TC_3:	//timer/counter 3 (16bits).
-			TCNT3 = val;
-		break;
-		#endif
-		
-		#if defined(TCNT4)
-		case TC_4:	//timer/counter 4 (16bits).
-			TCNT4 = val;
-		break;
-		#endif
-		
-		#if defined(TCNT5)
-		case TC_5:	//timer/counter 5 (16bits).
-			TCNT5 = val;
-		break;
-		#endif
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)	
+	{
+		switch(tc)
+		{		
+			#if defined(TCNT1)
+			case TC_1:	//timer/counter 1 (16bits).
+				TCNT1 = val;
+			break;
+			#endif
+			
+			#if defined(TCNT3)
+			case TC_3:	//timer/counter 3 (16bits).
+				TCNT3 = val;
+			break;
+			#endif
+			
+			#if defined(TCNT4)
+			case TC_4:	//timer/counter 4 (16bits).
+				TCNT4 = val;
+			break;
+			#endif
+			
+			#if defined(TCNT5)
+			case TC_5:	//timer/counter 5 (16bits).
+				TCNT5 = val;
+			break;
+			#endif
+		}
 	}
-	
-	//Restaure du drapeau d'interruption globale.
-	SREG = sreg;
 }
 
 //! \brief Permet d'obtenir la valeur des compteurs de 16 bits, (timer/counter 1, 3, 4 et 5).
@@ -774,33 +918,36 @@ static inline void tc_set_counter_16bit(tc_s tc, uint16_t val)
 //! \see tc_set_counter_8bit()
 //! \see tc_get_counter_8bit()
 //! \see tc_get_counter_16bit()
-static inline uint16_t tc_get_counter_16bit(tc_s tc)
+static inline uint16_t tc_get_counter_16bit(tc_e tc)
 {
-	switch(tc)
-	{		
-		#if defined(TCNT1)
-		case TC_1:	//timer/counter 1 (16bits).
-			return TCNT1;
-		break;
-		#endif
-		
-		#if defined(TCNT3)
-		case TC_3:	//timer/counter 3 (16bits).
-			return TCNT3;
-		break;
-		#endif
-		
-		#if defined(TCNT4)
-		case TC_4:	//timer/counter 4 (16bits).
-			return TCNT4;
-		break;
-		#endif
-		
-		#if defined(TCNT5)
-		case TC_5:	//timer/counter 5 (16bits).
-			return TCNT5;
-		break;
-		#endif
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)	
+	{
+		switch(tc)
+		{		
+			#if defined(TCNT1)
+			case TC_1:	//timer/counter 1 (16bits).
+				return TCNT1;
+			break;
+			#endif
+			
+			#if defined(TCNT3)
+			case TC_3:	//timer/counter 3 (16bits).
+				return TCNT3;
+			break;
+			#endif
+			
+			#if defined(TCNT4)
+			case TC_4:	//timer/counter 4 (16bits).
+				return TCNT4;
+			break;
+			#endif
+			
+			#if defined(TCNT5)
+			case TC_5:	//timer/counter 5 (16bits).
+				return TCNT5;
+			break;
+			#endif
+		}
 	}
 }
 
@@ -876,7 +1023,7 @@ static inline uint16_t tc_get_counter_16bit(tc_s tc)
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \param compare est le comparateur affecter par l'opération de cette fonction.
 //! \see tc_disable_interrupt_compare()
-static inline void tc_enable_interrupt_compare(tc_s tc, tc_compare_e compare)
+static inline void tc_enable_interrupt_compare(tc_e tc, tc_compare_e compare)
 {
 	switch(tc)
 	{
@@ -943,7 +1090,7 @@ static inline void tc_enable_interrupt_compare(tc_s tc, tc_compare_e compare)
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \param compare est le comparateur affecter par l'opération de cette fonction.
 //! \see tc_enable_interrupt_compare()
-static inline void tc_disable_interrupt_compare(tc_s tc, tc_compare_e compare)
+static inline void tc_disable_interrupt_compare(tc_e tc, tc_compare_e compare)
 {
 	switch(tc)
 	{
@@ -1011,7 +1158,7 @@ static inline void tc_disable_interrupt_compare(tc_s tc, tc_compare_e compare)
 //! \param compare est le comparateur affecter par l'opération de cette fonction.
 //! \return false si le drapeau n'est pas lever.
 //! \see tc_cleared_compare_flag()
-static inline bool tc_is_raising_compare_flag(tc_s tc, tc_compare_e compare)
+static inline bool tc_is_raising_compare_flag(tc_e tc, tc_compare_e compare)
 {
 	switch(tc)
 	{
@@ -1078,7 +1225,7 @@ static inline bool tc_is_raising_compare_flag(tc_s tc, tc_compare_e compare)
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \param compare est le comparateur affecter par l'opération de cette fonction.
 //! \see tc_is_raising_compare_flag()
-static inline void tc_cleared_compare_flag(tc_s tc, tc_compare_e compare)
+static inline void tc_cleared_compare_flag(tc_e tc, tc_compare_e compare)
 {
 	switch(tc)
 	{
@@ -1148,7 +1295,7 @@ static inline void tc_cleared_compare_flag(tc_s tc, tc_compare_e compare)
 //! \param compare est le comparateur affecter par l'opération de cette fonction.
 //! \see tc_mode_select()
 //! \see tc_mode_e
-static inline void tc_force_compare(tc_s tc, tc_compare_e compare)
+static inline void tc_force_compare(tc_e tc, tc_compare_e compare)
 {	
 	switch(tc)
 	{
@@ -1307,7 +1454,7 @@ static inline void tc_force_compare(tc_s tc, tc_compare_e compare)
 //! \see tc_get_compare_8bit()
 //! \see tc_set_compare_16bit()
 //! \see tc_get_compare_16bit()
-static inline void tc_set_compare_8bit(tc_s tc, tc_compare_e compare, uint8_t val)
+static inline void tc_set_compare_8bit(tc_e tc, tc_compare_e compare, uint8_t val)
 {
 	switch(tc)
 	{		
@@ -1361,7 +1508,7 @@ static inline void tc_set_compare_8bit(tc_s tc, tc_compare_e compare, uint8_t va
 //! \see tc_set_compare_8bit()
 //! \see tc_set_compare_16bit()
 //! \see tc_get_compare_16bit()
-static inline uint8_t tc_get_compare_8bit(tc_s tc, tc_compare_e compare)
+static inline uint8_t tc_get_compare_8bit(tc_e tc, tc_compare_e compare)
 {
 	switch(tc)
 	{		
@@ -1414,99 +1561,94 @@ static inline uint8_t tc_get_compare_8bit(tc_s tc, tc_compare_e compare)
 //! \see tc_set_compare_8bit()
 //! \see tc_get_compare_8bit()
 //! \see tc_get_compare_16bit()
-static inline void tc_set_compare_16bit(tc_s tc, tc_compare_e compare, uint16_t val)
+static inline void tc_set_compare_16bit(tc_e tc, tc_compare_e compare, uint16_t val)
 {
-	//Sauvegarde du drapeau d'interruption globale.
-	uint8_t sreg = SREG;
-	//Désactive les interruptions
-	cli();
-	
-	switch(tc)
-	{		
-		#if defined(TCNT1)
-		case TC_1:	//timer/counter 1 (16bits).
-			switch(compare)
-			{
-				case TC_COMPARE_A:
-					OCR1A = val;
-				break;
-				case TC_COMPARE_B:
-					OCR1B = val;
-				break;
-				#if defined(OCR1C)
-				case TC_COMPARE_C:
-					OCR1C = val;
-				break;
-				#endif
-				#if defined(OCR1D)
-				case TC_COMPARE_D:
-					OCR1D = val;
-				break;
-				#endif
-			}
-		break;
-		#endif
-		
-		#if defined(TCNT3)
-		case TC_3:	//timer/counter 3 (16bits).
-			switch(compare)
-			{
-				case TC_COMPARE_A:
-					OCR2A = val;
-				break;
-				case TC_COMPARE_B:
-					OCR3B = val;
-				break;
-				#if defined(OCR3C)
-				case TC_COMPARE_C:
-					OCR3C = val;
-				break;
-				#endif
-			}
-		break;
-		#endif
-		
-		#if defined(TCNT4)
-		case TC_4:	//timer/counter 4 (16bits).
-			switch(compare)
-			{
-				case TC_COMPARE_A:
-					OCR4A = val;
-				break;
-				case TC_COMPARE_B:
-					OCR4B = val;
-				break;
-				#if defined(OCR4C)
-				case TC_COMPARE_C:
-					OCR4C = val;
-				break;
-				#endif
-			}
-		break;
-		#endif
-		
-		#if defined(TCNT5)
-		case TC_5:	//timer/counter 5 (16bits).
-			switch(compare)
-			{
-				case TC_COMPARE_A:
-					OCR5A = val;
-				break;
-				case TC_COMPARE_B:
-					OCR5B = val;
-				break;
-				#if defined(OCR5C)
-				case TC_COMPARE_C:
-					OCR5C = val;
-				break;
-				#endif
-			}
-		break;
-		#endif
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)	
+	{
+		switch(tc)
+		{		
+			#if defined(TCNT1)
+			case TC_1:	//timer/counter 1 (16bits).
+				switch(compare)
+				{
+					case TC_COMPARE_A:
+						OCR1A = val;
+					break;
+					case TC_COMPARE_B:
+						OCR1B = val;
+					break;
+					#if defined(OCR1C)
+					case TC_COMPARE_C:
+						OCR1C = val;
+					break;
+					#endif
+					#if defined(OCR1D)
+					case TC_COMPARE_D:
+						OCR1D = val;
+					break;
+					#endif
+				}
+			break;
+			#endif
+			
+			#if defined(TCNT3)
+			case TC_3:	//timer/counter 3 (16bits).
+				switch(compare)
+				{
+					case TC_COMPARE_A:
+						OCR3A = val;
+					break;
+					case TC_COMPARE_B:
+						OCR3B = val;
+					break;
+					#if defined(OCR3C)
+					case TC_COMPARE_C:
+						OCR3C = val;
+					break;
+					#endif
+				}
+			break;
+			#endif
+			
+			#if defined(TCNT4)
+			case TC_4:	//timer/counter 4 (16bits).
+				switch(compare)
+				{
+					case TC_COMPARE_A:
+						OCR4A = val;
+					break;
+					case TC_COMPARE_B:
+						OCR4B = val;
+					break;
+					#if defined(OCR4C)
+					case TC_COMPARE_C:
+						OCR4C = val;
+					break;
+					#endif
+				}
+			break;
+			#endif
+			
+			#if defined(TCNT5)
+			case TC_5:	//timer/counter 5 (16bits).
+				switch(compare)
+				{
+					case TC_COMPARE_A:
+						OCR5A = val;
+					break;
+					case TC_COMPARE_B:
+						OCR5B = val;
+					break;
+					#if defined(OCR5C)
+					case TC_COMPARE_C:
+						OCR5C = val;
+					break;
+					#endif
+				}
+			break;
+			#endif
+		}
 	}
-	
-	//Restaure du drapeau d'interruption globale.
-	SREG = sreg;
 }
 
 //! \brief Permet d'obtenir la valeur de comparaison, des comparateurs de 16 bits (timer/counter 1, 3, 4 et 5).
@@ -1516,99 +1658,94 @@ static inline void tc_set_compare_16bit(tc_s tc, tc_compare_e compare, uint16_t 
 //! \see tc_set_compare_8bit()
 //! \see tc_get_compare_8bit()
 //! \see tc_set_compare_16bit()
-static inline uint16_t tc_get_compare_16bit(tc_s tc, tc_compare_e compare)
+static inline uint16_t tc_get_compare_16bit(tc_e tc, tc_compare_e compare)
 {	
-	//Sauvegarde du drapeau d'interruption globale.
-	uint8_t sreg = SREG;
-	//Désactive les interruptions
-	cli();
-	
-	switch(tc)
-	{		
-		#if defined(TCNT1)
-		case TC_1:	//timer/counter 1 (16bits).
-			switch(compare)
-			{
-				case TC_COMPARE_A:
-					return OCR1A;
-				break;
-				case TC_COMPARE_B:
-					return OCR1B;
-				break;
-				#if defined(OCR1C)
-				case TC_COMPARE_C:
-					return OCR1C;
-				break;
-				#endif
-				#if defined(OCR1D)
-				case TC_COMPARE_D:
-					return OCR1D;
-				break;
-				#endif
-			}
-		break;
-		#endif
-		
-		#if defined(TCNT3)
-		case TC_3:	//timer/counter 3 (16bits).
-			switch(compare)
-			{
-				case TC_COMPARE_A:
-					return OCR2A;
-				break;
-				case TC_COMPARE_B:
-					return OCR3B;
-				break;
-				#if defined(OCR3C)
-				case TC_COMPARE_C:
-					return OCR3C;
-				break;
-				#endif
-			}
-		break;
-		#endif
-		
-		#if defined(TCNT4)
-		case TC_4:	//timer/counter 4 (16bits).
-			switch(compare)
-			{
-				case TC_COMPARE_A:
-					return OCR4A;
-				break;
-				case TC_COMPARE_B:
-					return OCR4B;
-				break;
-				#if defined(OCR4C)
-				case TC_COMPARE_C:
-					return OCR4C;
-				break;
-				#endif
-			}
-		break;
-		#endif
-		
-		#if defined(TCNT5)
-		case TC_5:	//timer/counter 5 (16bits).
-			switch(compare)
-			{
-				case TC_COMPARE_A:
-					return OCR5A;
-				break;
-				case TC_COMPARE_B:
-					return OCR5B;
-				break;
-				#if defined(OCR5C)
-				case TC_COMPARE_C:
-					return OCR5C;
-				break;
-				#endif
-			}
-		break;
-		#endif
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)	
+	{
+		switch(tc)
+		{		
+			#if defined(TCNT1)
+			case TC_1:	//timer/counter 1 (16bits).
+				switch(compare)
+				{
+					case TC_COMPARE_A:
+						return OCR1A;
+					break;
+					case TC_COMPARE_B:
+						return OCR1B;
+					break;
+					#if defined(OCR1C)
+					case TC_COMPARE_C:
+						return OCR1C;
+					break;
+					#endif
+					#if defined(OCR1D)
+					case TC_COMPARE_D:
+						return OCR1D;
+					break;
+					#endif
+				}
+			break;
+			#endif
+			
+			#if defined(TCNT3)
+			case TC_3:	//timer/counter 3 (16bits).
+				switch(compare)
+				{
+					case TC_COMPARE_A:
+						return OCR3A;
+					break;
+					case TC_COMPARE_B:
+						return OCR3B;
+					break;
+					#if defined(OCR3C)
+					case TC_COMPARE_C:
+						return OCR3C;
+					break;
+					#endif
+				}
+			break;
+			#endif
+			
+			#if defined(TCNT4)
+			case TC_4:	//timer/counter 4 (16bits).
+				switch(compare)
+				{
+					case TC_COMPARE_A:
+						return OCR4A;
+					break;
+					case TC_COMPARE_B:
+						return OCR4B;
+					break;
+					#if defined(OCR4C)
+					case TC_COMPARE_C:
+						return OCR4C;
+					break;
+					#endif
+				}
+			break;
+			#endif
+			
+			#if defined(TCNT5)
+			case TC_5:	//timer/counter 5 (16bits).
+				switch(compare)
+				{
+					case TC_COMPARE_A:
+						return OCR5A;
+					break;
+					case TC_COMPARE_B:
+						return OCR5B;
+					break;
+					#if defined(OCR5C)
+					case TC_COMPARE_C:
+						return OCR5C;
+					break;
+					#endif
+				}
+			break;
+			#endif
+		}
 	}
-	
-	//Restaure du drapeau d'interruption globale.
-	SREG = sreg;
 }
 
 //! @} //Compare
@@ -1645,7 +1782,7 @@ static inline uint16_t tc_get_compare_16bit(tc_s tc, tc_compare_e compare)
 //!
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \see tc_disable_interrupt_capture()
-static inline void tc_enable_interrupt_capture(tc_s tc)
+static inline void tc_enable_interrupt_capture(tc_e tc)
 {
 	switch(tc)
 	{
@@ -1682,7 +1819,7 @@ static inline void tc_enable_interrupt_capture(tc_s tc)
 //! \brief Désactive l'interruption de capture.
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \see tc_enable_interrupt_capture()
-static inline void tc_disable_interrupt_capture(tc_s tc)
+static inline void tc_disable_interrupt_capture(tc_e tc)
 {
 	switch(tc)
 	{
@@ -1719,7 +1856,7 @@ static inline void tc_disable_interrupt_capture(tc_s tc)
 //! \brief Active le réducteur de bruit de l'entrée de capture (ICPn).
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \see tc_disable_noise_canceler_capture()
-static inline void tc_enable_noise_canceler_capture(tc_s tc)
+static inline void tc_enable_noise_canceler_capture(tc_e tc)
 {
 	switch(tc)
 	{
@@ -1752,7 +1889,7 @@ static inline void tc_enable_noise_canceler_capture(tc_s tc)
 //! \brief Désactive le réducteur de bruit de l'entrée de capture (ICPn).
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \see tc_enable_noise_canceler_capture()
-static inline void tc_disable_noise_canceler_capture(tc_s tc)
+static inline void tc_disable_noise_canceler_capture(tc_e tc)
 {
 	switch(tc)
 	{
@@ -1788,7 +1925,7 @@ static inline void tc_disable_noise_canceler_capture(tc_s tc)
 //! \param edge est la valeur représentant le front.
 //! \see tc_mode_select()
 //! \see tc_mode_e
-static inline void tc_edge_select(tc_s tc, tc_edge_e edge)
+static inline void tc_edge_select(tc_e tc, tc_edge_e edge)
 {
 	//*tc->tccrb = (*tc->tccrb&TC_EDGE_MASK)|edge;
 	
@@ -1824,7 +1961,7 @@ static inline void tc_edge_select(tc_s tc, tc_edge_e edge)
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \return false si le drapeau n'est pas lever.
 //! \see tc_cleared_capture_flag()
-static inline bool tc_is_raising_capture_flag(tc_s tc)
+static inline bool tc_is_raising_capture_flag(tc_e tc)
 {	
 	switch(tc)
 	{
@@ -1861,7 +1998,7 @@ static inline bool tc_is_raising_capture_flag(tc_s tc)
 //! \brief Pour effacer le drapeau de capture.
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \see tc_is_raising_capture_flag()
-static inline void tc_cleared_capture_flag(tc_s tc)
+static inline void tc_cleared_capture_flag(tc_e tc)
 {
 	switch(tc)
 	{
@@ -1899,84 +2036,74 @@ static inline void tc_cleared_capture_flag(tc_s tc)
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \param val est la nouvelle valeur de capture.
 //! \see tc_get_capture()
-static inline void tc_set_capture(tc_s tc, uint16_t val)
+static inline void tc_set_capture(tc_e tc, uint16_t val)
 {	
-	//Sauvegarde du drapeau d'interruption globale.
-	uint8_t sreg = SREG;
-	//Désactive les interruptions
-	cli();
-	
-	switch(tc)
-	{		
-		#if defined(TCNT1)
-		case TC_1:	//timer/counter 1 (16bits).
-			ICR1 = val;
-		break;
-		#endif
-		
-		#if defined(TCNT3)
-		case TC_3:	//timer/counter 3 (16bits).
-			ICR3 = val;
-		break;
-		#endif
-		
-		#if defined(TCNT4)
-		case TC_4:	//timer/counter 4 (16bits).
-			ICR4 = val;
-		break;
-		#endif
-		
-		#if defined(TCNT5)
-		case TC_5:	//timer/counter 5 (16bits).
-			ICR5 = val;
-		break;
-		#endif
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)	
+	{
+		switch(tc)
+		{		
+			#if defined(TCNT1)
+			case TC_1:	//timer/counter 1 (16bits).
+				ICR1 = val;
+			break;
+			#endif
+			
+			#if defined(TCNT3)
+			case TC_3:	//timer/counter 3 (16bits).
+				ICR3 = val;
+			break;
+			#endif
+			
+			#if defined(TCNT4)
+			case TC_4:	//timer/counter 4 (16bits).
+				ICR4 = val;
+			break;
+			#endif
+			
+			#if defined(TCNT5)
+			case TC_5:	//timer/counter 5 (16bits).
+				ICR5 = val;
+			break;
+			#endif
+		}
 	}
-	
-	//Restaure du drapeau d'interruption globale.
-	SREG = sreg;
 }
 
 //! \brief Permet d'obtenir la valeur de capture.
 //! \param tc est le timer/counter que vous voulez modifier.
 //! \return La valeur de capture.
 //! \see tc_set_capture()
-static inline uint16_t tc_get_capture(tc_s tc)
+static inline uint16_t tc_get_capture(tc_e tc)
 {
-	//Sauvegarde du drapeau d'interruption globale.
-	uint8_t sreg = SREG;
-	//Désactive les interruptions
-	cli();
-	
-	switch(tc)
-	{		
-		#if defined(TCNT1)
-		case TC_1:	//timer/counter 1 (16bits).
-			return ICR1;
-		break;
-		#endif
-		
-		#if defined(TCNT3)
-		case TC_3:	//timer/counter 3 (16bits).
-			return ICR3;
-		break;
-		#endif
-		
-		#if defined(TCNT4)
-		case TC_4:	//timer/counter 4 (16bits).
-			return ICR4;
-		break;
-		#endif
-		
-		#if defined(TCNT5)
-		case TC_5:	//timer/counter 5 (16bits).
-			return ICR5;
-		break;
-		#endif
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)	
+	{
+		switch(tc)
+		{		
+			#if defined(TCNT1)
+			case TC_1:	//timer/counter 1 (16bits).
+				return ICR1;
+			break;
+			#endif
+			
+			#if defined(TCNT3)
+			case TC_3:	//timer/counter 3 (16bits).
+				return ICR3;
+			break;
+			#endif
+			
+			#if defined(TCNT4)
+			case TC_4:	//timer/counter 4 (16bits).
+				return ICR4;
+			break;
+			#endif
+			
+			#if defined(TCNT5)
+			case TC_5:	//timer/counter 5 (16bits).
+				return ICR5;
+			break;
+			#endif
+		}
 	}
-	
-	//Restaure du drapeau d'interruption globale.
-	SREG = sreg;
 }
 
 
