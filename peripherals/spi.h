@@ -127,7 +127,7 @@ static inline void spi_enable()
 	SPCR |= _BV(SPE);
 }
 
-//! \brief Permet de désactiver le twi.
+//! \brief Permet de désactiver le spi.
 //! \see twi_enable()
 static inline void spi_disable()
 {
@@ -240,16 +240,16 @@ static inline bool spi_is_raising_collision_flag()
 //! - Si vous êtes en mode maître pour envoyer la donnée sur le bus spi il vous faudra en plus appeler la fonction \ref twi_read_data().
 //! \code
 //! //Exemple, pour écrire 0x32 sur le bus isp en mode maître.
-//! twi_write_data(0x32)	//Écriture dans le registre SPDR.
-//! twi_read_data()			//Lecture de SPDR (qui contiens 0x32, on ignorer la lecture).
+//! spi_write_data(0x32)	//Écriture dans le registre SPDR.
+//! spi_read_data()			//Lecture de SPDR (qui contiens 0x32, on ignorer la lecture).
 //!							//Mais surtout provoque la rotation des registres sur le bus spi.
 //!							//La donnée et transmis sur le bus à ce moment,
 //!							//(ainsi on récupère dans SPDR la donnée qui se trouvent dans l'esclave,
 //!							//un deuxième appelle a \ref twi_read_data() pour récupérée la donnée provenant de l'esclave).
 //! \endcode
 //! \param data la donnée à écrire.
-//! \see twi_write_data()
-static inline void twi_write_data(uint8_t data)
+//! \see spi_write_data()
+static inline void spi_write_data(uint8_t data)
 {
 	SPDR = data;
 }
@@ -259,8 +259,8 @@ static inline void twi_write_data(uint8_t data)
 //! - Si vous êtes en mode maître, de même vous lisez la donnée se trouvent dans SPDR, mais ensuit cette fonction 
 //! provoque aussi la rotation des registres sur le bus spi.
 //! \return la donnée se trouvent dans SPDR.
-//! \see twi_write_data()
-static inline uint8_t twi_read_data()
+//! \see spi_write_data()
+static inline uint8_t spi_read_data()
 {
 	return SPDR;
 }
