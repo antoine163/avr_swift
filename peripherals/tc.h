@@ -10,7 +10,7 @@
 //!
 //!
 //! \author Maleyrie Antoine
-//! \version 1.3
+//! \version 1.4
 //! \date 08 Juin 2011
 //!
 //! ****************************************************************************
@@ -1459,7 +1459,7 @@ static inline void tc_set_compare_8bit(tc_e tc, tc_compare_e compare, uint8_t va
 	switch(tc)
 	{		
 		#if defined(TCNT0)
-		case TC_1:	//timer/counter 0.
+		case TC_0:	//timer/counter 0.
 			#if defined(OCR0)
 			OCR0 = val;
 			#elif defined(OCR0B)
@@ -1479,7 +1479,7 @@ static inline void tc_set_compare_8bit(tc_e tc, tc_compare_e compare, uint8_t va
 		#endif
 		
 		#if defined(TCNT2)
-		case TC_3:	//timer/counter 2.
+		case TC_2:	//timer/counter 2.
 			#if defined(OCR2)
 			OCR2 = val;
 			#elif defined(OCR2B)
@@ -1513,7 +1513,7 @@ static inline uint8_t tc_get_compare_8bit(tc_e tc, tc_compare_e compare)
 	switch(tc)
 	{		
 		#if defined(TCNT0)
-		case TC_1:	//timer/counter 0.
+		case TC_0:	//timer/counter 0.
 			#if defined(OCR0)
 			return OCR0;
 			#elif defined(OCR0B)
@@ -1533,7 +1533,7 @@ static inline uint8_t tc_get_compare_8bit(tc_e tc, tc_compare_e compare)
 		#endif
 		
 		#if defined(TCNT2)
-		case TC_3:	//timer/counter 2.
+		case TC_2:	//timer/counter 2.
 			#if defined(OCR2)
 			return OCR2;
 			#elif defined(OCR2B)
