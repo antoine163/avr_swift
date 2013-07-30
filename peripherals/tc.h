@@ -294,48 +294,48 @@ static inline void tc_clock_select(tc_e tc, tc_clock_e clock)
 		#if defined(TCNT0)
 		case TC_0:	//timer/counter 0.
 			#if defined(TCCR0)
-			TCCR0 |= clock;
+			TCCR0 = (TCCR0&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 			#elif defined(TCCR0B)
-			TCCR0B |= clock;
+			TCCR0B = (TCCR0B&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 			#elif defined(TCCR0A) != defined(TCCR0B)
-			TCCR0A |= clock;
+			TCCR0A = (TCCR0A&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 			#endif
 		break;
 		#endif
 		
 		#if defined(TCNT1)
 		case TC_1:	//timer/counter 1 (16bits).
-			TCCR1B |= clock;
+			TCCR1B = (TCCR1B&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 		break;
 		#endif
 		
 		#if defined(TCNT2)
 		case TC_2:	//timer/counter 2.
 			#if defined(TCCR2)
-			TCCR2 |= clock;
+			TCCR2 = (TCCR2&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 			#elif defined(TCCR2B)
-			TCCR2B |= clock;
+			TCCR2B = (TCCR2B&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 			#elif defined(TCCR2A) != defined(TCCR2B)
-			TCCR2A |= clock;
+			TCCR2A = (TCCR2A&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 			#endif
 		break;
 		#endif
 		
 		#if defined(TCNT3)
 		case TC_3:	//timer/counter 3 (16bits).
-			TCCR3B |= clock;
+			TCCR3B = (TCCR3B&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 		break;
 		#endif
 		
 		#if defined(TCNT4)
 		case TC_4:	//timer/counter 4 (16bits).
-			TCCR4B |= clock;
+			TCCR4B = (TCCR4B&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 		break;
 		#endif
 		
 		#if defined(TCNT5)
 		case TC_5:	//timer/counter 5 (16bits).
-			TCCR5B |= clock;
+			TCCR5B = (TCCR5B&~TC_CLOCK_MASK)|(clock&TC_CLOCK_MASK);
 		break;
 		#endif
 	}
